@@ -109,6 +109,44 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\202205091614102_InitialCreate.cs" />
+    <Compile Include="Migrations\202205091614102_InitialCreate.Designer.cs">
+      <DependentUpon>202205091614102_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091618479_MMRelationBookingServices.cs" />
+    <Compile Include="Migrations\202205091618479_MMRelationBookingServices.designer.cs">
+      <DependentUpon>202205091618479_MMRelationBookingServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091631018_1MRelationGuestBooking.cs" />
+    <Compile Include="Migrations\202205091631018_1MRelationGuestBooking.designer.cs">
+      <DependentUpon>202205091631018_1MRelationGuestBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091639042_AddOfferTable.cs" />
+    <Compile Include="Migrations\202205091639042_AddOfferTable.designer.cs">
+      <DependentUpon>202205091639042_AddOfferTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091640118_UpdateDBContext.cs" />
+    <Compile Include="Migrations\202205091640118_UpdateDBContext.designer.cs">
+      <DependentUpon>202205091640118_UpdateDBContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091642101_1MRelationGuestOffer.cs" />
+    <Compile Include="Migrations\202205091642101_1MRelationGuestOffer.designer.cs">
+      <DependentUpon>202205091642101_1MRelationGuestOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091645149_MMRelationOfferServices.cs" />
+    <Compile Include="Migrations\202205091645149_MMRelationOfferServices.designer.cs">
+      <DependentUpon>202205091645149_MMRelationOfferServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataAccessLayer\HotelDBContext.cs" />
+    <Compile Include="Models\EntityLayer\Admin.cs" />
+    <Compile Include="Models\EntityLayer\Booking.cs" />
+    <Compile Include="Models\EntityLayer\Employee.cs" />
+    <Compile Include="Models\EntityLayer\Facility.cs" />
+    <Compile Include="Models\EntityLayer\Guest.cs" />
+    <Compile Include="Models\EntityLayer\HotelServices.cs" />
+    <Compile Include="Models\EntityLayer\Offer.cs" />
+    <Compile Include="Models\EntityLayer\Room.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -128,6 +166,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202205091614102_InitialCreate.resx">
+      <DependentUpon>202205091614102_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091618479_MMRelationBookingServices.resx">
+      <DependentUpon>202205091618479_MMRelationBookingServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091631018_1MRelationGuestBooking.resx">
+      <DependentUpon>202205091631018_1MRelationGuestBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091639042_AddOfferTable.resx">
+      <DependentUpon>202205091639042_AddOfferTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091640118_UpdateDBContext.resx">
+      <DependentUpon>202205091640118_UpdateDBContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091642101_1MRelationGuestOffer.resx">
+      <DependentUpon>202205091642101_1MRelationGuestOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091645149_MMRelationOfferServices.resx">
+      <DependentUpon>202205091645149_MMRelationOfferServices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -143,8 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\BusinessLogicLayer\" />
-    <Folder Include="Models\DataAccesLayer\" />
-    <Folder Include="Models\EntityLayer\" />
     <Folder Include="ViewModels\Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
