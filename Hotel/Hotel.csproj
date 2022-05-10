@@ -101,6 +101,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
+    <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
+    <Compile Include="ViewModels\AdminStartVM.cs" />
+    <Compile Include="ViewModels\Commands\LoginCommand.cs" />
+    <Compile Include="ViewModels\Commands\SignInCommand.cs" />
+    <Compile Include="ViewModels\SignInVM.cs" />
+    <Compile Include="Views\AdminStartWiew.xaml.cs">
+      <DependentUpon>AdminStartWiew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInView.xaml.cs">
+      <DependentUpon>SignInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AdminStartWiew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +156,10 @@
     <Compile Include="Migrations\202205091645149_MMRelationOfferServices.designer.cs">
       <DependentUpon>202205091645149_MMRelationOfferServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205101233547_ModifyUsernameToEmail.cs" />
+    <Compile Include="Migrations\202205101233547_ModifyUsernameToEmail.designer.cs">
+      <DependentUpon>202205101233547_ModifyUsernameToEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccessLayer\HotelDBContext.cs" />
     <Compile Include="Models\EntityLayer\Admin.cs" />
@@ -147,10 +170,24 @@
     <Compile Include="Models\EntityLayer\HotelServices.cs" />
     <Compile Include="Models\EntityLayer\Offer.cs" />
     <Compile Include="Models\EntityLayer\Room.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\Utility.cs" />
+    <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\Commands\BaseCommand.cs" />
+    <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\StartVM.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SignInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -187,6 +224,9 @@
     <EmbeddedResource Include="Migrations\202205091645149_MMRelationOfferServices.resx">
       <DependentUpon>202205091645149_MMRelationOfferServices.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205101233547_ModifyUsernameToEmail.resx">
+      <DependentUpon>202205101233547_ModifyUsernameToEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -200,9 +240,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\BusinessLogicLayer\" />
-    <Folder Include="ViewModels\Commands\" />
+    <Resource Include="Images\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

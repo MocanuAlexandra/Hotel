@@ -4,10 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotel.Views"
+        xmlns:viewModels="clr-namespace:Hotel.ViewModels"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow"
+        Width="{Binding CurrentWidth, Mode=TwoWay}" 
+        Height="{Binding CurrentHeight, Mode=TwoWay}"
+        ResizeMode="CanMinimize">
+
+    <Window.DataContext>
+        <viewModels:MainWindowVM/>
+    </Window.DataContext>
+
+    <ContentControl Content="{Binding CurrentViewModel}"/>
 </Window>

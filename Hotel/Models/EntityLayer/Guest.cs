@@ -22,19 +22,19 @@ namespace Hotel.Models.EntityLayer
 
         //define other attributes
         //these fileds are required so can't be null
-        [Required(ErrorMessage = "Please enter your username")]
-        public string Username { get; set; }
+        [Required]
+        public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please enter your password")]
+        [Required]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Please enter your first name")]
+        [Required]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your last name")]
+        [Required]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your phone number")]
+        [Required]
         [MaxLength(10, ErrorMessage = "Phone number must be 10 digits")]
         public string Phone { get; set; }
 

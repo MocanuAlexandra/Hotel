@@ -32,31 +32,34 @@ namespace Hotel.Views
         // populate the db with some data
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // create an admin
-            Admin admin = new Admin
-            {
-                Username = "MocanuAlexandra",
-                Password = "admin1234",
-                IsActive = true
-            };
-            // add the admin to the db
-            _context.Admins.Add(admin);
+            //// create an admin
+            //Admin admin = new Admin
+            //{
+            //    Email = "mocanu.alexandra@adminhotel.com",
+            //    Password = "admin1234",
+            //    IsActive = true
+            //};
+            //// add the admin to the db
+            //_context.Admins.Add(admin);
 
-            // create a guest
-            Guest guest = new Guest
-            {
-                Username = "MocanuDaria",
-                Password = "octombrie2004",
-                FirstName = "Daria",
-                LastName = "Mocanu",
-                Phone = "0723456789",
-                IsActive = true
-            };
-            // add the guest to the db
-            _context.Guests.Add(guest);
+            //// create a guest
+            //Guest guest = new Guest
+            //{
+            //    Username = "MocanuDaria",
+            //    Password = "octombrie2004",
+            //    FirstName = "Daria",
+            //    LastName = "Mocanu",
+            //    Phone = "0723456789",
+            //    IsActive = true
+            //};
+            //// add the guest to the db
+            //_context.Guests.Add(guest);
 
             // save the changes
             _context.SaveChanges();
+
+            if (DataContext is Utils.Utility.ICloseWindows viewModel)
+                viewModel.Close += () => { this.Close(); };
         }
     }
 }
