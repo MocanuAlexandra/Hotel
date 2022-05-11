@@ -14,5 +14,11 @@
         <DataTemplate DataType="{x:Type viewModels:SignInVM}">
             <views:SignInView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
+            <views:EmployeeStartView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:AdminStartVM}">
+            <views:AdminStartWiew/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

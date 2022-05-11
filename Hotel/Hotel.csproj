@@ -109,9 +109,13 @@
     <Compile Include="ViewModels\AdminStartVM.cs" />
     <Compile Include="ViewModels\Commands\LoginCommand.cs" />
     <Compile Include="ViewModels\Commands\SignInCommand.cs" />
+    <Compile Include="ViewModels\EmployeeStartVM.cs" />
     <Compile Include="ViewModels\SignInVM.cs" />
     <Compile Include="Views\AdminStartWiew.xaml.cs">
       <DependentUpon>AdminStartWiew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeStartView.xaml.cs">
+      <DependentUpon>EmployeeStartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SignInView.xaml.cs">
       <DependentUpon>SignInView.xaml</DependentUpon>
@@ -124,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminStartWiew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeStartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

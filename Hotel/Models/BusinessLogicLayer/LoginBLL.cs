@@ -30,11 +30,25 @@ namespace Hotel.Models.BusinessLogicLayer
             if (Regex.IsMatch(_email, Constants.adminEmailFormat))
             {
                 // then we check if the admin exists in the database
-                if (loginDAL.LoginAdmin(_email, _password)!=0)
+                if (loginDAL.IsAdminInDB(_email, _password) != 0)
                     return true;
                 else
-                    MessageBox.Show("Wrong email or password!");
+                    return false;
+            }
+            return false;
+        }
 
+        // verify if user is employee
+        public bool IsEmployee()
+        {
+            // first we check if the format of the email is correct
+            if (Regex.IsMatch(_email, Constants.employeeEmailFormat))
+            {
+                // then we check if the employee exists in the database
+                if (loginDAL.IsEmployeeInDB(_email, _password) != 0)
+                    return true;
+                else
+                    return false;
             }
             return false;
         }

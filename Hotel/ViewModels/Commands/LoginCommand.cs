@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Hotel.ViewModels.Commands
 {
@@ -14,7 +15,7 @@ namespace Hotel.ViewModels.Commands
         {
             _mainWindowViewModel = mainWindowViewModel;
         }
-        
+
         public override void Execute(object parameter)
         {
             var signInVM = parameter as SignInVM;
@@ -27,6 +28,17 @@ namespace Hotel.ViewModels.Commands
                 {
                     _mainWindowViewModel.CurrentViewModel = new AdminStartVM();
                 }
+
+                // verify if user is employee so we can load the employee view
+                else if (_loginBLL.IsEmployee())
+                {
+                    _mainWindowViewModel.CurrentViewModel = new EmployeeStartVM();
+                }
+
+                // if user is not admin or employee or guest, we can't load the view
+                // so we show an error message
+                else
+                    MessageBox.Show("Wrong email or password!", "Login error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

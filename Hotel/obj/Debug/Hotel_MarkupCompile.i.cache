@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\App.xaml
-5-101347654
+6-2115419667
 
-48-477649798
+50-301267017
 133-1931964731
-Utils\Components\BindablePasswordBox.xaml;Views\AdminStartWiew.xaml;Views\MainWindow.xaml;Views\SignInView.xaml;Views\StartView.xaml;
+Utils\Components\BindablePasswordBox.xaml;Views\AdminStartWiew.xaml;Views\EmployeeStartView.xaml;Views\MainWindow.xaml;Views\SignInView.xaml;Views\StartView.xaml;
 
 True
 
