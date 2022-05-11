@@ -35,10 +35,16 @@ namespace Hotel.ViewModels.Commands
                     _mainWindowViewModel.CurrentViewModel = new EmployeeStartVM();
                 }
 
+                // verify if user is guest so we can load the guest view
+                else if (_loginBLL.IsGuest())
+                {
+                    _mainWindowViewModel.CurrentViewModel = new GuestStartVM();
+                }
                 // if user is not admin or employee or guest, we can't load the view
                 // so we show an error message
                 else
-                    MessageBox.Show("Wrong email or password!", "Login error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Wrong email or password!", "Login error", 
+                        MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

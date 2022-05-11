@@ -20,5 +20,8 @@
         <DataTemplate DataType="{x:Type viewModels:AdminStartVM}">
             <views:AdminStartWiew/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:GuestStartVM}">
+            <views:GuestStartView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

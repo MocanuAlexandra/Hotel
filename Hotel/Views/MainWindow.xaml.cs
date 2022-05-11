@@ -65,8 +65,8 @@ namespace Hotel.Views
                 //};
                 //_context.Employees.Add(employee);
 
-                //// save the changes
-                //_context.SaveChanges();
+                // save the changes
+                _context.SaveChanges();
 
             }
             

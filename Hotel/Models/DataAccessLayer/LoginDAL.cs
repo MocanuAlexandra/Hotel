@@ -70,5 +70,34 @@ namespace Hotel.Models.DataAccesLayer
                 }
             }
         }
+
+        public int IsGuestInDB(string email, string password)
+        {
+            using (var hotelDBContext = new HotelDBContext())
+            {
+                try
+                {
+                    var guestQuery = (from employee in hotelDBContext.Guests
+                                         where employee.Email.Equals(email) && employee.Password.Equals(password)
+                                         select employee).FirstOrDefault();
+
+                    // if an employee with these attributes exists, we return ID of the employee
+                    if (guestQuery != null)
+                    {
+                        guestQuery.IsActive = true;
+                        hotelDBContext.Guests.Attach(guestQuery);
+                        hotelDBContext.Entry(guestQuery).Property(x => x.IsActive).IsModified = true;
+                        hotelDBContext.SaveChanges();
+
+                        return guestQuery.GuestId;
+                    }
+                    return 0;
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            }
+        }
     }
 }

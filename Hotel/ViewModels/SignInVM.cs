@@ -62,20 +62,6 @@ namespace Hotel.ViewModels
                 OnPropertyChanged("ErrorMessage");
             }
         }
-        
-        private LoginBLL _loginBLL;
-        public LoginBLL LoginBLL
-        {
-            get
-            {
-                return _loginBLL;
-            }
-            set
-            {
-                _loginBLL = value;
-                OnPropertyChanged("LoginBLL");
-            }
-        }
         #endregion
 
         public SignInVM()

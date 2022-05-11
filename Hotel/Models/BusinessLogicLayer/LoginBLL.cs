@@ -35,6 +35,7 @@ namespace Hotel.Models.BusinessLogicLayer
                 else
                     return false;
             }
+            //if the email format is not correct we return false since the user is not an admin
             return false;
         }
 
@@ -50,6 +51,23 @@ namespace Hotel.Models.BusinessLogicLayer
                 else
                     return false;
             }
+            //if the email format is not correct we return false since the user is not an employee
+            return false;
+        }
+
+        // verify if user is guest
+        public bool IsGuest()
+        {
+            // first we check if the format of the email is correct
+            if (Regex.IsMatch(_email, Constants.guestEmailFormat))
+            {
+                // then we check if the guest exists in the database
+                if (loginDAL.IsGuestInDB(_email, _password) != 0)
+                    return true;
+                else
+                    return false;
+            }
+            //if the email format is not correct we return false since the user is not a guest
             return false;
         }
     }
