@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hotel.Views"
-             xmlns:viewModels="clr-namespace:Hotel.ViewModels"
+             xmlns:viewModels="clr-namespace:Hotel.ViewModels" 
+             xmlns:components="clr-namespace:Hotel.Utils.Components"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=viewModels:SignInVM}"
              d:DesignHeight="500" d:DesignWidth="500">
@@ -64,11 +65,11 @@
 
         <Label Content="PASSWORD" HorizontalAlignment="Center" Margin="0,223,0,0" 
                VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20"/>
-        <TextBox x:Name="passwordBox" HorizontalAlignment="Center" Margin="0,275,0,0" 
+        <components:BindablePasswordBox x:Name="passwordBox" HorizontalAlignment="Center" Margin="0,275,0,0" 
                      VerticalAlignment="Top" Height="50" Width="400" Background="Transparent" 
                      BorderBrush="Black" BorderThickness="2" FontSize="20" 
                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                    Text="{Binding Password}"/>
+                     Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <Button Style="{StaticResource RoundedButtonStyle}" Content="SIGN IN"
                 HorizontalAlignment="Left" Margin="40,380,0, 0" Width="400" Cursor="Hand" 

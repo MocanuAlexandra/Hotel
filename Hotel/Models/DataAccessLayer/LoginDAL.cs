@@ -13,32 +13,33 @@ namespace Hotel.Models.DataAccesLayer
     {
         public LoginDAL() { }
 
-        private readonly HotelDBContext hotelDBContext = new HotelDBContext();
-
-        public bool LoginAdmin(string email, string password)
+        public int LoginAdmin(string email, string password)
         {
-            try
+            using (var hotelDBContext = new HotelDBContext())
             {
-                var adminQuery = (from admin in hotelDBContext.Admins
-                                 where admin.Email.Equals(email) && admin.Password.Equals(password)
-                                 select admin).FirstOrDefault();
-                
-                // if an admin with these attributes exits, we return true
-                if (adminQuery != null)
+                try
                 {
-                    adminQuery.IsActive = true;
-                    hotelDBContext.Admins.Attach(adminQuery);
-                    hotelDBContext.Entry(adminQuery).Property(x => x.IsActive).IsModified = true;
-                    hotelDBContext.SaveChanges();
+                    var adminQuery = (from admin in hotelDBContext.Admins
+                                      where admin.Email.Equals(email) && admin.Password.Equals(password)
+                                      select admin).FirstOrDefault();
 
-                    return true;
+                    // if an admin with these attributes exits, we return ID of the admin
+                    if (adminQuery != null)
+                    {
+                        adminQuery.IsActive = true;
+                        hotelDBContext.Admins.Attach(adminQuery);
+                        hotelDBContext.Entry(adminQuery).Property(x => x.IsActive).IsModified = true;
+                        hotelDBContext.SaveChanges();
+
+                        return adminQuery.AdminId;
+                    }
+
+                    return 0;
                 }
-                
-                return false;
-            }
-            catch
-            {
-                throw new Exception( );
+                catch
+                {
+                    throw new Exception();
+                }
             }
         }
     }

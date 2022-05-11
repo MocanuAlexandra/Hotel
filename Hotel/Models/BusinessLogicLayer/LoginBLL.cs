@@ -30,7 +30,7 @@ namespace Hotel.Models.BusinessLogicLayer
             if (Regex.IsMatch(_email, Constants.adminEmailFormat))
             {
                 // then we check if the admin exists in the database
-                if (loginDAL.LoginAdmin(_email, _password))
+                if (loginDAL.LoginAdmin(_email, _password)!=0)
                     return true;
                 else
                     MessageBox.Show("Wrong email or password!");

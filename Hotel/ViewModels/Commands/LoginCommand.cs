@@ -17,9 +17,10 @@ namespace Hotel.ViewModels.Commands
         
         public override void Execute(object parameter)
         {
+            var signInVM = parameter as SignInVM;
             if (parameter is SignInVM)
             {
-                LoginBLL _loginBLL = new LoginBLL((parameter as SignInVM).Email, (parameter as SignInVM).Password);
+                LoginBLL _loginBLL = new LoginBLL(signInVM.Email, signInVM.Password);
 
                 // verify if user is admin so we can load the admin view
                 if (_loginBLL.IsAdmin())

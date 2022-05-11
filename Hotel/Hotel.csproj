@@ -103,6 +103,9 @@
     </ApplicationDefinition>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
+    <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
+      <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AdminStartVM.cs" />
     <Compile Include="ViewModels\Commands\LoginCommand.cs" />
     <Compile Include="ViewModels\Commands\SignInCommand.cs" />
@@ -116,6 +119,10 @@
     <Compile Include="Views\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Utils\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminStartWiew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
