@@ -79,19 +79,19 @@
                      Text="{Binding Phone}" MaxLength="10"/>
 
             <Label Content="PASSWORD" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20"/>
-            <TextBox x:Name="passwordBox" HorizontalAlignment="Center" 
+            <components:BindablePasswordBox x:Name="passwordBox" HorizontalAlignment="Center" 
                          VerticalAlignment="Top" Height="50" Width="400" Background="Transparent" 
                          BorderBrush="Black" BorderThickness="2" FontSize="20" 
                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                        Text="{Binding Password}"/>
+                         Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
             <Label Content="CONFIRM PASSWORD" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20"/>
-            <TextBox x:Name="confirmPassword" HorizontalAlignment="Center" 
+            <components:BindablePasswordBox x:Name="confirmPassword" HorizontalAlignment="Center" 
                          VerticalAlignment="Top" Height="50" Width="400" 
                          Background="Transparent" BorderBrush="Black" BorderThickness="2" 
                          FontSize="20" HorizontalContentAlignment="Center" 
                          VerticalContentAlignment="Center"
-                        Text="{Binding ConfirmPassword}"/>
+                        Password="{Binding ConfirmPassword, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
             <Label Content="{Binding ErrorMessage}" HorizontalAlignment="Center" Margin="0,10,0,0" Height="39" Width="390" FontSize="20" FontFamily="Segoe UI Black" Foreground="Red" HorizontalContentAlignment="Center"/>
             <Button Style="{StaticResource RoundedButtonStyle}" Content="SIGN UP" Width="400" Cursor="Hand" 

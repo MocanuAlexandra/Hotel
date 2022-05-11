@@ -43,19 +43,7 @@ namespace Hotel.Views
                 //// add the admin to the db
                 //_context.Admins.Add(admin);
 
-                //// create a guest
-                //Guest guest = new Guest
-                //{
-                //    Email = "cantu.georgiana@gmail.com",
-                //    Password = "30122000",
-                //    FirstName = "Georgiana",
-                //    LastName = "Cantu",
-                //    Phone = "0723456789",
-                //    IsActive = true
-                //};
-                //// add the guest to the db
-                //_context.Guests.Add(guest);
-
+                
                 ////create an employee
                 //Employee employee = new Employee
                 //{
@@ -67,7 +55,6 @@ namespace Hotel.Views
 
                 // save the changes
                 _context.SaveChanges();
-
             }
             
             
