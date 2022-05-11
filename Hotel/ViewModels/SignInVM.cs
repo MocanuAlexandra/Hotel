@@ -10,55 +10,52 @@ namespace Hotel.ViewModels
 {
     public class SignInVM : BaseViewModel
     {
-     
-         #region DataMembers
-        
-        private string email;
+
+        #region DataMembers
+
+        private string _email;
         public string Email
         {
             get
             {
-                return email;
+                return _email;
             }
             set
             {
-                email = value;
+                _email = value;
                 ErrorMessage = "";
-                if (!(Utils.Utility.IsEmailFormatOK(email)))
+                if (!(Utils.Utility.IsEmailFormatOK(_email)))
                 {
                     ErrorMessage = "INVALID EMAIL FORMAT";
-                }
-                else
-                {
                 }
                 OnPropertyChanged("Email");
             }
         }
 
-        private string password;
+        private string _password;
         public string Password
         {
             get
             {
-                return password;
+                return _password;
             }
             set
             {
-                password = value;
+                _password = value;
                 OnPropertyChanged("Password");
             }
-        }     
-        
-        private string errorMessage;
+        }
+
+        private string _errorMessage;
         public string ErrorMessage
         {
             get
             {
-                return errorMessage;
+                return _errorMessage;
             }
             set
             {
-                errorMessage = value;
+                _errorMessage = value;
                 OnPropertyChanged("ErrorMessage");
             }
         }
@@ -66,7 +63,7 @@ namespace Hotel.ViewModels
 
         public SignInVM()
         {
-            
+
         }
     }
 }

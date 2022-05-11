@@ -15,9 +15,9 @@ namespace Hotel.Models.BusinessLogicLayer
         private string _email;
         private string _password;
 
-        public LoginBLL(string username, string password)
+        public LoginBLL(string email, string password)
         {
-            _email = username;
+            _email = email;
             _password = password;
         }
 
@@ -27,7 +27,7 @@ namespace Hotel.Models.BusinessLogicLayer
         public bool IsAdmin()
         {
             // first we check if the format of the email is correct
-            if (Regex.IsMatch(_email, Constants.adminEmailFormat))
+            if (Utility.IsAdminEmail(_email))
             {
                 // then we check if the admin exists in the database
                 if (loginDAL.IsAdminInDB(_email, _password) != 0)
@@ -43,7 +43,7 @@ namespace Hotel.Models.BusinessLogicLayer
         public bool IsEmployee()
         {
             // first we check if the format of the email is correct
-            if (Regex.IsMatch(_email, Constants.employeeEmailFormat))
+            if (Utility.IsEmployeeEmail(_email))
             {
                 // then we check if the employee exists in the database
                 if (loginDAL.IsEmployeeInDB(_email, _password) != 0)
@@ -59,7 +59,7 @@ namespace Hotel.Models.BusinessLogicLayer
         public bool IsGuest()
         {
             // first we check if the format of the email is correct
-            if (Regex.IsMatch(_email, Constants.guestEmailFormat))
+            if (Utility.IsGuestEmail(_email))
             {
                 // then we check if the guest exists in the database
                 if (loginDAL.IsGuestInDB(_email, _password) != 0)

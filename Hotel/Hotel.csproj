@@ -101,17 +101,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
+    <Compile Include="Migrations\202205111647456_UpdateGuestTable.designer.cs">
+      <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AdminStartVM.cs" />
     <Compile Include="ViewModels\Commands\LoginCommand.cs" />
+    <Compile Include="ViewModels\Commands\RegisterCommand.cs" />
     <Compile Include="ViewModels\Commands\SignInCommand.cs" />
+    <Compile Include="ViewModels\Commands\SignUpCommand.cs" />
     <Compile Include="ViewModels\EmployeeStartVM.cs" />
     <Compile Include="ViewModels\GuestStartVM.cs" />
     <Compile Include="ViewModels\SignInVM.cs" />
+    <Compile Include="ViewModels\SignUpVM.cs" />
     <Compile Include="Views\AdminStartWiew.xaml.cs">
       <DependentUpon>AdminStartWiew.xaml</DependentUpon>
     </Compile>
@@ -123,6 +132,9 @@
     </Compile>
     <Compile Include="Views\SignInView.xaml.cs">
       <DependentUpon>SignInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignUpView.xaml.cs">
+      <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
@@ -207,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SignUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -249,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205101233547_ModifyUsernameToEmail.resx">
       <DependentUpon>202205101233547_ModifyUsernameToEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205111647456_UpdateGuestTable.resx">
+      <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

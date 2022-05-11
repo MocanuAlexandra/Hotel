@@ -14,14 +14,17 @@
         <DataTemplate DataType="{x:Type viewModels:SignInVM}">
             <views:SignInView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
+        <!--<DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
             <views:EmployeeStartView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:AdminStartVM}">
             <views:AdminStartWiew/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:GuestStartVM}">
+        </DataTemplate>-->
+        <!--<DataTemplate DataType="{x:Type viewModels:GuestStartVM}">
             <views:GuestStartView/>
+        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type viewModels:SignUpVM}">
+            <views:SignUpView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

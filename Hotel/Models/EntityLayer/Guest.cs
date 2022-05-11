@@ -35,7 +35,6 @@ namespace Hotel.Models.EntityLayer
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(10, ErrorMessage = "Phone number must be 10 digits")]
         public string Phone { get; set; }
 
         // define collection for one to many relationship

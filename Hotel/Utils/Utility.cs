@@ -28,7 +28,30 @@ namespace Hotel.Utils
         {
             return Regex.IsMatch(email, Constants.employeeEmailFormat);
         }
-        
+
+        //check if email is guest email
+        public static bool IsGuestEmail(string email)
+        {
+            return Regex.IsMatch(email, Constants.guestEmailFormat);
+        }
+
+        //check if name is valid
+        public static bool IsValidName(string name)
+        {
+            return Regex.IsMatch(name, Constants.nameFormat);
+        }
+
+        // check if phone number is valid
+        public static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return Regex.IsMatch(phoneNumber, Constants.phoneNumberFormat);
+        }
+
+        //check if password and confirm password are same
+        public static bool IsPasswordSame(string password, string confirmPassword)
+        {
+            return password.Equals(confirmPassword);
+        }
         #endregion
         #region Others
         //interface that is used to close windows from view model
