@@ -1,5 +1,6 @@
 ﻿using Hotel.Models.DataAccesLayer;
 using Hotel.Models.EntityLayer;
+using Hotel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,18 +38,18 @@ namespace Hotel.Views
                 //Admin admin = new Admin
                 //{
                 //    Email = "mocanu.alexandra@adminhotel.com",
-                //    Password = "admin1234",
+                //    Password = Utility.HashPassword("admin1234"),
                 //    IsActive = true
                 //};
                 //// add the admin to the db
                 //_context.Admins.Add(admin);
 
-                
+
                 ////create an employee
                 //Employee employee = new Employee
                 //{
                 //    Email = "muntean.raluca@employee-hotel.com",
-                //    Password = "employee1234",
+                //    Password = Utility.HashPassword("employee1234"),
                 //    IsActive = true
                 //};
                 //_context.Employees.Add(employee);
@@ -61,5 +62,6 @@ namespace Hotel.Views
             if (DataContext is Utils.Utility.ICloseWindows viewModel)
                 viewModel.Close += () => { this.Close(); };
         }
+
     }
 }

@@ -15,16 +15,20 @@ namespace Hotel.Models.DataAccesLayer
 
         public int IsAdminInDB(string email, string password)
         {
+            // first we have to hash the password in order to compare it with the one in the DB
+            string hashedPassword = Utility.HashPassword(password);
             using (var hotelDBContext = new HotelDBContext())
             {
                 try
                 {
                     var adminQuery = (from admin in hotelDBContext.Admins
-                                      where admin.Email.Equals(email) && admin.Password.Equals(password)
+                                      where admin.Email.Equals(email)
                                       select admin).FirstOrDefault();
-
-                    // if an admin with these attributes exists, we return ID of the admin
-                    if (adminQuery != null)
+                    
+                    // if an admin with these attributes exists
+                    // we check if the password is correct
+                    // if it is, we return ID of the guest
+                    if (adminQuery != null && Utility.CheckPassword(password, adminQuery.Password))
                     {
                         adminQuery.IsActive = true;
                         hotelDBContext.Admins.Attach(adminQuery);
@@ -49,11 +53,13 @@ namespace Hotel.Models.DataAccesLayer
                 try
                 {
                     var employeeQuery = (from employee in hotelDBContext.Employees
-                                      where employee.Email.Equals(email) && employee.Password.Equals(password)
+                                      where employee.Email.Equals(email)
                                       select employee).FirstOrDefault();
 
-                    // if an employee with these attributes exists, we return ID of the employee
-                    if (employeeQuery != null)
+                    // if am employee with these attributes exists
+                    // we check if the password is correct
+                    // if it is, we return ID of the guest
+                    if (employeeQuery != null && Utility.CheckPassword(password, employeeQuery.Password))
                     {
                         employeeQuery.IsActive = true;
                         hotelDBContext.Employees.Attach(employeeQuery);
@@ -78,11 +84,13 @@ namespace Hotel.Models.DataAccesLayer
                 try
                 {
                     var guestQuery = (from guest in hotelDBContext.Guests
-                                         where guest.Email.Equals(email) && guest.Password.Equals(password)
-                                         select guest).FirstOrDefault();
+                                      where guest.Email.Equals(email)
+                                      select guest).FirstOrDefault();
 
-                    // if an employee with these attributes exists, we return ID of the employee
-                    if (guestQuery != null)
+                    // if a guest with these attributes exists
+                    // we check if the password is correct
+                    // if it is, we return ID of the guest
+                    if (guestQuery != null && Utility.CheckPassword(password, guestQuery.Password))
                     {
                         guestQuery.IsActive = true;
                         hotelDBContext.Guests.Attach(guestQuery);

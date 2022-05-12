@@ -28,8 +28,13 @@ namespace Hotel.Models.BusinessLogicLayer
 
         public bool RegisterSucceded()
         {
-
-            if (registerDAL.CanRegisterGuest(_firstname, _lastname, _email, _password, _phone))
+            // first we hash the password
+            // then we check if the email is already in the database
+            // if it is, we return false
+            // if it is not, we add the user to the database and return true
+            
+            string hashedPassword = Utils.Utility.HashPassword(_password);
+            if (registerDAL.CanRegisterGuest(_firstname, _lastname, _email, hashedPassword, _phone))
                 return true;
             else
                 return false;

@@ -52,7 +52,20 @@ namespace Hotel.Utils
         {
             return password.Equals(confirmPassword);
         }
+
+        // hash a password
+        public static string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+
+        // check if password is correct
+        public static bool CheckPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
         #endregion
+
         #region Others
         //interface that is used to close windows from view model
         public interface ICloseWindows

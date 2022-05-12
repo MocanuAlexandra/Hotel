@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hotel.Views"
         xmlns:viewModels="clr-namespace:Hotel.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Hotel"
         Width="{Binding CurrentWidth, Mode=TwoWay}" 
         Height="{Binding CurrentHeight, Mode=TwoWay}"
         ResizeMode="CanMinimize">

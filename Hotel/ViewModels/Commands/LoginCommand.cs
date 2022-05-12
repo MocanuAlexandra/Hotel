@@ -23,10 +23,10 @@ namespace Hotel.ViewModels.Commands
             {
                 LoginBLL _loginBLL = new LoginBLL(signInVM.Email, signInVM.Password);
 
-                // verify if Email and Password are empty
+                // verify if Email and Password fileds are empty
                 if (string.IsNullOrEmpty(signInVM.Email) || string.IsNullOrEmpty(signInVM.Password))
                 {
-                    MessageBox.Show("Email and password can't be empty", "Login error",
+                    MessageBox.Show("Please fill all fields!", "Login error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
