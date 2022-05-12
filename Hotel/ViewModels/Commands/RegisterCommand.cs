@@ -24,6 +24,16 @@ namespace Hotel.ViewModels.Commands
                 RegisterBLL _registerBLL = new RegisterBLL(signUpVM.FirstName,
                     signUpVM.LastName, signUpVM.Email, signUpVM.Password, signUpVM.Phone);
 
+                // verify if fields are empty
+                if (string.IsNullOrEmpty(signUpVM.FirstName) || string.IsNullOrEmpty(signUpVM.LastName) ||
+                    string.IsNullOrEmpty(signUpVM.Email) || string.IsNullOrEmpty(signUpVM.Password) ||
+                    string.IsNullOrEmpty(signUpVM.Phone))
+                {
+                    MessageBox.Show("Please fill all fields!", "Register error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+              
                 // verify if we can register the user
                 if (_registerBLL.RegisterSucceded())
                 {

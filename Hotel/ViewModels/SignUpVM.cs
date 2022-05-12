@@ -110,15 +110,12 @@ namespace Hotel.ViewModels
                 ErrorMessage = "";
                 if (!Utility.IsPasswordSame(_password, _confirmPassword))
                 {
-                    {
-                        ErrorMessage = "PASSWORDS DO NOT MATCH";
-                    }
-                    OnPropertyChanged("ConfirmPassword");
+                    ErrorMessage = "PASSWORDS DO NOT MATCH";
                 }
+                OnPropertyChanged("ConfirmPassword");
             }
-
         }
-        
+
         private string _errorMessage;
         public string ErrorMessage
         {

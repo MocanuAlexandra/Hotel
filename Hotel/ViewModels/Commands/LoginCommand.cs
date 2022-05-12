@@ -23,6 +23,14 @@ namespace Hotel.ViewModels.Commands
             {
                 LoginBLL _loginBLL = new LoginBLL(signInVM.Email, signInVM.Password);
 
+                // verify if Email and Password are empty
+                if (string.IsNullOrEmpty(signInVM.Email) || string.IsNullOrEmpty(signInVM.Password))
+                {
+                    MessageBox.Show("Email and password can't be empty", "Login error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                
                 // verify if user is admin so we can load the admin view
                 if (_loginBLL.IsAdmin())
                 {
