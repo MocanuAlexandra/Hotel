@@ -75,7 +75,6 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.SqlServer.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework6.Npgsql.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Npgsql.pdb
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Npgsql.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Buffers.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Memory.xml
@@ -111,3 +110,11 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.Cop
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.pdb
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateGuestTable.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.xml

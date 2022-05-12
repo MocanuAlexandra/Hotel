@@ -27,7 +27,7 @@ namespace Hotel.ViewModels.Commands
                 // verify if fields are empty
                 if (string.IsNullOrEmpty(signUpVM.FirstName) || string.IsNullOrEmpty(signUpVM.LastName) ||
                     string.IsNullOrEmpty(signUpVM.Email) || string.IsNullOrEmpty(signUpVM.Password) ||
-                    string.IsNullOrEmpty(signUpVM.Phone))
+                    string.IsNullOrEmpty(signUpVM.ConfirmPassword) || string.IsNullOrEmpty(signUpVM.Phone))
                 {
                     MessageBox.Show("Please fill all fields!", "Register error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
@@ -39,7 +39,6 @@ namespace Hotel.ViewModels.Commands
                 {
                     _mainWindowViewModel.CurrentViewModel = new GuestStartVM();
                 }
-
                 else
                 {
                     MessageBox.Show("User already exists!", "Register error",
