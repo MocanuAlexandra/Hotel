@@ -33,7 +33,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
         </Grid.Background>
-        
+
         <Button Style="{StaticResource RoundedButtonStyle}" 
                 Content="SIGN IN YOUR ACCOUNT" 
                 HorizontalAlignment="Left"

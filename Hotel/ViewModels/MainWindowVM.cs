@@ -51,6 +51,7 @@ namespace Hotel.ViewModels
         public ICommand LoginCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
+        public ICommand StartWindowCommand { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -63,6 +64,8 @@ namespace Hotel.ViewModels
 
             SignUpCommand = new SignUpCommand(this);
             RegisterCommand = new RegisterCommand(this);
+
+            StartWindowCommand = new StartWindowCommand(this);
 
             CurrentWidth = Utils.Constants.DefaultWindowSize.windowWidth;
             CurrentHeight = Utils.Constants.DefaultWindowSize.windowHeight;

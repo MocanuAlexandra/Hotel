@@ -51,7 +51,11 @@
                 FontWeight="Bold" 
                 FontSize="20" 
                 Height="48" 
-                >
+                CommandParameter="{Binding}"
+                Command="{Binding DataContext.StartWindowCommand, 
+                RelativeSource={RelativeSource Mode=FindAncestor, 
+                AncestorType={x:Type local:MainWindow}}}">
+            <Image Source="pack://application:,,,/Images/back.png"/>
         </Button>
 
         <Label Content="EMAIL" HorizontalAlignment="Center" Margin="0,116,0,0" 
