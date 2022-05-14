@@ -1,4 +1,5 @@
 ﻿using Hotel.Models.BusinessLogicLayer;
+using Hotel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,8 @@ namespace Hotel.ViewModels.Commands
                 if (_loginBLL.IsAdmin())
                 {
                     _mainWindowViewModel.CurrentViewModel = new AdminStartVM();
+                    _mainWindowViewModel.CurrentHeight = Constants.AdminWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.AdminWindowSize.windowWidth;
                 }
 
                 // verify if user is employee so we can load the employee view

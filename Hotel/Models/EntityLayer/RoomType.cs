@@ -14,10 +14,20 @@ namespace Hotel.Models.EntityLayer
         {
             this.Rooms = new HashSet<Room>();
         }
-        
+
+        public RoomType(string name, string capacity)
+        {
+            this.RoomTypeName = name;
+            this.RoomTypeCapacity = capacity;
+            this.Rooms = new HashSet<Room>();
+        }
+
         [Key]
         public int RoomTypeId { get; set; }
         public string RoomTypeName { get; set; }
+        public string RoomTypeCapacity { get; set; }
+
+        public bool IsActive { get; set; }
 
         // define relationship 1 to many with Room
         public ICollection<Room> Rooms { get; set; }

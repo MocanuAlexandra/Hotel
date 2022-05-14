@@ -1,0 +1,40 @@
+﻿<Window x:Class="Hotel.Views.Admin_Views.AddRoomType"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.Views.Admin_Views"
+        xmlns:viewModels="clr-namespace:Hotel.ViewModels"
+        mc:Ignorable="d"
+        Title="Add RoomType" Height="360" Width="300" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <viewModels:AddRoomTypeVM/>
+    </Window.DataContext>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="53"></DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="91" Width="296">
+            <TextBlock Text="Enter room type: " 
+                   FontSize="16" 
+                   Foreground="Black" DockPanel.Dock="Top" Height="30" Width="196"/>
+            <TextBox Text="{Binding InputRoomType, UpdateSourceTrigger=PropertyChanged}" 
+                  FontSize="18" FontWeight="Bold" DockPanel.Dock="Bottom" Height="32" Width="202"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="6"></DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="94" Width="300">
+            <TextBlock Text="Enter room capacity: " 
+                   FontSize="16" 
+                   Foreground="Black" DockPanel.Dock="Top" Height="24" Width="196"/>
+            <TextBox Text="{Binding InputRoomCapacity, UpdateSourceTrigger=PropertyChanged}" 
+                 FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.555,-3.849" DockPanel.Dock="Top" Height="34" Width="201"/>
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Bottom" Height="66">
+            <Button Content="Add" 
+                    DockPanel.Dock="Bottom" Height="20" Width="88"
+                    Command="{Binding AddRoomTypeCommand}"/>
+            <Label Content="{Binding ErrorMessage}" FontSize="20" FontFamily="Segoe UI Black" Foreground="Red" HorizontalContentAlignment="Center" DockPanel.Dock="Top" Height="36"/>
+        </DockPanel>
+
+    </DockPanel>
+</Window>

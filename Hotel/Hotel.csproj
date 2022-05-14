@@ -132,17 +132,49 @@
     <Compile Include="Migrations\202205141002391_AddRoomTypeTable.designer.cs">
       <DependentUpon>202205141002391_AddRoomTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205141011428_1MRelationPriceRoomType.cs" />
+    <Compile Include="Migrations\202205141011428_1MRelationPriceRoomType.designer.cs">
+      <DependentUpon>202205141011428_1MRelationPriceRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141042291_RemoveRoomImage.cs" />
+    <Compile Include="Migrations\202205141042291_RemoveRoomImage.designer.cs">
+      <DependentUpon>202205141042291_RemoveRoomImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141136227_UpdateRoomTypeTable.cs" />
+    <Compile Include="Migrations\202205141136227_UpdateRoomTypeTable.designer.cs">
+      <DependentUpon>202205141136227_UpdateRoomTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141150076_RemoveRoomTypePriceRelation.cs" />
+    <Compile Include="Migrations\202205141150076_RemoveRoomTypePriceRelation.designer.cs">
+      <DependentUpon>202205141150076_RemoveRoomTypePriceRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141151241_RemoveRoomAvailability.cs" />
+    <Compile Include="Migrations\202205141151241_RemoveRoomAvailability.designer.cs">
+      <DependentUpon>202205141151241_RemoveRoomAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141225014_AddIsActiveColumnRoomType.cs" />
+    <Compile Include="Migrations\202205141225014_AddIsActiveColumnRoomType.designer.cs">
+      <DependentUpon>202205141225014_AddIsActiveColumnRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141332457_ModifyRoomCapacityType.cs" />
+    <Compile Include="Migrations\202205141332457_ModifyRoomCapacityType.designer.cs">
+      <DependentUpon>202205141332457_ModifyRoomCapacityType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
     <Compile Include="Models\EntityLayer\Price.cs" />
     <Compile Include="Models\EntityLayer\RoomType.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddRoomTypeVM.cs" />
     <Compile Include="ViewModels\AdminStartVM.cs" />
+    <Compile Include="ViewModels\Commands\AddRoomTypeCommand.cs" />
     <Compile Include="ViewModels\Commands\LoginCommand.cs" />
+    <Compile Include="ViewModels\Commands\OpenAddRoomTypeWindowCommand.cs" />
     <Compile Include="ViewModels\Commands\RegisterCommand.cs" />
     <Compile Include="ViewModels\Commands\SignInCommand.cs" />
     <Compile Include="ViewModels\Commands\SignUpCommand.cs" />
@@ -151,7 +183,10 @@
     <Compile Include="ViewModels\GuestStartVM.cs" />
     <Compile Include="ViewModels\SignInVM.cs" />
     <Compile Include="ViewModels\SignUpVM.cs" />
-    <Compile Include="Views\AdminStartWiew.xaml.cs">
+    <Compile Include="Views\Admin Views\AddRoomType.xaml.cs">
+      <DependentUpon>AddRoomType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin Views\AdminStartWiew.xaml.cs">
       <DependentUpon>AdminStartWiew.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EmployeeStartView.xaml.cs">
@@ -173,7 +208,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AdminStartWiew.xaml">
+    <Page Include="Views\Admin Views\AddRoomType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\AdminStartWiew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,6 +346,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205141002391_AddRoomTypeTable.resx">
       <DependentUpon>202205141002391_AddRoomTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141011428_1MRelationPriceRoomType.resx">
+      <DependentUpon>202205141011428_1MRelationPriceRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141042291_RemoveRoomImage.resx">
+      <DependentUpon>202205141042291_RemoveRoomImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141136227_UpdateRoomTypeTable.resx">
+      <DependentUpon>202205141136227_UpdateRoomTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141150076_RemoveRoomTypePriceRelation.resx">
+      <DependentUpon>202205141150076_RemoveRoomTypePriceRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141151241_RemoveRoomAvailability.resx">
+      <DependentUpon>202205141151241_RemoveRoomAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141225014_AddIsActiveColumnRoomType.resx">
+      <DependentUpon>202205141225014_AddIsActiveColumnRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141332457_ModifyRoomCapacityType.resx">
+      <DependentUpon>202205141332457_ModifyRoomCapacityType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

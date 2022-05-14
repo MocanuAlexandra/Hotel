@@ -16,10 +16,10 @@
         </DataTemplate>
         <!--<DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
             <views:EmployeeStartView/>
-        </DataTemplate>
+        </DataTemplate>-->
         <DataTemplate DataType="{x:Type viewModels:AdminStartVM}">
             <views:AdminStartWiew/>
-        </DataTemplate>-->
+        </DataTemplate>
         <!--<DataTemplate DataType="{x:Type viewModels:GuestStartVM}">
             <views:GuestStartView/>
         </DataTemplate>-->

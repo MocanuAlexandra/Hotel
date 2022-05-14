@@ -1,0 +1,18 @@
+﻿namespace Hotel.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class RemoveRoomAvailability : DbMigration
+    {
+        public override void Up()
+        {
+            DropColumn("dbo.Rooms", "IsAvailable");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Rooms", "IsAvailable", c => c.Boolean(nullable: false));
+        }
+    }
+}

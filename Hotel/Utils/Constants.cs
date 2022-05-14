@@ -20,6 +20,12 @@ namespace Hotel.Utils
             public const int windowWidth = 500;
             public const int windowHeight = 800;
         }
+
+        public struct AdminWindowSize
+        {
+            public const int windowWidth = 600;
+            public const int windowHeight = 450;
+        }
         #endregion
 
         #region Const strings
@@ -30,6 +36,7 @@ namespace Hotel.Utils
 
         public static string nameFormat = "^[A-Z]{1}[a-z]+$";
         public static string phoneNumberFormat = @"^(?<paren>\()?0(?:(?:72|74|75|76|77|78)(?(paren)\))(?<first>\d)(?!\k<first>{6})\d{6}|(?:251|351)(?(paren)\))(?<first>\d)(?!\k<first>{5})\d{5})$";
+        public static string roomCapacityFormat = "^[1-9]{1}[0-9]{0,1}$";
         #endregion
     }
 }

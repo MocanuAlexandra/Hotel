@@ -64,6 +64,12 @@ namespace Hotel.Utils
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
+
+        // check if string is number 
+        public static bool IsNumber(string number)
+        {
+            return Regex.IsMatch(number, Constants.roomCapacityFormat);
+        }
         #endregion
 
         #region Others

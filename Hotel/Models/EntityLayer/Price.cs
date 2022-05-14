@@ -10,10 +10,10 @@ namespace Hotel.Models.EntityLayer
     public class Price
     {
         // constructor
-        public Price()
-        {
-            this.Rooms = new HashSet<Room>();
-        }
+        //public Price()
+        //{
+        //    this.RoomTypes = new HashSet<RoomType>();
+        //}
         
         [Key]
         public int PriceId { get; set; }
@@ -21,7 +21,7 @@ namespace Hotel.Models.EntityLayer
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
-        // define relationship 1 to many with Room
-        public ICollection<Room> Rooms { get; set; }
+        // define relationship 1 to many with RoomType
+       // public ICollection<RoomType> RoomTypes { get; set; }
     }
 }

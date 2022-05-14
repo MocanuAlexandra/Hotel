@@ -20,12 +20,7 @@ namespace Hotel.Models.EntityLayer
         [Key]
         public int RoomId { get; set; }
 
-        //define other attributes       
-
-        public byte[] Image { get; set; }
-
-        [Required(ErrorMessage = "Room availability is required")]
-        public bool IsAvailable { get; set; }
+        //define other attributes      
 
         // define collection for many to many relationship
         public virtual ICollection<Facility> Facilities { get; set; }

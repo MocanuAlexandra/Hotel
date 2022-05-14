@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Hotel.Views.AdminStartWiew"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel.Views"
+             xmlns:viewModels="clr-namespace:Hotel.ViewModels" 
+             xmlns:components="clr-namespace:Hotel.Utils.Components"
+             d:DataContext="{d:DesignInstance Type=viewModels:AdminStartVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+
+    <DockPanel>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
+        </DockPanel.Background>
+        <Grid DockPanel.Dock="Top" Height="22" Background="White">
+            <Button Width="71" HorizontalAlignment="Left"
+                Content="Rooms Type"
+                BorderBrush="#FFDDDDDD">
+            </Button>
+            <Button Width="60" Margin="76,0,0,0" HorizontalAlignment="Left" 
+                  Content="Rooms"
+                  BorderBrush="#FFDDDDDD">
+            </Button>
+
+            <Button Width="84" Margin="140,0,0,0" HorizontalAlignment="Left"
+                  Content="Hotel facilities"
+                  BorderBrush="#FFDDDDDD" >
+            </Button>
+
+            <Button Width="52" Margin="230,0,0,0" HorizontalAlignment="Left"
+                  Content="Offers"
+                   BorderBrush="#FFDDDDDD" >
+            </Button>
+
+            <Button  Width="75" Margin="290,0,0,0" HorizontalAlignment="Left" 
+                  Content="Room prices"
+                  BorderBrush="#FFDDDDDD">
+            </Button>
+
+            <Button  Width="75" Margin="290,0,0,0" HorizontalAlignment="Right" 
+                  Content="Logout"
+                  BorderBrush="#FFDDDDDD">
+            </Button>
+        </Grid>
+
+        <Grid DockPanel.Dock="Bottom" Height="22" Background="White">
+            <Button Name="d" Width="69" HorizontalAlignment="Left"
+                Content="Add "
+                BorderBrush="#FFDDDDDD"
+                Command="{Binding OpenAddRoomTypeWindowCommand}">
+            </Button>
+            <Button Width="76" Margin="260,0,0,0" HorizontalAlignment="Left" 
+                  Content="Edit"
+                  BorderBrush="#FFDDDDDD">
+            </Button>
+
+            <Button Width="84" Margin="140,0,0,0" HorizontalAlignment="Right"
+                  Content="Delete"
+                  BorderBrush="#FFDDDDDD" >
+            </Button>
+        </Grid>
+        <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
+                  HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Room Type" Width="100" DisplayMemberBinding="{Binding RoomTypeName}"/>
+                    <GridViewColumn Header="Capacity" Width="100" DisplayMemberBinding="{Binding RoomTypeCapacity}"/>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</UserControl>
