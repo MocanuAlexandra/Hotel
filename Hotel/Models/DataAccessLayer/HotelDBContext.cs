@@ -22,5 +22,7 @@ namespace Hotel.Models.DataAccesLayer
         public DbSet<HotelServices> HotelServices { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Offer> Offers { get; set; }
+        public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<Price> Prices { get; set; }
     }
 }

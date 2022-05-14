@@ -15,8 +15,6 @@ namespace Hotel.Models.DataAccesLayer
 
         public int IsAdminInDB(string email, string password)
         {
-            // first we have to hash the password in order to compare it with the one in the DB
-            string hashedPassword = Utility.HashPassword(password);
             using (var hotelDBContext = new HotelDBContext())
             {
                 try
@@ -27,7 +25,7 @@ namespace Hotel.Models.DataAccesLayer
                     
                     // if an admin with these attributes exists
                     // we check if the password is correct
-                    // if it is, we return ID of the guest
+                    // if it is, we return ID of the admin
                     if (adminQuery != null && Utility.CheckPassword(password, adminQuery.Password))
                     {
                         adminQuery.IsActive = true;
@@ -58,7 +56,7 @@ namespace Hotel.Models.DataAccesLayer
 
                     // if am employee with these attributes exists
                     // we check if the password is correct
-                    // if it is, we return ID of the guest
+                    // if it is, we return ID of the employee
                     if (employeeQuery != null && Utility.CheckPassword(password, employeeQuery.Password))
                     {
                         employeeQuery.IsActive = true;

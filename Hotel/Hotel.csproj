@@ -120,10 +120,24 @@
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.designer.cs">
       <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205140956319_1MRelationRoomTypeRoom.cs" />
+    <Compile Include="Migrations\202205140956319_1MRelationRoomTypeRoom.designer.cs">
+      <DependentUpon>202205140956319_1MRelationRoomTypeRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141001229_AddPriceTable.cs" />
+    <Compile Include="Migrations\202205141001229_AddPriceTable.designer.cs">
+      <DependentUpon>202205141001229_AddPriceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141002391_AddRoomTypeTable.cs" />
+    <Compile Include="Migrations\202205141002391_AddRoomTypeTable.designer.cs">
+      <DependentUpon>202205141002391_AddRoomTypeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
+    <Compile Include="Models\EntityLayer\Price.cs" />
+    <Compile Include="Models\EntityLayer\RoomType.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
@@ -284,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205111647456_UpdateGuestTable.resx">
       <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205140956319_1MRelationRoomTypeRoom.resx">
+      <DependentUpon>202205140956319_1MRelationRoomTypeRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141001229_AddPriceTable.resx">
+      <DependentUpon>202205141001229_AddPriceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141002391_AddRoomTypeTable.resx">
+      <DependentUpon>202205141002391_AddRoomTypeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

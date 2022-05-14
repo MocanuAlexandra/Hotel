@@ -21,13 +21,8 @@ namespace Hotel.Models.EntityLayer
         public int RoomId { get; set; }
 
         //define other attributes       
-        [Required(ErrorMessage = "Room type is required")]
-        public string Type { get; set; }
 
         public byte[] Image { get; set; }
-
-        [Required(ErrorMessage = "Room price is required")]
-        public double Price { get; set; }
 
         [Required(ErrorMessage = "Room availability is required")]
         public bool IsAvailable { get; set; }
