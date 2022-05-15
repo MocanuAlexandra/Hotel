@@ -70,6 +70,14 @@ namespace Hotel.Utils
         {
             return Regex.IsMatch(number, Constants.roomCapacityFormat);
         }
+
+        //checks if the room type name is valid
+        public static bool CheckIfRoomTypeNameIsValid(string roomTypeName)
+        {
+            if (string.IsNullOrEmpty(roomTypeName) || roomTypeName.Length < 1)
+                return false;
+            return Regex.IsMatch(roomTypeName, "^[- _]*[a-zA-Z0-9][- a-zA-Z0-9_]*$");
+        }
         #endregion
 
         #region Others

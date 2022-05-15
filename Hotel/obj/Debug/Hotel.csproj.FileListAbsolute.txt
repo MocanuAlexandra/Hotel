@@ -48,8 +48,9 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Utils\Components
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\EmployeeStartView.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\GuestStartView.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\MainWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\SignInView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\StartView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignInView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignUpView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\StartView.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\App.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupCompile.cache
@@ -57,41 +58,50 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupComp
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.exe.config
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.pdb
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\BCrypt.Net-Next.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.SqlServer.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework6.Npgsql.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Npgsql.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Buffers.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Memory.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Numerics.Vectors.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Text.Encodings.Web.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Text.Json.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.ValueTuple.dll
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\BCrypt.Net-Next.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework.SqlServer.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\EntityFramework6.Npgsql.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Npgsql.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Buffers.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Memory.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Numerics.Vectors.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Text.Encodings.Web.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Text.Json.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.ValueTuple.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\SignUpView.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\App.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Utils\Components\BindablePasswordBox.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\EmployeeStartView.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\GuestStartView.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\MainWindow.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\SignInView.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\SignUpView.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\StartView.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignInView.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignUpView.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\StartView.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.g.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.InitialCreate.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.MMRelationBookingServices.resources
@@ -101,23 +111,7 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations._1MRelationGuestOffer.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.MMRelationOfferServices.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.ModifyUsernameToEmail.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Properties.Resources.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.GenerateResource.cache
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CopyComplete
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.exe
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.pdb
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateGuestTable.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.dll
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.dll
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.dll
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Microsoft.Bcl.HashCode.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Collections.Immutable.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.xml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\BCrypt.Net-Next.dll
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\BCrypt.Net-Next.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations._1MRelationRoomTypeRoom.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddPriceTable.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddRoomTypeTable.resources
@@ -126,9 +120,17 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateRoomTypeTable.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.RemoveRoomTypePriceRelation.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.RemoveRoomAvailability.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminStartWiew.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminStartWiew.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddIsActiveColumnRoomType.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddRoomType.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddRoomType.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.ModifyRoomCapacityType.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.GenerateResource.cache
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CopyComplete
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.exe
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.pdb
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminMainWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminMainWindow.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomTypeEditWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomTypeEditWindow.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateRoomTypeTable1.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateRoomTable.resources

@@ -18,10 +18,12 @@ namespace Hotel.Models.EntityLayer
 
         //define primary key
         [Key]
-        public int RoomId { get; set; }
+        public int Id { get; set; }
+        public int Number { get; set; }
 
-        //define other attributes      
-
+        public int RoomTypeId { get; set; }
+        public RoomType RoomType { get; set; }
+        
         // define collection for many to many relationship
         public virtual ICollection<Facility> Facilities { get; set; }
         public virtual ICollection<Booking> Bookings { get; set; }

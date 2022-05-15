@@ -160,6 +160,14 @@
     <Compile Include="Migrations\202205141332457_ModifyRoomCapacityType.designer.cs">
       <DependentUpon>202205141332457_ModifyRoomCapacityType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205150724204_UpdateRoomTypeTable1.cs" />
+    <Compile Include="Migrations\202205150724204_UpdateRoomTypeTable1.designer.cs">
+      <DependentUpon>202205150724204_UpdateRoomTypeTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205150728364_UpdateRoomTable.cs" />
+    <Compile Include="Migrations\202205150728364_UpdateRoomTable.designer.cs">
+      <DependentUpon>202205150728364_UpdateRoomTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
@@ -170,24 +178,28 @@
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AddRoomTypeVM.cs" />
-    <Compile Include="ViewModels\AdminStartVM.cs" />
-    <Compile Include="ViewModels\Commands\AddRoomTypeCommand.cs" />
-    <Compile Include="ViewModels\Commands\LoginCommand.cs" />
-    <Compile Include="ViewModels\Commands\OpenAddRoomTypeWindowCommand.cs" />
-    <Compile Include="ViewModels\Commands\RegisterCommand.cs" />
-    <Compile Include="ViewModels\Commands\SignInCommand.cs" />
-    <Compile Include="ViewModels\Commands\SignUpCommand.cs" />
+    <Compile Include="ViewModels\AdminMainVM.cs" />
+    <Compile Include="ViewModels\Commands\Admin Commands\DeleteRoomTypeCommand.cs" />
+    <Compile Include="ViewModels\Commands\Admin Commands\OpenEditRoomTypeWindowCommand.cs" />
+    <Compile Include="ViewModels\Commands\Edit Room Type Commands\SubmitRoomTypeCommand.cs" />
+    <Compile Include="ViewModels\Commands\Welcome Page Commands\LoginCommand.cs" />
+    <Compile Include="ViewModels\Commands\Admin Commands\OpenAddRoomTypeWindowCommand.cs" />
+    <Compile Include="ViewModels\Commands\Welcome Page Commands\RegisterCommand.cs" />
+    <Compile Include="ViewModels\Commands\Welcome Page Commands\SignInCommand.cs" />
+    <Compile Include="ViewModels\Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="ViewModels\Commands\Navigation Commands\StartWindowCommand.cs" />
-    <Compile Include="ViewModels\EmployeeStartVM.cs" />
-    <Compile Include="ViewModels\GuestStartVM.cs" />
-    <Compile Include="ViewModels\SignInVM.cs" />
-    <Compile Include="ViewModels\SignUpVM.cs" />
-    <Compile Include="Views\Admin Views\AddRoomType.xaml.cs">
-      <DependentUpon>AddRoomType.xaml</DependentUpon>
+    <Compile Include="ViewModels\EmployeeMainVM.cs" />
+    <Compile Include="ViewModels\GuestMainVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
+    <Compile Include="ViewModels\RoomTypeEditVM.cs" />
+    <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
+    <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
+    <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
+    <Compile Include="Views\Admin Views\RoomTypeEditWindow.xaml.cs">
+      <DependentUpon>RoomTypeEditWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin Views\AdminStartWiew.xaml.cs">
-      <DependentUpon>AdminStartWiew.xaml</DependentUpon>
+    <Compile Include="Views\Admin Views\AdminMainWindow.xaml.cs">
+      <DependentUpon>AdminMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EmployeeStartView.xaml.cs">
       <DependentUpon>EmployeeStartView.xaml</DependentUpon>
@@ -195,24 +207,24 @@
     <Compile Include="Views\GuestStartView.xaml.cs">
       <DependentUpon>GuestStartView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SignInView.xaml.cs">
+    <Compile Include="Views\Welcome Window Views\SignInView.xaml.cs">
       <DependentUpon>SignInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SignUpView.xaml.cs">
+    <Compile Include="Views\Welcome Window Views\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\StartView.xaml.cs">
+    <Compile Include="Views\Welcome Window Views\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin Views\AddRoomType.xaml">
+    <Page Include="Views\Admin Views\RoomTypeEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin Views\AdminStartWiew.xaml">
+    <Page Include="Views\Admin Views\AdminMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -279,22 +291,21 @@
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\Commands\BaseCommand.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
-    <Compile Include="ViewModels\StartVM.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\SignInView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\Welcome Window Views\SignInView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\SignUpView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\Welcome Window Views\SignUpView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\StartView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\Welcome Window Views\StartView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -368,6 +379,12 @@
     <EmbeddedResource Include="Migrations\202205141332457_ModifyRoomCapacityType.resx">
       <DependentUpon>202205141332457_ModifyRoomCapacityType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205150724204_UpdateRoomTypeTable1.resx">
+      <DependentUpon>202205150724204_UpdateRoomTypeTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205150728364_UpdateRoomTable.resx">
+      <DependentUpon>202205150728364_UpdateRoomTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -387,6 +404,7 @@
   <ItemGroup>
     <Resource Include="Images\background.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

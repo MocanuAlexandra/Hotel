@@ -1,4 +1,5 @@
 ﻿using Hotel.ViewModels.Commands;
+using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

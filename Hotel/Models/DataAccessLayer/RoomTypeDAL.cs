@@ -3,62 +3,62 @@ using Hotel.Models.EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Hotel.Models.DataAccessLayer
 {
-    public class RoomTypeDAL
+    public static class RoomTypeDAL
     {
-        // Get all room types from database into observable collection
+        //reads all room types from the database and also includes all rooms of the room type
         public static ObservableCollection<RoomType> GetRoomTypes()
         {
-            ObservableCollection<RoomType> roomTypes = new ObservableCollection<RoomType>();
             using (var context = new HotelDBContext())
             {
-                var query = from rt in context.RoomTypes
-                            select rt;
-                foreach (var item in query)
-                {
-                    roomTypes.Add(item);
-                }
-            }
-            return roomTypes;
-        }
-
-        // check if room type exists in database
-        public static bool RoomTypeExists(string roomType)
-        {
-            using (var context = new HotelDBContext())
-            {
-                var query = from rt in context.RoomTypes
-                            where rt.RoomTypeName == roomType
-                            select rt;
-                if (query.Count() > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return new ObservableCollection<RoomType>(
+                    context.RoomTypes.Include(nameof(RoomType.RoomsOfType)));
             }
         }
 
-        // add new room type to database from capacity and name
-        public static void AddRoomType(string roomType, string capacity)
+        //adds a room type to the database
+        public static void AddRoomType(RoomType roomType)
         {
             using (var context = new HotelDBContext())
             {
-                RoomType newRoomType = new RoomType
-                {
-                    RoomTypeName = roomType,
-                    RoomTypeCapacity = capacity,
-                    IsActive = true
-                };
-                context.RoomTypes.Add(newRoomType);
+                context.RoomTypes.Add(roomType);
                 context.SaveChanges();
+            }
+        }
+
+        //updates a room type in the database
+        public static void UpdateRoomType(RoomType roomType)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.Entry(roomType).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
+        //deletes a room type from the database
+        public static void DeleteRoomType(RoomType roomType)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.RoomTypes.Attach(roomType);
+                context.RoomTypes.Remove(roomType);
+                context.SaveChanges();
+            }
+        }
+
+        //check if a room type exists in the database by its name
+        public static bool RoomTypeExists(string name)
+        {
+            using (var context = new HotelDBContext())
+            {
+                return context.RoomTypes.Any(r => r.Name == name);
             }
         }
     }

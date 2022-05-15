@@ -17,7 +17,7 @@
         <!--<DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
             <views:EmployeeStartView/>
         </DataTemplate>-->
-        <DataTemplate DataType="{x:Type viewModels:AdminStartVM}">
+        <DataTemplate DataType="{x:Type viewModels:AdminMainVM}">
             <views:AdminStartWiew/>
         </DataTemplate>
         <!--<DataTemplate DataType="{x:Type viewModels:GuestStartVM}">
