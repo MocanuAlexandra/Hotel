@@ -59,7 +59,7 @@ namespace Hotel.Views
             }
             
             
-            if (DataContext is Utils.Utility.ICloseWindows viewModel)
+            if (DataContext is Utility.ICloseWindows viewModel)
                 viewModel.Close += () => { this.Close(); };
         }
 

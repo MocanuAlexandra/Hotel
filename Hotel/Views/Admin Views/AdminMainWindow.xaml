@@ -10,11 +10,39 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
 
+    <!--We made a custom button style-->
+    <UserControl.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="LightSkyBlue"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding  Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+                                              Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DodgerBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    
     <DockPanel Background="LightSkyBlue">
         <Menu DockPanel.Dock="Top" Height="25" HorizontalAlignment="Center" Background="LightSkyBlue">
             <MenuItem Header="Room Type" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
                       FontSize="12" Background="LightSkyBlue" Foreground="Black">
-                
+
                 <!--Menu item style-->
                 <MenuItem.ItemContainerStyle>
                     <Style TargetType="MenuItem">
@@ -22,14 +50,14 @@
                         <Setter Property="Foreground" Value="Black"/>
                     </Style>
                 </MenuItem.ItemContainerStyle>
-                
+
                 <MenuItem Header="New" Command="{Binding OpenAddRoomTypeWindowCommand}"/>
                 <MenuItem Header="Edit" Command="{Binding OpenEditRoomTypeWindowCommand}"/>
                 <MenuItem Header="Delete" Command="{Binding DeleteRoomTypeCommand}"/>
             </MenuItem>
             <MenuItem Header="Room" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" FontSize="12"
                       Background="LightSkyBlue" Foreground="Black">
-                
+
                 <!--Menu item style-->
                 <MenuItem.ItemContainerStyle>
                     <Style TargetType="MenuItem">
@@ -41,9 +69,19 @@
             </MenuItem>
         </Menu>
 
+
+        <StackPanel DockPanel.Dock="Bottom" Height="33">
+            <Button         Content="Logout" Width="100" Height="33"
+                            FontWeight="Bold" FontSize="14"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            CommandParameter="{Binding}"
+                            Command="{Binding DataContext.StartWindowCommand, 
+                            RelativeSource={RelativeSource Mode=FindAncestor, 
+                            AncestorType={x:Type local:MainWindow}}}"/>
+        </StackPanel>
         <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
                   HorizontalContentAlignment="Center" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="424">
 
             <ListView.View>
                 <GridView>
@@ -68,7 +106,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    
+
                     <GridView.ColumnHeaderContainerStyle>
                         <Style TargetType="GridViewColumnHeader">
                             <Setter Property="FontSize" Value="16"/>

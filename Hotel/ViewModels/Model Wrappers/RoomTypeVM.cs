@@ -1,4 +1,5 @@
 ﻿using Hotel.Models.EntityLayer;
+using Hotel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

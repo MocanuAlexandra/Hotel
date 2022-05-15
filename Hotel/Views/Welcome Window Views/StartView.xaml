@@ -29,11 +29,17 @@
     </UserControl.Resources>
 
     <Grid>
-
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
         </Grid.Background>
 
+        <TextBlock Text="Welcome to Aqua Hotel!"
+                   FontSize="30" Margin="58,63,60,331"
+                   FontFamily="Segoe UI Black" 
+                   HorizontalAlignment="Center"
+                    FontWeight="Bold" >
+        </TextBlock>
+        
         <Button Style="{StaticResource RoundedButtonStyle}" 
                 Content="SIGN IN YOUR ACCOUNT" 
                 HorizontalAlignment="Left"

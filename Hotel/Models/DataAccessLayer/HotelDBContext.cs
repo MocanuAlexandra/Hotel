@@ -1,4 +1,5 @@
 ﻿using Hotel.Models.EntityLayer;
+using Hotel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +12,7 @@ namespace Hotel.Models.DataAccesLayer
     public class HotelDBContext : DbContext
     {
         public HotelDBContext() : base("HotelDBContext")
-        {
+        {        
         }
 
         public DbSet<Admin> Admins { get; set; }

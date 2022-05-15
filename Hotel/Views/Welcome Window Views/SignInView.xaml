@@ -54,7 +54,7 @@
                 CommandParameter="{Binding}"
                 Command="{Binding DataContext.StartWindowCommand, 
                 RelativeSource={RelativeSource Mode=FindAncestor, 
-                  AncestorType={x:Type local:MainWindow}}}">
+                 AncestorType={x:Type local:MainWindow}}}">
             <Image Source="pack://application:,,,/Images/back.png"/>
         </Button>
 

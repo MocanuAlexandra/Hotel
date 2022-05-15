@@ -1,4 +1,5 @@
 ﻿using Hotel.ViewModels.Commands.Edit_Room_Type_Commands;
+using Hotel.ViewModels.Commands.Navigation_Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,13 +41,15 @@ namespace Hotel.ViewModels
 
         #region Commands
         public ICommand SubmitRoomTypeCommand { get; private set; }
+        public ICommand CloseCommand { get; private set; }
         #endregion
-        
+
         public RoomTypeEditVM(AdminMainVM adminMainVM, RoomTypeEditMode mode)
         {
             AdminMainVM = adminMainVM;
             Mode = mode;
             SubmitRoomTypeCommand = new SubmitRoomTypeCommand(this);
+            CloseCommand = new CloseCommand(this);
 
             //if we're in the edit mode we need to populate the fields with the room type's data
             if (mode == RoomTypeEditMode.Edit)

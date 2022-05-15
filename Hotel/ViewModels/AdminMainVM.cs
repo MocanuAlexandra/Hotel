@@ -1,6 +1,7 @@
 ﻿using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Commands.Admin_Commands;
+using Hotel.ViewModels.Commands.Navigation_Commands;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace Hotel.ViewModels
         public ICommand OpenAddRoomTypeWindowCommand { get; set; }
         public ICommand OpenEditRoomTypeWindowCommand { get; set; }
         public ICommand DeleteRoomTypeCommand { get; set; }
+
         #endregion
 
         public AdminMainVM()

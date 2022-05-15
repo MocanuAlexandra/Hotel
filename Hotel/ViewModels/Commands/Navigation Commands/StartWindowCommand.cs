@@ -34,6 +34,15 @@ namespace Hotel.ViewModels.Commands
                 _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
                 _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
             }
+
+            // if we execute logout from AdminMainView
+            if (parameter is AdminMainVM)
+            {
+                _mainWindowViewModel.CurrentViewModel = new StartVM();
+
+                _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+            }
         }
     }
 }

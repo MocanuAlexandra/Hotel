@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Hotel.ViewModels.Commands.Navigation_Commands;
 
 namespace Hotel.ViewModels
 {

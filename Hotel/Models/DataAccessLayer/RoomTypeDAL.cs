@@ -42,13 +42,13 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        //deletes a room type from the database
+        // deletes a room type from the database
         public static void DeleteRoomType(RoomType roomType)
         {
             using (var context = new HotelDBContext())
             {
-                context.RoomTypes.Attach(roomType);
-                context.RoomTypes.Remove(roomType);
+                roomType.IsActive = false;
+                context.Entry(roomType).State = EntityState.Deleted;
                 context.SaveChanges();
             }
         }
