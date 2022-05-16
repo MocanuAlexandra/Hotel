@@ -56,6 +56,7 @@ namespace Hotel.ViewModels
 
         // navigation commands
         public ICommand StartWindowCommand { get; set; }
+        public ICommand CloseCommand { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -71,6 +72,7 @@ namespace Hotel.ViewModels
 
             // navigation commands
             StartWindowCommand = new StartWindowCommand(this);
+            CloseCommand = new CloseCommand(this);
 
             CurrentWidth = Utils.Constants.DefaultWindowSize.windowWidth;
             CurrentHeight = Utils.Constants.DefaultWindowSize.windowHeight;

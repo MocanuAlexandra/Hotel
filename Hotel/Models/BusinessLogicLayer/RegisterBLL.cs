@@ -34,7 +34,7 @@ namespace Hotel.Models.BusinessLogicLayer
             // if it is not, we add the user to the database and return true
             
             string hashedPassword = Utils.Utility.HashPassword(_password);
-            if (registerDAL.CanRegisterGuest(_firstname, _lastname, _email, hashedPassword, _phone))
+            if (registerDAL.CanRegisterClient(_firstname, _lastname, _email, hashedPassword, _phone))
                 return true;
             else
                 return false;

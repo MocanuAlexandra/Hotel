@@ -30,9 +30,9 @@ namespace Hotel.Utils
         }
 
         //check if email is guest email
-        public static bool IsGuestEmail(string email)
+        public static bool IsClientEmail(string email)
         {
-            return Regex.IsMatch(email, Constants.guestEmailFormat);
+            return Regex.IsMatch(email, Constants.clientEmailFormat);
         }
 
         //check if name is valid

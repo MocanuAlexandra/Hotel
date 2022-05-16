@@ -47,9 +47,9 @@ namespace Hotel.ViewModels.Commands
                 }
 
                 // verify if user is guest so we can load the guest view
-                else if (_loginBLL.IsGuest())
+                else if (_loginBLL.IsClient())
                 {
-                    _mainWindowViewModel.CurrentViewModel = new GuestMainVM();
+                    _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
                 }
                 // if user is not admin or employee or guest, we can't load the view
                 // so we show an error message

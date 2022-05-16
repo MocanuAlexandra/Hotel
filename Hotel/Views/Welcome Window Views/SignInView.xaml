@@ -8,7 +8,7 @@
              xmlns:components="clr-namespace:Hotel.Utils.Components"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=viewModels:SignInVM}"
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="600" d:DesignWidth="800">
 
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
@@ -76,9 +76,8 @@
                      Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <Button Style="{StaticResource RoundedButtonStyle}" Content="SIGN IN"
-                HorizontalAlignment="Left" Margin="40,380,0, 0" Width="400" Cursor="Hand" 
+                HorizontalAlignment="Center" Margin="0,402,0,110" Width="400" Cursor="Hand" 
                 BorderThickness="0" FontFamily="Segoe UI Black" FontWeight="Bold" FontSize="20" 
-                Height="60" 
                 CommandParameter="{Binding}"
                 Command="{Binding DataContext.LoginCommand, 
                 RelativeSource={RelativeSource Mode=FindAncestor, 

@@ -12,17 +12,17 @@ namespace Hotel.Models.DataAccessLayer
     {
         public RegisterDAL() { }
 
-        public bool CanRegisterGuest(string firstname, string lastname, string email, string password, string phone)
+        public bool CanRegisterClient(string firstname, string lastname, string email, string password, string phone)
         {
             using (var hotelDBContext = new HotelDBContext())
             {
                 // first we check if guest already exists in database
-                var guest = hotelDBContext.Guests.Where(g => g.Email == email).FirstOrDefault();
+                var client = hotelDBContext.Clients.Where(g => g.Email == email).FirstOrDefault();
 
-                if (guest == null)
+                if (client == null)
                 {
                     // if not, we create a new guest
-                    guest = new Guest
+                    client = new Client
                     {
                         FirstName = firstname,
                         LastName = lastname,
@@ -33,7 +33,7 @@ namespace Hotel.Models.DataAccessLayer
                     };
                     
                     // and add it to database
-                    hotelDBContext.Guests.Add(guest);
+                    hotelDBContext.Clients.Add(client);
                     hotelDBContext.SaveChanges();
                     return true;
                 }

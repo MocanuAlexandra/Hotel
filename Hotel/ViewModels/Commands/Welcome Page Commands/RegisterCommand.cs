@@ -37,7 +37,7 @@ namespace Hotel.ViewModels.Commands
                 // verify if we can register the user
                 if (_registerBLL.RegisterSucceded())
                 {
-                    _mainWindowViewModel.CurrentViewModel = new GuestMainVM();
+                    _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
                 }
                 else
                 {

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Hotel.Models.EntityLayer
 {
-    public class Guest
+    public class Client
     {
         // constructor
-        public Guest()
+        public Client()
         {
             this.Bookings = new HashSet<Booking>();
             this.Offers = new HashSet<Offer>();
@@ -18,7 +18,7 @@ namespace Hotel.Models.EntityLayer
 
         //define primary key
         [Key]
-        public int GuestId { get; set; }
+        public int ClientId { get; set; }
 
         //define other attributes
         //these fileds are required so can't be null

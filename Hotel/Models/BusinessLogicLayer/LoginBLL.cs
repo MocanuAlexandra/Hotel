@@ -56,13 +56,13 @@ namespace Hotel.Models.BusinessLogicLayer
         }
 
         // verify if user is guest
-        public bool IsGuest()
+        public bool IsClient()
         {
             // first we check if the format of the email is correct
-            if (Utility.IsGuestEmail(_email))
+            if (Utility.IsClientEmail(_email))
             {
                 // then we check if the guest exists in the database
-                if (loginDAL.IsGuestInDB(_email, _password) != 0)
+                if (loginDAL.IsClientInDB(_email, _password) != 0)
                     return true;
                 else
                     return false;

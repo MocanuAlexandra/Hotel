@@ -168,6 +168,10 @@
     <Compile Include="Migrations\202205150728364_UpdateRoomTable.designer.cs">
       <DependentUpon>202205150728364_UpdateRoomTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205161455405_UpdateClientTable.cs" />
+    <Compile Include="Migrations\202205161455405_UpdateClientTable.designer.cs">
+      <DependentUpon>202205161455405_UpdateClientTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
@@ -190,7 +194,9 @@
     <Compile Include="ViewModels\Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="ViewModels\Commands\Navigation Commands\StartWindowCommand.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
-    <Compile Include="ViewModels\GuestMainVM.cs" />
+    <Compile Include="ViewModels\ClientMainVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
     <Compile Include="ViewModels\RoomTypeEditVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
@@ -205,8 +211,8 @@
     <Compile Include="Views\EmployeeStartView.xaml.cs">
       <DependentUpon>EmployeeStartView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GuestStartView.xaml.cs">
-      <DependentUpon>GuestStartView.xaml</DependentUpon>
+    <Compile Include="Views\ClientStartView.xaml.cs">
+      <DependentUpon>ClientStartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Welcome Window Views\SignInView.xaml.cs">
       <DependentUpon>SignInView.xaml</DependentUpon>
@@ -233,7 +239,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GuestStartView.xaml">
+    <Page Include="Views\ClientStartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,7 +289,7 @@
     <Compile Include="Models\EntityLayer\Booking.cs" />
     <Compile Include="Models\EntityLayer\Employee.cs" />
     <Compile Include="Models\EntityLayer\Facility.cs" />
-    <Compile Include="Models\EntityLayer\Guest.cs" />
+    <Compile Include="Models\EntityLayer\Client.cs" />
     <Compile Include="Models\EntityLayer\HotelServices.cs" />
     <Compile Include="Models\EntityLayer\Offer.cs" />
     <Compile Include="Models\EntityLayer\Room.cs" />
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205150728364_UpdateRoomTable.resx">
       <DependentUpon>202205150728364_UpdateRoomTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205161455405_UpdateClientTable.resx">
+      <DependentUpon>202205161455405_UpdateClientTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

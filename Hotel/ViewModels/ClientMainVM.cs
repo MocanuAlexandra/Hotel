@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels
 {
-    public class GuestMainVM : BaseViewModel
+    public class ClientMainVM : BaseViewModel
     {
-        public GuestMainVM()
+        public ClientMainVM()
         {
         }
     }

@@ -75,27 +75,27 @@ namespace Hotel.Models.DataAccesLayer
             }
         }
 
-        public int IsGuestInDB(string email, string password)
+        public int IsClientInDB(string email, string password)
         {
             using (var hotelDBContext = new HotelDBContext())
             {
                 try
                 {
-                    var guestQuery = (from guest in hotelDBContext.Guests
-                                      where guest.Email.Equals(email)
-                                      select guest).FirstOrDefault();
-
+                    var clientQuery = (from client in hotelDBContext.Clients
+                                      where client.Email.Equals(email)
+                                      select client).FirstOrDefault();
+                    
                     // if a guest with these attributes exists
                     // we check if the password is correct
                     // if it is, we return ID of the guest
-                    if (guestQuery != null && Utility.CheckPassword(password, guestQuery.Password))
+                    if (clientQuery != null && Utility.CheckPassword(password, clientQuery.Password))
                     {
-                        guestQuery.IsActive = true;
-                        hotelDBContext.Guests.Attach(guestQuery);
-                        hotelDBContext.Entry(guestQuery).Property(x => x.IsActive).IsModified = true;
+                        clientQuery.IsActive = true;
+                        hotelDBContext.Clients.Attach(clientQuery);
+                        hotelDBContext.Entry(clientQuery).Property(x => x.IsActive).IsModified = true;
                         hotelDBContext.SaveChanges();
 
-                        return guestQuery.GuestId;
+                        return clientQuery.ClientId;
                     }
                     return 0;
                 }

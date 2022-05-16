@@ -56,7 +56,7 @@ namespace Hotel.ViewModels
             {
                 _email = value;
                 ErrorMessage = "";
-                if (!Utility.IsGuestEmail(_email))
+                if (!Utility.IsClientEmail(_email))
                 {
                     ErrorMessage = "INVALID EMAIL FORMAT";
                 }
