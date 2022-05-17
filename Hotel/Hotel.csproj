@@ -176,13 +176,17 @@
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\RoomDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
     <Compile Include="Models\EntityLayer\Price.cs" />
     <Compile Include="Models\EntityLayer\RoomType.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddRoomVM.cs" />
     <Compile Include="ViewModels\AdminMainVM.cs" />
+    <Compile Include="ViewModels\Commands\Admin Commands\Room Commands\AddRoomCommand.cs" />
+    <Compile Include="ViewModels\Commands\Admin Commands\Room Commands\OpenAddRoomWindowCommand.cs" />
     <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\DeleteRoomTypeCommand.cs" />
     <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\OpenEditRoomTypeWindowCommand.cs" />
     <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\AddEdit RoomType Commands\SubmitRoomTypeCommand.cs" />
@@ -192,7 +196,7 @@
     <Compile Include="ViewModels\Commands\Welcome Page Commands\RegisterCommand.cs" />
     <Compile Include="ViewModels\Commands\Welcome Page Commands\SignInCommand.cs" />
     <Compile Include="ViewModels\Commands\Welcome Page Commands\SignUpCommand.cs" />
-    <Compile Include="ViewModels\Commands\Navigation Commands\StartWindowCommand.cs" />
+    <Compile Include="ViewModels\Commands\Navigation Commands\LogoutCommand.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\ClientMainVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
@@ -202,6 +206,9 @@
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
+    <Compile Include="Views\Admin Views\AddRoomWindow.xaml.cs">
+      <DependentUpon>AddRoomWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin Views\RoomTypeEditWindow.xaml.cs">
       <DependentUpon>RoomTypeEditWindow.xaml</DependentUpon>
     </Compile>
@@ -224,6 +231,10 @@
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\AddRoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -414,9 +425,7 @@
   <ItemGroup>
     <Resource Include="Images\background.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\Commands\Admin Commands\Room Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

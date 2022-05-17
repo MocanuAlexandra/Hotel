@@ -65,7 +65,8 @@
                         <Setter Property="Foreground" Value="Black"/>
                     </Style>
                 </MenuItem.ItemContainerStyle>
-                <MenuItem Header="Add/Remove"/>
+                <MenuItem Header="Add" Command="{Binding OpenAddRoomWindowCommand}"/>
+                <MenuItem Header="Remove"/>
             </MenuItem>
         </Menu>
 
@@ -75,7 +76,7 @@
                             FontWeight="Bold" FontSize="14"
                             Style="{StaticResource RoundedButtonStyle}"
                             CommandParameter="{Binding}"
-                            Command="{Binding DataContext.StartWindowCommand, 
+                            Command="{Binding DataContext.LogoutCommand, 
                             RelativeSource={RelativeSource Mode=FindAncestor, 
                             AncestorType={x:Type local:MainWindow}}}"/>
         </StackPanel>

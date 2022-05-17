@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Commands
 {
-    public class StartWindowCommand : BaseCommand
+    public class LogoutCommand : BaseCommand
     {
         private readonly MainWindowVM _mainWindowViewModel;
-        public StartWindowCommand(MainWindowVM mainWindowViewModel)
+        public LogoutCommand(MainWindowVM mainWindowViewModel)
         {
             _mainWindowViewModel = mainWindowViewModel;
         }
 
         public override void Execute(object parameter)
         {
-            //if we execute StartWindowCommand from SignUpView
+            //if we execute LogoutCommand from SignUpView
             if (parameter is SignUpVM )
             {
                 _mainWindowViewModel.CurrentViewModel = new StartVM();
@@ -26,7 +26,7 @@ namespace Hotel.ViewModels.Commands
                 _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
             }
 
-            //if we execute StartWindowCommand from SignInView
+            //if we execute LogoutCommand from SignInView
             if (parameter is SignInVM)
             {
                 _mainWindowViewModel.CurrentViewModel = new StartVM();

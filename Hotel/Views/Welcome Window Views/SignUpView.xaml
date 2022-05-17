@@ -47,7 +47,7 @@
                         BorderThickness="0" FontFamily="Segoe UI Black" FontWeight="Bold" 
                         FontSize="20" Height="42"
                         CommandParameter="{Binding}"
-                        Command="{Binding DataContext.StartWindowCommand, 
+                        Command="{Binding DataContext.LogoutCommand, 
                         RelativeSource={RelativeSource Mode=FindAncestor, 
                         AncestorType={x:Type local:MainWindow}}}">
                     <Image Source="pack://application:,,,/Images/back.png"/>

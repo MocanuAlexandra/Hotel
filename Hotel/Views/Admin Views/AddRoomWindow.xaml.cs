@@ -1,5 +1,4 @@
-﻿using Hotel.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +15,11 @@ using System.Windows.Shapes;
 namespace Hotel.Views.Admin_Views
 {
     /// <summary>
-    /// Interaction logic for AddRoomType.xaml
+    /// Interaction logic for AddRoomWindow.xaml
     /// </summary>
-    public partial class RoomTypeEditWindowView : Window
+    public partial class AddRoomWindow : Window
     {
-        public RoomTypeEditWindowView()
+        public AddRoomWindow()
         {
             InitializeComponent();
             Loaded += Window_Loaded;

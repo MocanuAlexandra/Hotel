@@ -1,0 +1,98 @@
+﻿<Window x:Class="Hotel.Views.Admin_Views.AddRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.Views.Admin_Views"
+        xmlns:viewModels ="clr-namespace:Hotel.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewModels:AddRoomVM}"
+        mc:Ignorable="d"
+        Title="Add Room Window"  Height="360" Width="300" ResizeMode="NoResize">
+
+
+    <!--We made a custom button style-->
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="LightSkyBlue"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding  Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+                                              Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DodgerBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+
+    <DockPanel>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
+        </DockPanel.Background>
+
+        <DockPanel DockPanel.Dock="Top" Height="53"></DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="91" Width="296">
+            <TextBlock Text="Select room type: " 
+                       FontFamily="Segoe UI Black" FontWeight="Bold" 
+                       FontSize="16"
+                   Foreground="Black" DockPanel.Dock="Top" Height="30" Width="196"/>
+            <ComboBox ItemsSource="{Binding RoomTypes}"
+                                      SelectedItem="{Binding SelectedRoomType}"
+                                      DisplayMemberPath="Name"
+                                      Width="200" Height="30" Margin="10, 0, 0, 0" FontSize="18" 
+                                      HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center"
+                                      />
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="6"></DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="94" Width="300">
+            <TextBlock Text="Enter room index: " 
+                       FontFamily="Segoe UI Black" FontWeight="Bold" 
+                       FontSize="16"
+                   Foreground="Black" DockPanel.Dock="Top" Height="24" Width="196"/>
+            <TextBox Width="200" Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}"
+                                     AcceptsReturn="False"
+                                     AcceptsTab="False"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     Margin="10, 0, 0, 0" FontSize="18" Height="32"/>
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Bottom" Height="66" Width="202">
+            <StackPanel Orientation="Horizontal" Width="202">
+                <Button
+                    Style="{StaticResource RoundedButtonStyle}"
+                    DockPanel.Dock="Bottom" Height="22" Width="88"
+                    FontSize="12" 
+                    FontFamily="Segoe UI Black" 
+                    FontWeight="Bold" 
+                    Margin="10,0"
+                    Command="{Binding AddRoomCommand}"
+                    Content="Add"/>
+                <Button
+                    Style="{StaticResource RoundedButtonStyle}"
+                    DockPanel.Dock="Bottom" Height="22" Width="89"
+                    FontSize="12" 
+                    FontFamily="Segoe UI Black" 
+                    FontWeight="Bold" 
+                    Command="{Binding CloseCommand}"
+                    Content="Cancel"/>
+            </StackPanel>
+
+        </DockPanel>
+
+    </DockPanel>
+</Window>

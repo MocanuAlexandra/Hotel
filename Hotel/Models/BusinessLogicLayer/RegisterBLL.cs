@@ -9,11 +9,11 @@ namespace Hotel.Models.BusinessLogicLayer
 {
     public class RegisterBLL
     {
-        private string _firstname;
-        private string _lastname;
-        private string _email;
-        private string _password;
-        private string _phone;
+        private readonly string _firstname;
+        private readonly string _lastname;
+        private readonly string _email;
+        private readonly string _password;
+        private readonly string _phone;
 
         public RegisterBLL(string firstname, string lastname, string email, string password, string phone)
         {

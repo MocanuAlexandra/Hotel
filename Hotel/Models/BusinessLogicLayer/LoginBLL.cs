@@ -12,8 +12,8 @@ namespace Hotel.Models.BusinessLogicLayer
 {
     public class LoginBLL
     {
-        private string _email;
-        private string _password;
+        private readonly string _email;
+        private readonly string _password;
 
         public LoginBLL(string email, string password)
         {
