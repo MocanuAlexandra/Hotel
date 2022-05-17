@@ -12,8 +12,8 @@ namespace Hotel.Models.EntityLayer
         // constructor
         public Client()
         {
-            this.Bookings = new HashSet<Booking>();
-            this.Offers = new HashSet<Offer>();
+            //this.Bookings = new HashSet<Booking>();
+            //this.Offers = new HashSet<Offer>();
         }
 
         //define primary key
@@ -38,8 +38,8 @@ namespace Hotel.Models.EntityLayer
         public string Phone { get; set; }
 
         // define collection for one to many relationship
-        public ICollection<Booking> Bookings { get; set; }
-        public ICollection<Offer> Offers { get; set; }
+       // public ICollection<Booking> Bookings { get; set; }
+        //public ICollection<Offer> Offers { get; set; }
 
         public bool IsActive { get; set; }
     }

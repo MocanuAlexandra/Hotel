@@ -1,4 +1,5 @@
 ﻿using Hotel.Commands.Admin_Commands;
+using Hotel.Commands.Admin_Commands.Hotel_services_Commands;
 using Hotel.Commands.Admin_Commands.Room_Commands;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
@@ -23,6 +24,14 @@ namespace Hotel.ViewModels
             set { _selectedRoomType = value; OnPropertyChanged(); }
         }
 
+        public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
+        private HotelServicesVM _selectedHotelService;
+        public HotelServicesVM SelectedHotelService
+        {
+            get { return _selectedHotelService; }
+            set { _selectedHotelService = value; OnPropertyChanged(); }
+        }
+
         #region Commands
 
         // room type commands
@@ -33,6 +42,11 @@ namespace Hotel.ViewModels
         // room commands
         public ICommand OpenAddRoomWindowCommand { get; set; }
         public ICommand OpenRemoveRoomWindowCommand { get; set; }
+
+        // hotel service commands
+        public ICommand OpenEditServiceWindowCommand { get; set; }
+        public ICommand OpenAddServiceWindowCommand { get; set; }
+        public ICommand DeleteHotelServiceCommand { get; set; }
 
         #endregion
 
@@ -45,10 +59,19 @@ namespace Hotel.ViewModels
             OpenAddRoomWindowCommand = new OpenAddRoomWindowCommand(this);
             OpenRemoveRoomWindowCommand = new OpenRemoveRoomWindowCommand(this);
 
+            OpenEditServiceWindowCommand = new OpenEditServiceWindowCommand(this);
+            OpenAddServiceWindowCommand = new OpenAddServiceWindowCommand(this);
+            DeleteHotelServiceCommand = new DeleteHotelServiceCommand(this);
+
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypes())
                 RoomTypes.Add(new RoomTypeVM(roomType));
+
+            // read the hotel services, create wrapers and populate the list
+            HotelServices = new ObservableCollection<HotelServicesVM>();
+            foreach (var hotelService in HotelServiceDAL.GetHotelServices())
+                HotelServices.Add(new HotelServicesVM(hotelService));
         }
     }
 }

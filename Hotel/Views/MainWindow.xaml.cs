@@ -55,6 +55,14 @@ namespace Hotel.Views
                 //};
                 //_context.Employees.Add(employee);
 
+                // create a hotel service
+                //HotelService hotelService = new HotelService
+                //{
+                //    Name = "Breakfast",
+                //    IsActive = true,
+                //};
+                //_context.HotelServices.Add(hotelService);
+
                 // save the changes
                 _context.SaveChanges();
             }

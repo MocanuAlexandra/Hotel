@@ -116,7 +116,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\DeleteHotelServiceCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenAddServiceWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenEditServiceWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\SubmitHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Commands\RemoveRoomCommand.cs" />
+    <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.designer.cs">
       <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
@@ -173,12 +178,22 @@
     <Compile Include="Migrations\202205161455405_UpdateClientTable.designer.cs">
       <DependentUpon>202205161455405_UpdateClientTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205171555091_UpdateDatabase.cs" />
+    <Compile Include="Migrations\202205171555091_UpdateDatabase.designer.cs">
+      <DependentUpon>202205171555091_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171558081_AddHotelServiceTable.cs" />
+    <Compile Include="Migrations\202205171558081_AddHotelServiceTable.designer.cs">
+      <DependentUpon>202205171558081_AddHotelServiceTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
+    <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
+    <Compile Include="Models\EntityLayer\HotelService.cs" />
     <Compile Include="Models\EntityLayer\Price.cs" />
     <Compile Include="Models\EntityLayer\RoomType.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
@@ -199,10 +214,12 @@
     <Compile Include="Commands\Welcome Page Commands\SignInCommand.cs" />
     <Compile Include="Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
+    <Compile Include="ViewModels\Admin ViewModels\HotelServiceEditVM.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\ClientMainVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\HotelServicesVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
     <Compile Include="ViewModels\Admin ViewModels\RemoveRoomVM.cs" />
     <Compile Include="ViewModels\Admin ViewModels\RoomTypeEditVM.cs" />
@@ -211,6 +228,9 @@
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
     <Compile Include="Views\Admin Views\AddRoomWindow.xaml.cs">
       <DependentUpon>AddRoomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin Views\HotelServiceEditWindow.xaml.cs">
+      <DependentUpon>HotelServiceEditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin Views\RemoveRoomWindow.xaml.cs">
       <DependentUpon>RemoveRoomWindow.xaml</DependentUpon>
@@ -241,6 +261,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Admin Views\AddRoomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\HotelServiceEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -305,14 +329,9 @@
       <DependentUpon>202205101233547_ModifyUsernameToEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Models\EntityLayer\Admin.cs" />
-    <Compile Include="Models\EntityLayer\Booking.cs" />
     <Compile Include="Models\EntityLayer\Employee.cs" />
-    <Compile Include="Models\EntityLayer\Facility.cs" />
     <Compile Include="Models\EntityLayer\Client.cs" />
-    <Compile Include="Models\EntityLayer\HotelServices.cs" />
-    <Compile Include="Models\EntityLayer\Offer.cs" />
     <Compile Include="Models\EntityLayer\Room.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Utility.cs" />
@@ -415,6 +434,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205161455405_UpdateClientTable.resx">
       <DependentUpon>202205161455405_UpdateClientTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171555091_UpdateDatabase.resx">
+      <DependentUpon>202205171555091_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171558081_AddHotelServiceTable.resx">
+      <DependentUpon>202205171558081_AddHotelServiceTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

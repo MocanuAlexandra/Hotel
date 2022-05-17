@@ -7,28 +7,24 @@ using System.Threading.Tasks;
 
 namespace Hotel.Models.EntityLayer
 {
-    public class Room
+    public class HotelService
     {
         // constructor
-        //public Room()
-        //{
-        //    this.Facilities = new HashSet<Facility>();
-        //    this.Bookings = new HashSet<Booking>();
-        //}
+        public HotelService()
+        {
+            //this.Bookings = new HashSet<Booking>();
+            //this.Offers = new HashSet<Offer>();
+        }
 
-        //define primary key
+        // define primary key
         [Key]
         public int Id { get; set; }
-        public int Number { get; set; }
+        public string Name { get; set; }
 
-        public int RoomTypeId { get; set; }
-        public RoomType RoomType { get; set; }
-        
         // define collection for many to many relationship
-       // public virtual ICollection<Facility> Facilities { get; set; }
        // public virtual ICollection<Booking> Bookings { get; set; }
+        //public virtual ICollection<Offer> Offers { get; set; }
 
         public bool IsActive { get; set; }
-
     }
 }

@@ -8,7 +8,7 @@
              xmlns:components="clr-namespace:Hotel.Utils.Components"
              d:DataContext="{d:DesignInstance Type=viewModels:AdminMainVM}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600">
+               d:DesignHeight="600" d:DesignWidth="800">
 
     <!--We made a custom button style-->
     <UserControl.Resources>
@@ -37,7 +37,7 @@
         </Style>
     </UserControl.Resources>
 
-    
+
     <DockPanel Background="LightSkyBlue">
         <Menu DockPanel.Dock="Top" Height="25" HorizontalAlignment="Center" Background="LightSkyBlue">
             <MenuItem Header="Room Type" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
@@ -68,6 +68,21 @@
                 <MenuItem Header="Add" Command="{Binding OpenAddRoomWindowCommand}"/>
                 <MenuItem Header="Remove" Command="{Binding OpenRemoveRoomWindowCommand}"/>
             </MenuItem>
+            <MenuItem Header="Hotel services" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
+                      FontSize="12" Background="LightSkyBlue" Foreground="Black">
+
+                <!--Menu item style-->
+                <MenuItem.ItemContainerStyle>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Background" Value="LightSkyBlue"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+
+                <MenuItem Header="New" Command="{Binding OpenAddServiceWindowCommand}"/>
+                <MenuItem Header="Edit" Command="{Binding OpenEditServiceWindowCommand}"/>
+                <MenuItem Header="Delete" Command="{Binding DeleteHotelServiceCommand}"/>
+            </MenuItem>
         </Menu>
 
 
@@ -80,46 +95,106 @@
                             RelativeSource={RelativeSource Mode=FindAncestor, 
                             AncestorType={x:Type local:MainWindow}}}"/>
         </StackPanel>
-        <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
+
+        <TabControl DockPanel.Dock="Top">
+            
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Name="Panel">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Panel" Property="Background" Value="DodgerBlue" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Panel" Property="Background" Value="LightSkyBlue" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            
+            <TabItem Header="Room types" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-1,0">
+                <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
                   HorizontalContentAlignment="Center" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="424">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="553">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Room Type" Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold"  />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Capacity" Width="250" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Capacity}"  FontSize="14" FontWeight="Bold"  />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Available" Width="260" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding RoomsOfType.Count}"  FontSize="14" FontWeight="Bold"  />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
 
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Room Type" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold"  />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Capacity" Width="200" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Capacity}"  FontSize="14" FontWeight="Bold"  />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Available" Width="200" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding RoomsOfType.Count}"  FontSize="14" FontWeight="Bold"  />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="GridViewColumnHeader">
+                                    <Setter Property="FontSize" Value="16"/>
+                                    <Setter Property="FontFamily" Value="Segoe UI Black"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="LightSkyBlue"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
 
-                    <GridView.ColumnHeaderContainerStyle>
-                        <Style TargetType="GridViewColumnHeader">
-                            <Setter Property="FontSize" Value="16"/>
-                            <Setter Property="FontFamily" Value="Segoe UI Black"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="LightSkyBlue"/>
-                        </Style>
-                    </GridView.ColumnHeaderContainerStyle>
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <TabItem Header="Hotel services" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
+                <ListView ItemsSource="{Binding HotelServices}" SelectedItem="{Binding SelectedHotelService}" 
+                  HorizontalContentAlignment="Center" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="517">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Hotel service" Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold"  />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="GridViewColumnHeader">
+                                    <Setter Property="FontSize" Value="16"/>
+                                    <Setter Property="FontFamily" Value="Segoe UI Black"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="LightSkyBlue"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </UserControl>
