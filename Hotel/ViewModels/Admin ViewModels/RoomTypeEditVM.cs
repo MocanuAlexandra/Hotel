@@ -1,5 +1,5 @@
-﻿using Hotel.ViewModels.Commands.Edit_Room_Type_Commands;
-using Hotel.ViewModels.Commands.Navigation_Commands;
+﻿using Hotel.Commands.Edit_Room_Type_Commands;
+using Hotel.Commands.Navigation_Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

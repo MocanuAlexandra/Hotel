@@ -66,7 +66,7 @@
                     </Style>
                 </MenuItem.ItemContainerStyle>
                 <MenuItem Header="Add" Command="{Binding OpenAddRoomWindowCommand}"/>
-                <MenuItem Header="Remove"/>
+                <MenuItem Header="Remove" Command="{Binding OpenRemoveRoomWindowCommand}"/>
             </MenuItem>
         </Menu>
 

@@ -1,5 +1,6 @@
 ﻿using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
+using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Hotel.ViewModels.Commands.Admin_Commands.Room_Commands
+namespace Hotel.Commands.Admin_Commands.Room_Commands
 {
     public class AddRoomCommand:BaseCommand
     {

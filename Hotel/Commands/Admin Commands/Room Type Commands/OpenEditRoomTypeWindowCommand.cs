@@ -1,4 +1,5 @@
-﻿using Hotel.Models.DataAccessLayer;
+﻿using Hotel.ViewModels;
+using Hotel.Views.Admin_Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.ViewModels.Commands.Admin_Commands
+namespace Hotel.Commands.Admin_Commands
 {
-    public class DeleteRoomTypeCommand : BaseCommand
+    public class OpenEditRoomTypeWindowCommand : BaseCommand
     {
         private readonly AdminMainVM _adminMainVM;
-        public DeleteRoomTypeCommand(AdminMainVM adminMainVM)
+        public OpenEditRoomTypeWindowCommand(AdminMainVM adminMainVM)
         {
             _adminMainVM = adminMainVM;
             _adminMainVM.PropertyChanged += OnViewModelPropertyChanged;
@@ -19,8 +20,12 @@ namespace Hotel.ViewModels.Commands.Admin_Commands
 
         public override void Execute(object parameter)
         {
-            RoomTypeDAL.DeleteRoomType(_adminMainVM.SelectedRoomType._roomType);
-            _adminMainVM.RoomTypes.Remove(_adminMainVM.SelectedRoomType);
+            RoomTypeEditWindowView roomTypeEditWindowView = new RoomTypeEditWindowView()
+            {
+                DataContext = new RoomTypeEditVM(_adminMainVM,
+                RoomTypeEditVM.RoomTypeEditMode.Edit)
+            };
+            roomTypeEditWindowView.ShowDialog();
         }
 
         public override bool CanExecute(object parameter)
@@ -35,3 +40,4 @@ namespace Hotel.ViewModels.Commands.Admin_Commands
         }
     }
 }
+

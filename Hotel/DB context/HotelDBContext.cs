@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Models.DataAccesLayer
+namespace Hotel.DBContext
 {
     public class HotelDBContext : DbContext
     {

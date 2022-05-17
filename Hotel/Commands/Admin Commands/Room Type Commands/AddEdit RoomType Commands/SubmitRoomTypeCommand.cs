@@ -1,6 +1,7 @@
 ﻿using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.Utils;
+using Hotel.ViewModels;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Hotel.ViewModels.Commands.Edit_Room_Type_Commands
+namespace Hotel.Commands.Edit_Room_Type_Commands
 {
     public class SubmitRoomTypeCommand : BaseCommand
     {

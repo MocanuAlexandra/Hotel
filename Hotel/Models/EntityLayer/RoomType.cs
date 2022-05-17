@@ -13,7 +13,6 @@ namespace Hotel.Models.EntityLayer
         public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }
-        public int NumberOfRooms => RoomsOfType.Count;
         public ObservableCollection<Room> RoomsOfType { get; set; }
         public bool IsActive { get; set; }
     }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Hotel.Utils.Utility;
 
-namespace Hotel.ViewModels.Commands.Navigation_Commands
+namespace Hotel.Commands.Navigation_Commands
 {
     internal class CloseCommand:BaseCommand
     {

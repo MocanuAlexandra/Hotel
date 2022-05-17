@@ -1,8 +1,7 @@
-﻿using Hotel.Models.DataAccessLayer;
+﻿using Hotel.Commands.Admin_Commands;
+using Hotel.Commands.Admin_Commands.Room_Commands;
+using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
-using Hotel.ViewModels.Commands.Admin_Commands;
-using Hotel.ViewModels.Commands.Admin_Commands.Room_Commands;
-using Hotel.ViewModels.Commands.Navigation_Commands;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
@@ -25,11 +24,15 @@ namespace Hotel.ViewModels
         }
 
         #region Commands
+
+        // room type commands
         public ICommand OpenAddRoomTypeWindowCommand { get; set; }
         public ICommand OpenEditRoomTypeWindowCommand { get; set; }
         public ICommand DeleteRoomTypeCommand { get; set; }
 
+        // room commands
         public ICommand OpenAddRoomWindowCommand { get; set; }
+        public ICommand OpenRemoveRoomWindowCommand { get; set; }
 
         #endregion
 
@@ -40,6 +43,7 @@ namespace Hotel.ViewModels
             DeleteRoomTypeCommand = new DeleteRoomTypeCommand(this);
 
             OpenAddRoomWindowCommand = new OpenAddRoomWindowCommand(this);
+            OpenRemoveRoomWindowCommand = new OpenRemoveRoomWindowCommand(this);
 
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();

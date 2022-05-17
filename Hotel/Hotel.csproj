@@ -116,6 +116,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Admin Commands\Room Commands\RemoveRoomCommand.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.designer.cs">
       <DependentUpon>202205111647456_UpdateGuestTable.cs</DependentUpon>
@@ -183,31 +184,36 @@
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AddRoomVM.cs" />
-    <Compile Include="ViewModels\AdminMainVM.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Commands\AddRoomCommand.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Commands\OpenAddRoomWindowCommand.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\DeleteRoomTypeCommand.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\OpenEditRoomTypeWindowCommand.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\AddEdit RoomType Commands\SubmitRoomTypeCommand.cs" />
-    <Compile Include="ViewModels\Commands\Navigation Commands\CloseCommand.cs" />
-    <Compile Include="ViewModels\Commands\Welcome Page Commands\LoginCommand.cs" />
-    <Compile Include="ViewModels\Commands\Admin Commands\Room Type Commands\OpenAddRoomTypeWindowCommand.cs" />
-    <Compile Include="ViewModels\Commands\Welcome Page Commands\RegisterCommand.cs" />
-    <Compile Include="ViewModels\Commands\Welcome Page Commands\SignInCommand.cs" />
-    <Compile Include="ViewModels\Commands\Welcome Page Commands\SignUpCommand.cs" />
-    <Compile Include="ViewModels\Commands\Navigation Commands\LogoutCommand.cs" />
+    <Compile Include="ViewModels\Admin ViewModels\AddRoomVM.cs" />
+    <Compile Include="ViewModels\Admin ViewModels\AdminMainVM.cs" />
+    <Compile Include="Commands\Admin Commands\Room Commands\AddRoomCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Commands\OpenAddRoomWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Commands\OpenRemoveRoomWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\DeleteRoomTypeCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\OpenEditRoomTypeWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\AddEdit RoomType Commands\SubmitRoomTypeCommand.cs" />
+    <Compile Include="Commands\Navigation Commands\CloseCommand.cs" />
+    <Compile Include="Commands\Welcome Page Commands\LoginCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\OpenAddRoomTypeWindowCommand.cs" />
+    <Compile Include="Commands\Welcome Page Commands\RegisterCommand.cs" />
+    <Compile Include="Commands\Welcome Page Commands\SignInCommand.cs" />
+    <Compile Include="Commands\Welcome Page Commands\SignUpCommand.cs" />
+    <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\ClientMainVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
-    <Compile Include="ViewModels\RoomTypeEditVM.cs" />
+    <Compile Include="ViewModels\Admin ViewModels\RemoveRoomVM.cs" />
+    <Compile Include="ViewModels\Admin ViewModels\RoomTypeEditVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
     <Compile Include="Views\Admin Views\AddRoomWindow.xaml.cs">
       <DependentUpon>AddRoomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin Views\RemoveRoomWindow.xaml.cs">
+      <DependentUpon>RemoveRoomWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin Views\RoomTypeEditWindow.xaml.cs">
       <DependentUpon>RoomTypeEditWindow.xaml</DependentUpon>
@@ -235,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Admin Views\AddRoomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\RemoveRoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,7 +305,7 @@
       <DependentUpon>202205101233547_ModifyUsernameToEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\DataAccessLayer\HotelDBContext.cs" />
+    <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Models\EntityLayer\Admin.cs" />
     <Compile Include="Models\EntityLayer\Booking.cs" />
     <Compile Include="Models\EntityLayer\Employee.cs" />
@@ -307,7 +317,7 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Utility.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
-    <Compile Include="ViewModels\Commands\BaseCommand.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

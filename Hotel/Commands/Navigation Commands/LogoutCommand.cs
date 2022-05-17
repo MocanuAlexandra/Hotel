@@ -1,11 +1,12 @@
 ﻿using Hotel.Utils;
+using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.ViewModels.Commands
+namespace Hotel.Commands.Navigation_Commands
 {
     public class LogoutCommand : BaseCommand
     {

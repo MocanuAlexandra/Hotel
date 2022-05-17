@@ -1,4 +1,5 @@
-﻿using Hotel.Models.DataAccesLayer;
+﻿using Hotel.DBContext;
+using Hotel.Models.DataAccesLayer;
 using Hotel.Models.EntityLayer;
 using System;
 using System.Collections.Generic;

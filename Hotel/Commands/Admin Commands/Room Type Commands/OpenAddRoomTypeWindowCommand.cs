@@ -1,11 +1,12 @@
-﻿using Hotel.Views.Admin_Views;
+﻿using Hotel.ViewModels;
+using Hotel.Views.Admin_Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.ViewModels.Commands.Admin_Commands
+namespace Hotel.Commands.Admin_Commands
 {
     public class OpenAddRoomTypeWindowCommand : BaseCommand
     {

@@ -1,5 +1,6 @@
 ﻿using Hotel.Models.BusinessLogicLayer;
 using Hotel.Utils;
+using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Hotel.ViewModels.Commands
+namespace Hotel.Commands.Welcome_Page_Commands
 {
     public class LoginCommand : BaseCommand
     {

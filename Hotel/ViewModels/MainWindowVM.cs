@@ -1,12 +1,12 @@
-﻿using Hotel.ViewModels.Commands;
-using Hotel.ViewModels;
+﻿using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Hotel.ViewModels.Commands.Navigation_Commands;
+using Hotel.Commands.Welcome_Page_Commands;
+using Hotel.Commands.Navigation_Commands;
 
 namespace Hotel.ViewModels
 {
