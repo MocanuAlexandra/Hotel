@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotel.Views"
-        xmlns:viewModels="clr-namespace:Hotel.ViewModels"
+        xmlns:viewModels="clr-namespace:Hotel.ViewModels.Admin_ViewModels"
         d:DataContext="{d:DesignInstance Type=viewModels:RoomTypeEditVM}"
         mc:Ignorable="d"
         Title="Edit Room Type" Height="360" Width="300" ResizeMode="NoResize">

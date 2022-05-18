@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.Models.DataAccessLayer
 {
-    public class RoomDAL
+    public static class RoomDAL
     {
         //adds a room to the database
         public static void AddRoom(Room room, RoomType roomType)
@@ -34,5 +34,7 @@ namespace Hotel.Models.DataAccessLayer
                 context.SaveChanges();
             }
         }
+
+        
     }
 }

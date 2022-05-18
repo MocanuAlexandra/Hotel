@@ -33,7 +33,7 @@
             <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
         </Grid.Background>
 
-        <TextBlock Text="Welcome to Aqua Hotel!"
+        <TextBlock Text="Welcome to Miami Beach Hotel!"
                    FontSize="30" Margin="0,63,0,448"
                    FontFamily="Segoe UI Black" 
                    HorizontalAlignment="Center"

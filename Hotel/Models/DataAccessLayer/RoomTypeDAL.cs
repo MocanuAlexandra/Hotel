@@ -14,12 +14,13 @@ namespace Hotel.Models.DataAccessLayer
     public static class RoomTypeDAL
     {
         //reads all room types from the database and also includes all rooms of the room type
+        // and all facilitie of the room type
         public static ObservableCollection<RoomType> GetRoomTypes()
         {
             using (var context = new HotelDBContext())
             {
-                return new ObservableCollection<RoomType>(
-                    context.RoomTypes.Include(nameof(RoomType.RoomsOfType)));
+                var roomTypes = context.RoomTypes.Include(rt => rt.RoomsOfType).Include(rt => rt.Facilities).ToList();
+                return new ObservableCollection<RoomType>(roomTypes);
             }
         }
 
@@ -62,5 +63,15 @@ namespace Hotel.Models.DataAccessLayer
                 return context.RoomTypes.Any(r => r.Name == name);
             }
         }
+
+        // gets id of a room type
+        public static int GetRoomTypeId(string name)
+        {
+            using (var context = new HotelDBContext())
+            {
+                return context.RoomTypes.FirstOrDefault(r => r.Name == name).Id;
+            }
+        }
+
     }
 }

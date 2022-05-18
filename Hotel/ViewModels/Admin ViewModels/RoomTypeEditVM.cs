@@ -1,5 +1,6 @@
-﻿using Hotel.Commands.Edit_Room_Type_Commands;
+﻿
 using Hotel.Commands.Navigation_Commands;
+using Hotel.Commands.Room_Type_Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

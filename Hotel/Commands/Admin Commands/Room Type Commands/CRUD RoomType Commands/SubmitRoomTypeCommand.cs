@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Hotel.Commands.Edit_Room_Type_Commands
+namespace Hotel.Commands.Room_Type_Commands
 {
     public class SubmitRoomTypeCommand : BaseCommand
     {
@@ -34,6 +34,7 @@ namespace Hotel.Commands.Edit_Room_Type_Commands
                 newRoomType.Capacity = capacity;
                 newRoomType.IsActive = true;
                 newRoomType.RoomsOfType = new ObservableCollection<Room>();
+                newRoomType.Facilities = new ObservableCollection<Facility>();
 
                 //add to the list and database
                 RoomTypeDAL.AddRoomType(newRoomType);
@@ -47,6 +48,7 @@ namespace Hotel.Commands.Edit_Room_Type_Commands
                     , MessageBoxImage.Error);
                 return false;
             }
+
         }
 
         //is executed if the edit window is open in edit mode

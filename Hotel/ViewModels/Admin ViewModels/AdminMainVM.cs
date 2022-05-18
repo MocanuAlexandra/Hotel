@@ -1,6 +1,9 @@
 ﻿using Hotel.Commands.Admin_Commands;
 using Hotel.Commands.Admin_Commands.Hotel_services_Commands;
 using Hotel.Commands.Admin_Commands.Room_Commands;
+using Hotel.Commands.Admin_Commands.Room_Facilities_Commands;
+using Hotel.Commands.Admin_Commands.Room_Facilities_Commands.CRUD_RoomFacilities_Commands;
+using Hotel.Commands.Admin_Commands.RoomFacilities_Commands;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
@@ -32,6 +35,14 @@ namespace Hotel.ViewModels
             set { _selectedHotelService = value; OnPropertyChanged(); }
         }
 
+        public ObservableCollection<FacilityVM> Facilities { get; set; }
+        private FacilityVM _selectedFacility;
+        public FacilityVM SelectedFacility
+        {
+            get { return _selectedFacility; }
+            set { _selectedFacility = value; OnPropertyChanged(); }
+        }
+
         #region Commands
 
         // room type commands
@@ -48,6 +59,12 @@ namespace Hotel.ViewModels
         public ICommand OpenAddServiceWindowCommand { get; set; }
         public ICommand DeleteHotelServiceCommand { get; set; }
 
+        // facility commands
+        public ICommand OpenAddRoomFacilityWindowCommand { get; set; }
+        public ICommand OpenEditRoomFacilityWindowCommand { get; set; }
+        public ICommand DeleteRoomFacilityCommand { get; set; }
+        public ICommand OpenAssignRoomFacilityCommand { get; set; }
+
         #endregion
 
         public AdminMainVM()
@@ -63,6 +80,11 @@ namespace Hotel.ViewModels
             OpenAddServiceWindowCommand = new OpenAddServiceWindowCommand(this);
             DeleteHotelServiceCommand = new DeleteHotelServiceCommand(this);
 
+            OpenAddRoomFacilityWindowCommand = new OpenAddRoomFacilityWindowCommand(this);
+            OpenEditRoomFacilityWindowCommand = new OpenEditRoomFacilityWindowCommand(this);
+            DeleteRoomFacilityCommand = new DeleteRoomFacilityCommand(this);
+            OpenAssignRoomFacilityCommand = new OpenAssignRoomFacilityCommand(this);
+
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypes())
@@ -72,6 +94,11 @@ namespace Hotel.ViewModels
             HotelServices = new ObservableCollection<HotelServicesVM>();
             foreach (var hotelService in HotelServiceDAL.GetHotelServices())
                 HotelServices.Add(new HotelServicesVM(hotelService));
+
+            //read the facilities, create wrapers and populate the list
+            Facilities = new ObservableCollection<FacilityVM>();
+            foreach (var facility in FacilityDAL.GetFacilities())
+                Facilities.Add(new FacilityVM(facility));
         }
     }
 }

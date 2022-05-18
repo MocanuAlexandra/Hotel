@@ -19,7 +19,7 @@ namespace Hotel.DBContext
         public DbSet<Client> Clients { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Room> Rooms { get; set; }
-       // public DbSet<Facility> Facilities { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
         public DbSet<HotelService> HotelServices { get; set; }
        // public DbSet<Booking> Bookings { get; set; }
        // public DbSet<Offer> Offers { get; set; }

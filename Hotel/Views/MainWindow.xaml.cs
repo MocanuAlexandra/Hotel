@@ -63,6 +63,15 @@ namespace Hotel.Views
                 //};
                 //_context.HotelServices.Add(hotelService);
 
+                //RoomType roomType = _context.RoomTypes.FirstOrDefault(x => x.Name == "Double");
+                //Facility facility = new Facility
+                //{
+                //    Name = "Free Wifi",
+                //    IsActive = true,
+                //    RoomType = roomType,
+                //};
+                //_context.Facilities.Add(facility);
+
                 // save the changes
                 _context.SaveChanges();
             }

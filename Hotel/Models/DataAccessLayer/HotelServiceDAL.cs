@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.Models.DataAccessLayer
 {
-    internal class HotelServiceDAL
+    public static class HotelServiceDAL
     {
         //reads all hotel services from the database
         public static ObservableCollection<HotelService> GetHotelServices()
