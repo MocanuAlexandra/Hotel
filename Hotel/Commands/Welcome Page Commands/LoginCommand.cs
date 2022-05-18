@@ -51,7 +51,11 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 else if (_loginBLL.IsClient())
                 {
                     _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
+                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+
                 }
+                
                 // if user is not admin or employee or guest, we can't load the view
                 // so we show an error message
                 else

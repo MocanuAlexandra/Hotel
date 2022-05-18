@@ -127,6 +127,7 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenAddRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenAssignRoomFacilityCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
+    <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
     <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.designer.cs">
@@ -243,6 +244,7 @@
     <Compile Include="ViewModels\Admin ViewModels\HotelServiceEditVM.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\ClientMainVM.cs" />
+    <Compile Include="ViewModels\GuestWindowVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\FacilityVM.cs" />
@@ -274,11 +276,11 @@
     <Compile Include="Views\Admin Views\AdminMainWindow.xaml.cs">
       <DependentUpon>AdminMainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EmployeeStartView.xaml.cs">
-      <DependentUpon>EmployeeStartView.xaml</DependentUpon>
+    <Compile Include="Views\Client Views\ClientMainView.xaml.cs">
+      <DependentUpon>ClientMainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClientStartView.xaml.cs">
-      <DependentUpon>ClientStartView.xaml</DependentUpon>
+    <Compile Include="Views\GuestWindow.xaml.cs">
+      <DependentUpon>GuestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Welcome Window Views\SignInView.xaml.cs">
       <DependentUpon>SignInView.xaml</DependentUpon>
@@ -321,11 +323,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EmployeeStartView.xaml">
+    <Page Include="Views\Client Views\ClientMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClientStartView.xaml">
+    <Page Include="Views\GuestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

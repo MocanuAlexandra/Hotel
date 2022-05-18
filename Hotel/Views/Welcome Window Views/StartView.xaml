@@ -84,7 +84,11 @@
                 Height="60" 
                 FontFamily="Segoe UI Black" 
                 FontWeight="Bold" 
-                FontSize="20" />
+                FontSize="20" 
+                CommandParameter="{Binding}"
+                Command="{Binding DataContext.GuestViewCommand, 
+                RelativeSource={RelativeSource Mode=FindAncestor, 
+                AncestorType={x:Type local:MainWindow}}}"/>
 
         <Button Style="{StaticResource RoundedButtonStyle}" 
                 Content="EXIT" 

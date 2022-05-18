@@ -57,6 +57,7 @@ namespace Hotel.ViewModels
         // navigation commands
         public ICommand LogoutCommand { get; set; }
         public ICommand CloseCommand { get; set; }
+        public ICommand GuestViewCommand { get; set; }
         #endregion
 
         public MainWindowVM()
@@ -73,6 +74,7 @@ namespace Hotel.ViewModels
             // navigation commands
             LogoutCommand = new LogoutCommand(this);
             CloseCommand = new CloseCommand(this);
+            GuestViewCommand = new GuestViewCommand(this);
 
             CurrentWidth = Utils.Constants.DefaultWindowSize.windowWidth;
             CurrentHeight = Utils.Constants.DefaultWindowSize.windowHeight;

@@ -20,11 +20,14 @@
         <DataTemplate DataType="{x:Type viewModels:AdminMainVM}">
             <views:AdminStartWiew/>
         </DataTemplate>
-        <!--<DataTemplate DataType="{x:Type viewModels:ClientStartVM}">
-            <views:ClientStartView/>
-        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type viewModels:ClientMainVM}">
+            <views:ClientMainView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:SignUpVM}">
             <views:SignUpView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:GuestWindowVM}">
+            <views:GuestWindow/>
         </DataTemplate>
     </Application.Resources>
 </Application>

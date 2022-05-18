@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels
 {
-    public class ClientMainVM : BaseViewModel
+    public class GuestWindowVM:BaseViewModel
     {
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
         public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
         public ObservableCollection<FacilityVM> Facilities { get; set; }
-        public ClientMainVM()
+        public GuestWindowVM()
         {
             // read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
@@ -28,3 +28,4 @@ namespace Hotel.ViewModels
         }
     }
 }
+
