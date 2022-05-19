@@ -54,6 +54,17 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
+        // verify if a facility is already assigned to a room type
+        public static bool IsFacilityAssignedToRoomType( int roomTypeId, int facilityId)
+        {
+            using (var context = new HotelDBContext())
+            {
+                var facility = context.Facilities.Where(f => f.Id == facilityId).FirstOrDefault();
+                var roomType = context.RoomTypes.Where(rt => rt.Id == roomTypeId).FirstOrDefault();
+                return facility.RoomTypes.Contains(roomType);
+            }
+        }
+
         // updates a facility in the database
         public static void UpdateFacility(Facility facility)
         {

@@ -9,19 +9,15 @@ namespace Hotel.Models.EntityLayer
 {
     public class Price
     {
-        // constructor
-        //public Price()
-        //{
-        //    this.RoomTypes = new HashSet<RoomType>();
-        //}
-        
-        [Key]
-        public int PriceId { get; set; }
-        public double PriceValue { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public int Id { get; set; }
+        public float Value { get; set; }
+        public string Description { get; set; }
+        public DateTime ValabilityStartDate { get; set; }
+        public DateTime ValabilityEndDate { get; set; }
 
-        // define relationship 1 to many with RoomType
-       // public ICollection<RoomType> RoomTypes { get; set; }
+        public int AssignedRoomTypeId { get; set; }
+        public RoomType AssignedRoomType { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

@@ -26,6 +26,16 @@ namespace Hotel.Commands.Admin_Commands.Room_Facilities_Commands.CRUD_RoomFacili
             var roomFacility = FacilityDAL.GetFacilityId(_assignRoomFacilityVM.SelectedFacility._facility.Name);
             var roomType = RoomTypeDAL.GetRoomTypeId(_assignRoomFacilityVM.SelectedRoomType._roomType.Name);
 
+            //verify if the room type already has the facility
+            if (FacilityDAL.IsFacilityAssignedToRoomType(roomType, roomFacility))
+            {
+                MessageBox.Show("The room type already has the facility!", "Error",
+                    MessageBoxButton.OK
+                   , MessageBoxImage.Error);
+                return;
+            }
+
+            // assign the facility to the room type
             FacilityDAL.AssignFacilityToRoomType(roomFacility, roomType);
 
             MessageBox.Show("Room facility assigned successfully!", "Success", MessageBoxButton.OK,

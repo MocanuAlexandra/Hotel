@@ -59,7 +59,7 @@
         </DockPanel>
         <DockPanel DockPanel.Dock="Top" Height="6"></DockPanel>
         <DockPanel DockPanel.Dock="Top" Height="94" Width="300">
-            <TextBlock Text="Enter room index: " 
+            <TextBlock Text="Enter room number: " 
                        FontFamily="Segoe UI Black" FontWeight="Bold" 
                        FontSize="16"
                    Foreground="Black" DockPanel.Dock="Top" Height="24" Width="196"/>

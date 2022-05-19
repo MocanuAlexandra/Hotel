@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:Hotel.Views"
              xmlns:viewModels="clr-namespace:Hotel.ViewModels"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=viewModels:ClientMainVM}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
+
     <!--We made a custom button style-->
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
@@ -46,6 +47,47 @@
                             RelativeSource={RelativeSource Mode=FindAncestor, 
                             AncestorType={x:Type local:MainWindow}}}"/>
         </StackPanel>
+
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal" Width="571" DockPanel.Dock="Left">
+                <StackPanel>
+                    <TextBlock Text="Start date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
+                    <DatePicker  
+                        DisplayDateStart="{x:Static sys:DateTime.Today}"
+                        FontSize="18">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="SelectionOpacity" Value="0"/>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                </StackPanel>
+                <StackPanel Margin="20, 0, 0, 0">
+                    <TextBlock Text="End date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
+                    <DatePicker
+                        DisplayDateStart="{x:Static sys:DateTime.Today}"
+                        FontSize="18">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="SelectionOpacity" Value="0"/>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                </StackPanel>
+                <!--<Button Content="Search" 
+                        FontWeight="Bold"
+                        Background="AliceBlue"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Margin="20, 0" Height="30" FontSize="18" Width="73"/>
+                <Button Content="Make Reservation" 
+                        FontWeight="Bold"
+                        Background="AliceBlue"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        FontSize="18" Height="30"/>-->
+            </StackPanel>
+        </DockPanel>
 
         <TabControl DockPanel.Dock="Top">
             <TabControl.Resources>

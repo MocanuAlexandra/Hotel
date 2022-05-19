@@ -209,11 +209,16 @@
     <Compile Include="Migrations\202205181000207_AddMNRelationFacilityRoomType1.designer.cs">
       <DependentUpon>202205181000207_AddMNRelationFacilityRoomType1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205190723111_UpdatePriceTable.cs" />
+    <Compile Include="Migrations\202205190723111_UpdatePriceTable.designer.cs">
+      <DependentUpon>202205190723111_UpdatePriceTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
     <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\PriceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
@@ -224,10 +229,10 @@
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Admin ViewModels\AssignRoomFacilityVM.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\RoomFacilityEditVM.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\AddRoomVM.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\AdminMainVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\AssignRoomFacilityVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\RoomFacilityEditVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\AddRoomVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\AdminMainVM.cs" />
     <Compile Include="Commands\Admin Commands\Room Commands\CRUD Room Commands\AddRoomCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Commands\OpenAddRoomWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Commands\OpenRemoveRoomWindowCommand.cs" />
@@ -241,7 +246,7 @@
     <Compile Include="Commands\Welcome Page Commands\SignInCommand.cs" />
     <Compile Include="Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\HotelServiceEditVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\HotelServiceEditVM.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\ClientMainVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
@@ -250,8 +255,8 @@
     <Compile Include="ViewModels\Model Wrappers\FacilityVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\HotelServicesVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\RemoveRoomVM.cs" />
-    <Compile Include="ViewModels\Admin ViewModels\RoomTypeEditVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\RemoveRoomVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\RoomTypeEditVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
@@ -495,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205181000207_AddMNRelationFacilityRoomType1.resx">
       <DependentUpon>202205181000207_AddMNRelationFacilityRoomType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205190723111_UpdatePriceTable.resx">
+      <DependentUpon>202205190723111_UpdatePriceTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -40,7 +40,10 @@ namespace Hotel.Commands.Admin_Commands.Room_Type_Commands.RoomFacilities_Comman
         private void ExecuteEdit()
         {
             _roomFacilityEditVM.AdminMainVM.SelectedFacility.Name =
-                _roomFacilityEditVM.FacilityName;     
+                _roomFacilityEditVM.FacilityName;
+
+            // save to database
+            FacilityDAL.UpdateFacility(_roomFacilityEditVM.AdminMainVM.SelectedFacility._facility);
         }
 
         public override void Execute(object parameter)
