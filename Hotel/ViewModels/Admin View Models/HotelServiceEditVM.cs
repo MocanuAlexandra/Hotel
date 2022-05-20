@@ -26,11 +26,17 @@ namespace Hotel.ViewModels.Admin_ViewModels
 
         #region Hotel Service Properties
         private string _hotelServiceName;
-
         public string HotelServiceName
         {
             get { return _hotelServiceName; }
             set { _hotelServiceName = value; OnPropertyChanged(); }
+        }
+
+        private string _price;
+        public string Price
+        {
+            get { return _price; }
+            set { _price = value; OnPropertyChanged(); }
         }
         #endregion
 
@@ -50,6 +56,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
             if (mode == HotelServiceEditMode.Edit)
             {
                 HotelServiceName = AdminMainVM.SelectedHotelService.Name;
+                Price = AdminMainVM.SelectedHotelService.Price.ToString();
             }
         }
 

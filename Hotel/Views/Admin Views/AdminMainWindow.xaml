@@ -225,14 +225,14 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <!--<GridViewColumn Header="Price" Width="250">
-                                --><!--<GridViewColumn.CellTemplate>
+                            <GridViewColumn Header="Price" Width="250">
+                                <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold" Height="30"  
+                                        <TextBlock Text="{Binding Price}"  FontSize="14" FontWeight="Bold" Height="30"  
                                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </DataTemplate>
-                                </GridViewColumn.CellTemplate>--><!--
-                            </GridViewColumn>-->
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
 
                             <GridView.ColumnHeaderContainerStyle>
                                 <Style TargetType="GridViewColumnHeader">

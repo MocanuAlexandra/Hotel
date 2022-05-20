@@ -22,6 +22,12 @@ namespace Hotel.ViewModels.Model_Wrappers
             get { return _hotelService.Name; }
             set { _hotelService.Name = value; OnPropertyChanged(); }
         }
+
+        public float Price
+        {
+            get { return _hotelService.Price; }
+            set { _hotelService.Price = value; OnPropertyChanged(); }
+        }
         public bool IsActive
         {
             get { return _hotelService.IsActive; }

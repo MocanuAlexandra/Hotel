@@ -42,7 +42,7 @@
             <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
         </DockPanel.Background>
 
-        <DockPanel DockPanel.Dock="Top" Height="53"></DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="21"></DockPanel>
         <DockPanel DockPanel.Dock="Top" Height="91" Width="296">
             <TextBlock Text="Enter hotel service: " 
                        FontFamily="Segoe UI Black" FontWeight="Bold" 
@@ -52,7 +52,20 @@
                   FontSize="18" FontWeight="Bold" DockPanel.Dock="Bottom" Height="32" Width="202"/>
         </DockPanel>
 
-        <DockPanel DockPanel.Dock="Bottom" Height="66" Width="202">
+        <DockPanel DockPanel.Dock="Top" Height="94" Width="300">
+        <TextBlock Text="Enter price: " 
+                       FontFamily="Segoe UI Black" FontWeight="Bold" 
+                       FontSize="16"
+                   Foreground="Black" DockPanel.Dock="Top" Height="24" Width="196"/>
+        <TextBox Width="200" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"
+                                     AcceptsReturn="False"
+                                     AcceptsTab="False"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     Margin="10, 0, 0, 0" FontSize="18" Height="32"/>
+    </DockPanel>
+    
+    <DockPanel DockPanel.Dock="Bottom" Height="66" Width="202">
             <StackPanel Orientation="Horizontal" Width="202">
                 <Button
                     Style="{StaticResource RoundedButtonStyle}"

@@ -20,9 +20,10 @@ namespace Hotel.Models.EntityLayer
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public float Price { get; set; }
 
         // define collection for many to many relationship
-       // public virtual ICollection<Booking> Bookings { get; set; }
+        // public virtual ICollection<Booking> Bookings { get; set; }
         //public virtual ICollection<Offer> Offers { get; set; }
 
         public bool IsActive { get; set; }

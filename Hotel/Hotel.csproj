@@ -213,6 +213,10 @@
     <Compile Include="Migrations\202205190723111_UpdatePriceTable.designer.cs">
       <DependentUpon>202205190723111_UpdatePriceTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205201243030_UpdateHotelServiceTable.cs" />
+    <Compile Include="Migrations\202205201243030_UpdateHotelServiceTable.designer.cs">
+      <DependentUpon>202205201243030_UpdateHotelServiceTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
@@ -230,6 +234,7 @@
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Admin View Models\AssignRoomFacilityVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\PriceEditVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RoomFacilityEditVM.cs" />
     <Compile Include="ViewModels\Admin View Models\AddRoomVM.cs" />
     <Compile Include="ViewModels\Admin View Models\AdminMainVM.cs" />
@@ -262,6 +267,9 @@
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
     <Compile Include="Views\Admin Views\AssignRoomFacilityWindow.xaml.cs">
       <DependentUpon>AssignRoomFacilityWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin Views\PriceEditView.xaml.cs">
+      <DependentUpon>PriceEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin Views\RoomFacilityEditWindow.xaml.cs">
       <DependentUpon>RoomFacilityEditWindow.xaml</DependentUpon>
@@ -301,6 +309,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Admin Views\AssignRoomFacilityWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\PriceEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -503,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205190723111_UpdatePriceTable.resx">
       <DependentUpon>202205190723111_UpdatePriceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205201243030_UpdateHotelServiceTable.resx">
+      <DependentUpon>202205201243030_UpdateHotelServiceTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
