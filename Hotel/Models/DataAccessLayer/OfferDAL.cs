@@ -29,7 +29,9 @@ namespace Hotel.Models.DataAccessLayer
         {
             using (var context = new HotelDBContext())
             {
-                var offers = context.Offers.Include(o => o.AssignedRoomType).ToList();
+                var offers = context.Offers.
+                    Include(o => o.AssignedRoomType).
+                    Include(hs => hs.HotelServices).ToList();
                 return new ObservableCollection<Offer>(offers);
             }
         }
@@ -63,6 +65,15 @@ namespace Hotel.Models.DataAccessLayer
             using (var context = new HotelDBContext())
             {
                 return context.Offers.FirstOrDefault(o => o.Description == name);
+            }
+        }
+
+        //get offer id by name
+        public static int GetOfferIdByName(string name)
+        {
+            using (var context = new HotelDBContext())
+            {
+                return context.Offers.FirstOrDefault(o => o.Description == name).Id;
             }
         }
     }

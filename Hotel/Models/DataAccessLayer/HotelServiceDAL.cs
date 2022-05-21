@@ -60,5 +60,38 @@ namespace Hotel.Models.DataAccessLayer
                 return context.HotelServices.Any(hs => hs.Name == name);
             }
         }
+
+        //assign a hotel service to an offer
+        public static void AssignHotelServiceToOffer(int hotelServiceId, int offerId)
+            
+        {
+            using (var context = new HotelDBContext())
+            {
+                var hotelService = context.HotelServices.Where(hs => hs.Id == hotelServiceId).FirstOrDefault();
+                var offer = context.Offers.Where(rt => rt.Id == offerId).FirstOrDefault();
+                hotelService.Offers.Add(offer);
+                context.SaveChanges();
+            }
+        }
+
+        //verify if a hotel service is assigned to an offer
+        public static bool IsHotelServiceAssignedToOffer(int hotelServiceId, int offerId)
+        {
+            using (var context = new HotelDBContext())
+            {
+                var hotelService = context.HotelServices.Where(hs => hs.Id == hotelServiceId).FirstOrDefault();
+                var offer = context.Offers.Where(rt => rt.Id == offerId).FirstOrDefault();
+                return hotelService.Offers.Contains(offer);
+            }
+        }
+
+        // get hotel service id by name
+        public static int GetHotelServiceIdByName(string name)
+        {
+            using (var context = new HotelDBContext())
+            {
+                return context.HotelServices.Where(hs => hs.Name == name).FirstOrDefault().Id;
+            }
+        }
     }
 }

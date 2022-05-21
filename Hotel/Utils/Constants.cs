@@ -23,7 +23,7 @@ namespace Hotel.Utils
 
         public struct AdminWindowSize
         {
-            public const int windowWidth = 950;
+            public const int windowWidth = 1000;
             public const int windowHeight = 600;
         }
         #endregion

@@ -68,6 +68,7 @@ namespace Hotel.ViewModels
         public ICommand OpenEditServiceWindowCommand { get; set; }
         public ICommand OpenAddServiceWindowCommand { get; set; }
         public ICommand DeleteHotelServiceCommand { get; set; }
+        public ICommand OpenAssignHotelServiceCommand { get; set; }
 
         // facility commands
         public ICommand OpenAddRoomFacilityWindowCommand { get; set; }
@@ -94,6 +95,7 @@ namespace Hotel.ViewModels
             OpenEditServiceWindowCommand = new OpenEditServiceWindowCommand(this);
             OpenAddServiceWindowCommand = new OpenAddServiceWindowCommand(this);
             DeleteHotelServiceCommand = new DeleteHotelServiceCommand(this);
+            OpenAssignHotelServiceCommand = new OpenAssignHotelServiceCommand(this);
 
             OpenAddRoomFacilityWindowCommand = new OpenAddRoomFacilityWindowCommand(this);
             OpenEditRoomFacilityWindowCommand = new OpenEditRoomFacilityWindowCommand(this);

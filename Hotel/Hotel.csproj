@@ -116,8 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\AssignHotelServiceToOfferCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\DeleteHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenAddServiceWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenAssignHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenEditServiceWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\SubmitHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Offers Commands\CRUD Offer Commands\DeleteOfferCommand.cs" />
@@ -248,6 +250,7 @@
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Admin View Models\AssignRoomFacilityVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\AssignHotelServiceToOfferVM.cs" />
     <Compile Include="ViewModels\Admin View Models\OfferEditVM.cs" />
     <Compile Include="ViewModels\Admin View Models\PriceEditVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RoomFacilityEditVM.cs" />
@@ -281,6 +284,9 @@
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
+    <Compile Include="Views\Admin Views\AssignHotelServiceWindow.xaml.cs">
+      <DependentUpon>AssignHotelServiceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin Views\AssignRoomFacilityWindow.xaml.cs">
       <DependentUpon>AssignRoomFacilityWindow.xaml</DependentUpon>
     </Compile>
@@ -324,6 +330,10 @@
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\AssignHotelServiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

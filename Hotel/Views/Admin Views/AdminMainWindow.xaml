@@ -7,7 +7,7 @@
              xmlns:viewModels="clr-namespace:Hotel.ViewModels" 
              d:DataContext="{d:DesignInstance Type=viewModels:AdminMainVM}"
              mc:Ignorable="d" 
-                d:DesignHeight="600" d:DesignWidth="950">
+                d:DesignHeight="600" d:DesignWidth="1000">
 
     <!--We made a custom button style-->
     <UserControl.Resources>
@@ -87,6 +87,7 @@
                 <MenuItem Header="New" Command="{Binding OpenAddServiceWindowCommand}"/>
                 <MenuItem Header="Edit" Command="{Binding OpenEditServiceWindowCommand}"/>
                 <MenuItem Header="Delete" Command="{Binding DeleteHotelServiceCommand}"/>
+                <MenuItem Header="Assign to offer" Command="{Binding OpenAssignHotelServiceCommand}"/>
             </MenuItem>
 
             <!--Room facilities-->
@@ -341,7 +342,20 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="Price" Width="150" >
+                            <GridViewColumn Header="Hotel services" Width="180" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding HotelServices}"
+                                        DisplayMemberPath="Name"
+                                        Width="160" Height="30" FontSize="18"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                      />
+                                      </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            
+                            <GridViewColumn Header="Price" Width="160" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Price}" FontSize="14" FontWeight="Bold"  />
