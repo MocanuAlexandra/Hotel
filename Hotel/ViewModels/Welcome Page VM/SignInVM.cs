@@ -11,7 +11,7 @@ namespace Hotel.ViewModels
     public class SignInVM : BaseViewModel
     {
 
-        #region DataMembers
+        #region Properties
 
         private string _email;
         public string Email
@@ -60,7 +60,6 @@ namespace Hotel.ViewModels
             }
         }
         #endregion
-
         public SignInVM()
         {
 

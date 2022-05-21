@@ -62,6 +62,15 @@ namespace Hotel.Commands.Navigation_Commands
                 _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
                 _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
             }
+
+            //if we execute logoiut from employee window
+            if (parameter is EmployeeMainVM)
+            {
+                _mainWindowViewModel.CurrentViewModel = new StartVM();
+
+                _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+            }
         }
     }
 }

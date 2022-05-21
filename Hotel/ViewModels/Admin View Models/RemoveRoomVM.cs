@@ -14,6 +14,7 @@ namespace Hotel.ViewModels
 {
     public class RemoveRoomVM : BaseViewModel, Utils.Utility.ICloseWindows
     {
+        #region Properties
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
 
         private string _roomNumber;
@@ -49,6 +50,8 @@ namespace Hotel.ViewModels
             }
         }
 
+        #endregion
+        
         #region Commands
         public ICommand RemoveRoomCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -61,7 +64,8 @@ namespace Hotel.ViewModels
             RemoveRoomCommand = new RemoveRoomCommand(this);
             CloseCommand = new CloseCommand(this);
         }
-        
+
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -70,5 +74,6 @@ namespace Hotel.ViewModels
             Close?.Invoke();
         }
 
+        #endregion
     }
 }

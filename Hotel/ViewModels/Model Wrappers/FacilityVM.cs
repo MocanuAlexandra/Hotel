@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
+    //wrapper class for Facility model that will be used in the view model as a representative
     public class FacilityVM:BaseViewModel
     {
         public readonly Facility _facility;

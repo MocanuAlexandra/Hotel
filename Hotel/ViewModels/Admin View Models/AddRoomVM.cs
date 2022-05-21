@@ -15,6 +15,8 @@ namespace Hotel.ViewModels
     {
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
 
+        #region Properties
+        
         private string _roomNumber;
         public string RoomNumber
         {
@@ -36,7 +38,8 @@ namespace Hotel.ViewModels
                 OnPropertyChanged();
             }
         }
-
+        #endregion
+        
         #region Commands
         public ICommand AddRoomCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -50,6 +53,7 @@ namespace Hotel.ViewModels
             CloseCommand = new CloseCommand(this);
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -57,6 +61,7 @@ namespace Hotel.ViewModels
             //windows that use this viewModel (see MainWindow code-behind)
             Close?.Invoke();
         }
+        #endregion
     }
 }
 

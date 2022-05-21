@@ -317,6 +317,9 @@
     <Compile Include="Views\Client Views\ClientMainView.xaml.cs">
       <DependentUpon>ClientMainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EmployeeMainView.xaml.cs">
+      <DependentUpon>EmployeeMainView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GuestWindow.xaml.cs">
       <DependentUpon>GuestWindow.xaml</DependentUpon>
     </Compile>
@@ -374,6 +377,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Client Views\ClientMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

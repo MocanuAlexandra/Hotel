@@ -60,6 +60,7 @@ namespace Hotel.ViewModels
             }
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -67,5 +68,6 @@ namespace Hotel.ViewModels
             //windows that use this viewModel 
             Close?.Invoke();
         }
+        #endregion
     }
 }

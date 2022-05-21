@@ -21,31 +21,34 @@ namespace Hotel.ViewModels
 {
     public class AdminMainVM : BaseViewModel
     {
+        #region Properties
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
+        public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
+        public ObservableCollection<FacilityVM> Facilities { get; set; }
+        public ObservableCollection<OfferVM> Offers { get; set; }
+        
+
         private RoomTypeVM _selectedRoomType;
         public RoomTypeVM SelectedRoomType
         {
             get { return _selectedRoomType; }
             set { _selectedRoomType = value; OnPropertyChanged(); }
         }
-
-        public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
+  
         private HotelServicesVM _selectedHotelService;
         public HotelServicesVM SelectedHotelService
         {
             get { return _selectedHotelService; }
             set { _selectedHotelService = value; OnPropertyChanged(); }
         }
-
-        public ObservableCollection<FacilityVM> Facilities { get; set; }
+  
         private FacilityVM _selectedFacility;
         public FacilityVM SelectedFacility
         {
             get { return _selectedFacility; }
             set { _selectedFacility = value; OnPropertyChanged(); }
         }
-
-        public ObservableCollection<OfferVM> Offers { get; set; }
+       
         private OfferVM _selectedOffer;
         public OfferVM SelectedOffer
         {
@@ -53,6 +56,8 @@ namespace Hotel.ViewModels
             set { _selectedOffer = value; OnPropertyChanged(); }
         }
 
+        #endregion
+        
         #region Commands
 
         // room type commands

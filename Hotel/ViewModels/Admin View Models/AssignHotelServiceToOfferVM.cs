@@ -13,6 +13,7 @@ namespace Hotel.ViewModels.Admin_View_Models
 {
     public class AssignHotelServiceToOfferVM : BaseViewModel, Utils.Utility.ICloseWindows
     {
+        #region Properties
         public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
         public ObservableCollection<OfferVM> Offers { get; set; }
 
@@ -40,6 +41,8 @@ namespace Hotel.ViewModels.Admin_View_Models
             }
         }
 
+        #endregion
+        
         #region Commands
         public ICommand AssignCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -48,6 +51,7 @@ namespace Hotel.ViewModels.Admin_View_Models
         public AssignHotelServiceToOfferVM(AdminMainVM adminMainVM)
         {
             AdminMainVM = adminMainVM;
+            
             HotelServices = new ObservableCollection<HotelServicesVM>(adminMainVM.HotelServices);
             Offers = new ObservableCollection<OfferVM>(adminMainVM.Offers);
 
@@ -55,6 +59,7 @@ namespace Hotel.ViewModels.Admin_View_Models
             CloseCommand = new CloseCommand(this);
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -62,5 +67,7 @@ namespace Hotel.ViewModels.Admin_View_Models
             //windows that use this viewModel (see MainWindow code-behind)
             Close?.Invoke();
         }
+
+        #endregion
     }
 }

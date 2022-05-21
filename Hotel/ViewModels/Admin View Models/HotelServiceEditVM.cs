@@ -25,6 +25,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
         public string SubmitButtonContent => Mode.ToString();
 
         #region Hotel Service Properties
+        
         private string _hotelServiceName;
         public string HotelServiceName
         {
@@ -60,6 +61,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
             }
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -67,5 +69,6 @@ namespace Hotel.ViewModels.Admin_ViewModels
             //windows that use this viewModel 
             Close?.Invoke();
         }
+        #endregion
     }
 }

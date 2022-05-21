@@ -13,10 +13,12 @@ namespace Hotel.ViewModels.Admin_ViewModels
 {
     public class AssignRoomFacilityVM : BaseViewModel, Utils.Utility.ICloseWindows
     {
+
+        #region Properties
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
         public ObservableCollection<FacilityVM> Facilities { get; set; }
 
-        AdminMainVM AdminMainVM { get; set; }
+        public AdminMainVM AdminMainVM { get; set; }
 
         private RoomTypeVM _selectedRoomType;
         public RoomTypeVM SelectedRoomType
@@ -40,6 +42,8 @@ namespace Hotel.ViewModels.Admin_ViewModels
             }
         }
 
+        #endregion
+        
         #region Commands
         public ICommand AssignCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -55,6 +59,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
             CloseCommand = new CloseCommand(this);
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -63,5 +68,6 @@ namespace Hotel.ViewModels.Admin_ViewModels
             Close?.Invoke();
         }
 
+        #endregion
     }
 }

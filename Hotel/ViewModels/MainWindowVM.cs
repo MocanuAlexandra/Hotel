@@ -12,6 +12,8 @@ namespace Hotel.ViewModels
 {
     public class MainWindowVM : BaseViewModel, Utils.Utility.ICloseWindows
     {
+        #region Properties
+
         private BaseViewModel _currentViewModel;
         public int _currentHeight;
         public int _currentWidth;
@@ -48,7 +50,11 @@ namespace Hotel.ViewModels
 
         public StartVM StartVM { get; set; }
 
+        #endregion
+
         #region Commands
+
+        // welcome window commands
         public ICommand SignInCommand { get; set; }
         public ICommand LoginCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
@@ -65,9 +71,9 @@ namespace Hotel.ViewModels
             StartVM = new StartVM();
             CurrentViewModel = StartVM;
 
+            // welcome window commands
             SignInCommand = new SignInCommand(this);
             LoginCommand = new LoginCommand(this);
-
             SignUpCommand = new SignUpCommand(this);
             RegisterCommand = new RegisterCommand(this);
 
@@ -80,7 +86,7 @@ namespace Hotel.ViewModels
             CurrentHeight = Utils.Constants.DefaultWindowSize.windowHeight;
         }
 
-
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -88,5 +94,7 @@ namespace Hotel.ViewModels
             //windows that use this viewModel (see MainWindow code-behind)
             Close?.Invoke();
         }
+
+        #endregion
     }
 }

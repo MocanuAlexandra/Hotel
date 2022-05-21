@@ -45,6 +45,8 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 else if (_loginBLL.IsEmployee())
                 {
                     _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM();
+                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
                 }
 
                 // verify if user is guest so we can load the guest view

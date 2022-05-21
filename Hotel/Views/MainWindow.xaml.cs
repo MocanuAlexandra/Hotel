@@ -32,51 +32,6 @@ namespace Hotel.Views
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var _context = new HotelDBContext())
-            {
-
-                //// create an admin
-                //Admin admin = new Admin
-                //{
-                //    Email = "mocanu.alexandra@adminhotel.com",
-                //    Password = Utility.HashPassword("admin1234"),
-                //    IsActive = true
-                //};
-                //// add the admin to the db
-                //_context.Admins.Add(admin);
-
-
-                ////create an employee
-                //Employee employee = new Employee
-                //{
-                //    Email = "muntean.raluca@employee-hotel.com",
-                //    Password = Utility.HashPassword("employee1234"),
-                //    IsActive = true
-                //};
-                //_context.Employees.Add(employee);
-
-                // create a hotel service
-                //HotelService hotelService = new HotelService
-                //{
-                //    Name = "Breakfast",
-                //    IsActive = true,
-                //};
-                //_context.HotelServices.Add(hotelService);
-
-                //RoomType roomType = _context.RoomTypes.FirstOrDefault(x => x.Name == "Double");
-                //Facility facility = new Facility
-                //{
-                //    Name = "Free Wifi",
-                //    IsActive = true,
-                //    RoomType = roomType,
-                //};
-                //_context.Facilities.Add(facility);
-
-                // save the changes
-                _context.SaveChanges();
-            }
-            
-            
             if (DataContext is Utility.ICloseWindows viewModel)
                 viewModel.Close += () => { this.Close(); };
         }

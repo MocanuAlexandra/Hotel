@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
-    //wrapper class for Offer model that will be used in the view model as a representative
-    
+    //wrapper class for Offer model that will be used in the view model as a representative 
     public class OfferVM:BaseViewModel
     {
         public readonly Offer _offer;

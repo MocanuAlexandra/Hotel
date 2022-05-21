@@ -25,6 +25,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
         //displays create if the window is opened in create mode, or edit if it is opened in edit mode
         public string SubmitButtonContent => Mode.ToString();
 
+        #region Properties
         private string _facilityName;
         public string FacilityName
         {
@@ -36,6 +37,8 @@ namespace Hotel.ViewModels.Admin_ViewModels
             }
         }
 
+        #endregion
+        
         #region Commands
         public ICommand SubmitRoomFacilityCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -56,6 +59,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
             }
         }
 
+        #region Methods
         public Action Close { get; set; }
         public void CloseWindow()
         {
@@ -63,6 +67,7 @@ namespace Hotel.ViewModels.Admin_ViewModels
             //windows that use this viewModel (see MainWindow code-behind)
             Close?.Invoke();
         }
+        #endregion
     }
 }
 

@@ -9,7 +9,7 @@ namespace Hotel.ViewModels
 {
     public class SignUpVM : BaseViewModel
     {
-        #region DataMembers
+        #region Properties
 
         private string _firstname;
         public string FirstName

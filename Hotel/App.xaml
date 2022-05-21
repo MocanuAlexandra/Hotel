@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:Hotel.Views"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
+        
         <!--providing view - viewModel correlation for the UI to know how to change
         views based on the currentViewModel from the MainWindowViewModel-->
         <DataTemplate DataType="{x:Type viewModels:StartVM}">
@@ -14,9 +15,9 @@
         <DataTemplate DataType="{x:Type viewModels:SignInVM}">
             <views:SignInView/>
         </DataTemplate>
-        <!--<DataTemplate DataType="{x:Type viewModels:EmployeeStartVM}">
-            <views:EmployeeStartView/>
-        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type viewModels:EmployeeMainVM}">
+            <views:EmployeeMainView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:AdminMainVM}">
             <views:AdminStartWiew/>
         </DataTemplate>
