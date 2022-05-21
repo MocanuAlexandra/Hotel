@@ -15,7 +15,7 @@ namespace Hotel.Models.DataAccesLayer
         public LoginDAL() { }
 
         // this method is used to check if admin is in databse or not
-        public int IsAdminInDB(string email, string password)
+        public static int IsAdminInDB(string email, string password)
         {
             using (var hotelDBContext = new HotelDBContext())
             {
@@ -47,7 +47,7 @@ namespace Hotel.Models.DataAccesLayer
         }
 
         // this method is used to check if employee is in databse or not
-        public int IsEmployeeInDB(string email, string password)
+        public static int IsEmployeeInDB(string email, string password)
         {
             using (var hotelDBContext = new HotelDBContext())
             {
@@ -79,7 +79,7 @@ namespace Hotel.Models.DataAccesLayer
         }
 
         // this method is used to check if client is in databse or not
-        public int IsClientInDB(string email, string password)
+        public static int IsClientInDB(string email, string password)
         {
             using (var hotelDBContext = new HotelDBContext())
             {

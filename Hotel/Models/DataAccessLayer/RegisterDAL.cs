@@ -13,7 +13,7 @@ namespace Hotel.Models.DataAccessLayer
     {
         public RegisterDAL() { }
 
-        public bool CanRegisterClient(string firstname, string lastname, string email, string password, string phone)
+        public static bool CanRegisterClient(string firstname, string lastname, string email, string password, string phone)
         {
             using (var hotelDBContext = new HotelDBContext())
             {

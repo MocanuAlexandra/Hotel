@@ -1,4 +1,4 @@
-﻿using Hotel.Models.BusinessLogicLayer;
+﻿using Hotel.Models.DataAccesLayer;
 using Hotel.Utils;
 using Hotel.ViewModels;
 using System;
@@ -23,8 +23,7 @@ namespace Hotel.Commands.Welcome_Page_Commands
             var signInVM = parameter as SignInVM;
             if (parameter is SignInVM)
             {
-                LoginBLL _loginBLL = new LoginBLL(signInVM.Email, signInVM.Password);
-
+              
                 // verify if Email and Password fileds are empty
                 if (string.IsNullOrEmpty(signInVM.Email) || string.IsNullOrEmpty(signInVM.Password))
                 {
@@ -32,36 +31,48 @@ namespace Hotel.Commands.Welcome_Page_Commands
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                
+
                 // verify if user is admin so we can load the admin view
-                if (_loginBLL.IsAdmin())
+                // first we check if the format of the email is correct
+                if (Utility.IsAdminEmail(signInVM.Email))
                 {
-                    _mainWindowViewModel.CurrentViewModel = new AdminMainVM();
-                    _mainWindowViewModel.CurrentHeight = Constants.AdminWindowSize.windowHeight;
-                    _mainWindowViewModel.CurrentWidth = Constants.AdminWindowSize.windowWidth;
+                    // then we check if the admin exists in the database
+                    if (LoginDAL.IsAdminInDB(signInVM.Email, signInVM.Password) != 0)
+                    {
+                        _mainWindowViewModel.CurrentViewModel = new AdminMainVM();
+                        _mainWindowViewModel.CurrentHeight = Constants.AdminWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.AdminWindowSize.windowWidth;
+                    }
                 }
 
                 // verify if user is employee so we can load the employee view
-                else if (_loginBLL.IsEmployee())
+                else if (Utility.IsEmployeeEmail(signInVM.Email))
                 {
-                    _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM();
-                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                    // then we check if the employee exists in the database
+                    if (LoginDAL.IsEmployeeInDB(signInVM.Email, signInVM.Password) != 0)
+                    {
+                        _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM();
+                        _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                    }
                 }
 
                 // verify if user is guest so we can load the guest view
-                else if (_loginBLL.IsClient())
+                else if (Utility.IsClientEmail(signInVM.Email))
                 {
-                    _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
-                    _mainWindowViewModel.CurrentHeight = Constants.AdminWindowSize.windowHeight;
-                    _mainWindowViewModel.CurrentWidth = Constants.AdminWindowSize.windowWidth;
+                    // then we check if the guest exists in the database
+                    if (LoginDAL.IsClientInDB(signInVM.Email, signInVM.Password) != 0)
+                    {
+                        _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
+                        _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                    }
+                }             
 
-                }
-                
                 // if user is not admin or employee or guest, we can't load the view
                 // so we show an error message
                 else
-                    MessageBox.Show("Wrong email or password!", "Login error", 
+                    MessageBox.Show("Wrong email or password!", "Login error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

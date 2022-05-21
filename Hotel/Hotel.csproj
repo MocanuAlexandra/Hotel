@@ -231,8 +231,6 @@
     <Compile Include="Migrations\202205210718134_Add1MRelationRoomTypeOffers.designer.cs">
       <DependentUpon>202205210718134_Add1MRelationRoomTypeOffers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BusinessLogicLayer\LoginBLL.cs" />
-    <Compile Include="Models\BusinessLogicLayer\RegisterBLL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
     <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />

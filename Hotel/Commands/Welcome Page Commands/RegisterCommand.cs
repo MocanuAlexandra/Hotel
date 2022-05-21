@@ -1,4 +1,6 @@
-﻿using Hotel.Models.BusinessLogicLayer;
+﻿
+using Hotel.Models.DataAccessLayer;
+using Hotel.Utils;
 using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,9 +24,6 @@ namespace Hotel.Commands.Welcome_Page_Commands
             var signUpVM = parameter as SignUpVM;
             if (parameter is SignUpVM)
             {
-                RegisterBLL _registerBLL = new RegisterBLL(signUpVM.FirstName,
-                    signUpVM.LastName, signUpVM.Email, signUpVM.Password, signUpVM.Phone);
-
                 // verify if fields are empty
                 if (string.IsNullOrEmpty(signUpVM.FirstName) || string.IsNullOrEmpty(signUpVM.LastName) ||
                     string.IsNullOrEmpty(signUpVM.Email) || string.IsNullOrEmpty(signUpVM.Password) ||
@@ -34,11 +33,17 @@ namespace Hotel.Commands.Welcome_Page_Commands
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-              
-                // verify if we can register the user
-                if (_registerBLL.RegisterSucceded())
+
+                // first we hash the password
+                // then we check if the email is already in the database
+                // if it is not, we add the user to the database and return true
+                string hashedPassword = Utils.Utility.HashPassword(signUpVM.Password);
+                if (RegisterDAL.CanRegisterClient(signUpVM.FirstName, signUpVM.LastName, signUpVM.Email,
+                    hashedPassword, signUpVM.Phone))
                 {
                     _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
+                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
                 }
                 else
                 {
