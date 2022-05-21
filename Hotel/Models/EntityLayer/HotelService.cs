@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,7 @@ namespace Hotel.Models.EntityLayer
         // constructor
         public HotelService()
         {
-            //this.Bookings = new HashSet<Booking>();
-            //this.Offers = new HashSet<Offer>();
+            this.Offers = new ObservableCollection<Offer>();
         }
 
         // define primary key
@@ -23,8 +23,7 @@ namespace Hotel.Models.EntityLayer
         public float Price { get; set; }
 
         // define collection for many to many relationship
-        // public virtual ICollection<Booking> Bookings { get; set; }
-        //public virtual ICollection<Offer> Offers { get; set; }
+        public virtual ObservableCollection<Offer> Offers { get; set; }
 
         public bool IsActive { get; set; }
     }

@@ -62,7 +62,7 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        //deletes a price from the database
+        //deletes a price from the database 
         public static void DeletePrice(Price price)
         {
             using (var context = new HotelDBContext())

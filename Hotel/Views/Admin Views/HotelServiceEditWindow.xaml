@@ -7,7 +7,7 @@
         xmlns:viewModels="clr-namespace:Hotel.ViewModels.Admin_ViewModels"
         d:DataContext="{d:DesignInstance Type=viewModels:HotelServiceEditVM}"
         mc:Ignorable="d"
-      Title="Edit Room Type" Height="300" Width="300" ResizeMode="NoResize">
+        Title="Edit Room Type" Height="300" Width="300" ResizeMode="NoResize">
 
     <!--We made a custom button style-->
     <Window.Resources>
@@ -57,12 +57,12 @@
                        FontFamily="Segoe UI Black" FontWeight="Bold" 
                        FontSize="16"
                    Foreground="Black" DockPanel.Dock="Top" Height="24" Width="196"/>
-        <TextBox Width="200" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox Width="204" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"
                                      AcceptsReturn="False"
                                      AcceptsTab="False"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
-                                     Margin="10, 0, 0, 0" FontSize="18" Height="32"/>
+                                     Margin="0, 0, 0, 0" FontSize="18" Height="32"/>
     </DockPanel>
     
     <DockPanel DockPanel.Dock="Bottom" Height="66" Width="202">

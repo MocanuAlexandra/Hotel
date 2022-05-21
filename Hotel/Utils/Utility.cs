@@ -89,6 +89,14 @@ namespace Hotel.Utils
                 return false;
             return Regex.IsMatch(roomFacilityName, "^[- _]*[a-zA-Z0-9][- a-zA-Z0-9_]*$");
         }
+
+        //check if offer name is valid
+        public static bool CheckIfOfferNameIsValid(string offerName)
+        {
+            if (string.IsNullOrEmpty(offerName) || offerName.Length < 1)
+                return false;
+            return Regex.IsMatch(offerName, "^[- _]*[a-zA-Z0-9][- a-zA-Z0-9_]*$");
+        }
         #endregion
 
         #region Others

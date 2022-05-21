@@ -22,7 +22,7 @@ namespace Hotel.DBContext
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<HotelService> HotelServices { get; set; }
        // public DbSet<Booking> Bookings { get; set; }
-       // public DbSet<Offer> Offers { get; set; }
+        public DbSet<Offer> Offers { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Price> Prices { get; set; }
     }

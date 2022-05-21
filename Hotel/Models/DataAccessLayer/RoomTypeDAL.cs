@@ -19,7 +19,9 @@ namespace Hotel.Models.DataAccessLayer
         {
             using (var context = new HotelDBContext())
             {
-                var roomTypes = context.RoomTypes.Include(rt => rt.RoomsOfType).Include(rt => rt.Facilities).ToList();
+                var roomTypes = context.RoomTypes.
+                    Include(rt => rt.RoomsOfType).
+                    Include(rt => rt.Facilities).ToList();
                 return new ObservableCollection<RoomType>(roomTypes);
             }
         }
@@ -39,39 +41,39 @@ namespace Hotel.Models.DataAccessLayer
         {
             using (var context = new HotelDBContext())
             {
-                context.Entry(roomType).State = EntityState.Modified;
+                var existingRoomType = context.RoomTypes.Find(roomType.Id);
+                context.Entry(existingRoomType).CurrentValues.SetValues(roomType);
                 context.SaveChanges();
             }
         }
 
-        // deletes a room type from the database
+        //deletes a room type from the database
         public static void DeleteRoomType(RoomType roomType)
         {
             using (var context = new HotelDBContext())
             {
-                roomType.IsActive = false;
-                context.Entry(roomType).State = EntityState.Deleted;
+                context.RoomTypes.Attach(roomType);
+                context.RoomTypes.Remove(roomType);
                 context.SaveChanges();
             }
         }
 
-        //check if a room type exists in the database by its name
-        public static bool RoomTypeExists(string name)
+    //check if a room type exists in the database by its name
+    public static bool RoomTypeExists(string name)
+    {
+        using (var context = new HotelDBContext())
         {
-            using (var context = new HotelDBContext())
-            {
-                return context.RoomTypes.Any(r => r.Name == name);
-            }
+            return context.RoomTypes.Any(r => r.Name == name);
         }
+    }
 
-        // gets id of a room type
-        public static int GetRoomTypeId(string name)
+    // gets id of a room type
+    public static int GetRoomTypeId(string name)
+    {
+        using (var context = new HotelDBContext())
         {
-            using (var context = new HotelDBContext())
-            {
-                return context.RoomTypes.FirstOrDefault(r => r.Name == name).Id;
-            }
+            return context.RoomTypes.FirstOrDefault(r => r.Name == name).Id;
         }
-
+    }
     }
 }

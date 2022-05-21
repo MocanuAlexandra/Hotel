@@ -1,5 +1,7 @@
 ﻿using Hotel.Commands.Admin_Commands;
 using Hotel.Commands.Admin_Commands.Hotel_services_Commands;
+using Hotel.Commands.Admin_Commands.Offers_Commands;
+using Hotel.Commands.Admin_Commands.Offers_Commands.CRUD_Offer_Commands;
 using Hotel.Commands.Admin_Commands.Room_Commands;
 using Hotel.Commands.Admin_Commands.Room_Facilities_Commands;
 using Hotel.Commands.Admin_Commands.Room_Facilities_Commands.CRUD_RoomFacilities_Commands;
@@ -43,6 +45,14 @@ namespace Hotel.ViewModels
             set { _selectedFacility = value; OnPropertyChanged(); }
         }
 
+        public ObservableCollection<OfferVM> Offers { get; set; }
+        private OfferVM _selectedOffer;
+        public OfferVM SelectedOffer
+        {
+            get { return _selectedOffer; }
+            set { _selectedOffer = value; OnPropertyChanged(); }
+        }
+
         #region Commands
 
         // room type commands
@@ -65,6 +75,11 @@ namespace Hotel.ViewModels
         public ICommand DeleteRoomFacilityCommand { get; set; }
         public ICommand OpenAssignRoomFacilityCommand { get; set; }
 
+        // offers commands
+        public ICommand OpenAddOfferWindowCommand { get; set; }
+        public ICommand OpenEditOfferWindowCommand { get; set; }
+        public ICommand DeleteOfferCommand { get; set; }
+
         #endregion
 
         public AdminMainVM()
@@ -85,6 +100,10 @@ namespace Hotel.ViewModels
             DeleteRoomFacilityCommand = new DeleteRoomFacilityCommand(this);
             OpenAssignRoomFacilityCommand = new OpenAssignRoomFacilityCommand(this);
 
+            OpenAddOfferWindowCommand = new OpenAddOfferWindowCommand(this);
+            OpenEditOfferWindowCommand = new OpenEditOfferWindowCommand(this);
+            DeleteOfferCommand = new DeleteOfferCommand(this);
+
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypes())
@@ -99,6 +118,11 @@ namespace Hotel.ViewModels
             Facilities = new ObservableCollection<FacilityVM>();
             foreach (var facility in FacilityDAL.GetFacilities())
                 Facilities.Add(new FacilityVM(facility));
+
+            //read the offers, create wrapers and populate the list
+            Offers = new ObservableCollection<OfferVM>();
+            foreach (var offer in OfferDAL.GetAllOffers())
+                Offers.Add(new OfferVM(offer));
         }
     }
 }

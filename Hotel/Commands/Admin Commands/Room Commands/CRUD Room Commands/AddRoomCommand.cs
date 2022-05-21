@@ -23,7 +23,6 @@ namespace Hotel.Commands.Admin_Commands.Room_Commands
         public override void Execute(object parameter)
         {
             //check if the room number is valid and if it is, add the room to the database
-            //and update the roomType list
             if (int.TryParse(_addRoomViewModel.RoomNumber, out int roomNumber))
             {
                 Room room = new Room()
@@ -42,7 +41,7 @@ namespace Hotel.Commands.Admin_Commands.Room_Commands
                 MessageBox.Show("Room number is not valid!", "Error", MessageBoxButton.OK,
                     MessageBoxImage.Error);
 
-            // after adding the roo, we close the window
+            // after adding the room, we close the window
             _addRoomViewModel.CloseWindow();
         }
 

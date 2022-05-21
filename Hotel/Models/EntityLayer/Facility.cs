@@ -14,6 +14,7 @@ namespace Hotel.Models.EntityLayer
         {
             this.RoomTypes = new ObservableCollection<RoomType>();
         }
+        
         [Key] 
         public int Id { get; set; }
         public string Name { get; set; }
