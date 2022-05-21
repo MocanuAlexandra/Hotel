@@ -51,8 +51,8 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 else if (_loginBLL.IsClient())
                 {
                     _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
-                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                    _mainWindowViewModel.CurrentHeight = Constants.AdminWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.AdminWindowSize.windowWidth;
 
                 }
                 
