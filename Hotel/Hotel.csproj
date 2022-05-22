@@ -133,6 +133,8 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenAddRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenAssignRoomFacilityCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\DeletePriceCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\SubmitPriceCommand.cs" />
     <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
     <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
@@ -269,13 +271,14 @@
     <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
     <Compile Include="ViewModels\Admin View Models\HotelServiceEditVM.cs" />
     <Compile Include="ViewModels\EmployeeMainVM.cs" />
-    <Compile Include="ViewModels\ClientMainVM.cs" />
+    <Compile Include="ViewModels\Client View Models\ClientMainVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\FacilityVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\HotelServicesVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\OfferVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\PriceVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RemoveRoomVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RoomTypeEditVM.cs" />

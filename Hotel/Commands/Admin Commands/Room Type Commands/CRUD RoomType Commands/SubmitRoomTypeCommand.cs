@@ -36,9 +36,23 @@ namespace Hotel.Commands.Room_Type_Commands
                 newRoomType.RoomsOfType = new ObservableCollection<Room>();
                 newRoomType.Facilities = new ObservableCollection<Facility>();
 
+                //first we create the list of prices that were added, we ignore the first one
+                //because it represents the "dummy" price, placeholder for the new price
+                ObservableCollection<Price> prices = new ObservableCollection<Price>();
+                for (int i = 1; i < _roomTypeEditViewModel.PriceEditViewModel.Prices.Count; i++)
+                {
+                    //we set the current price's room type to the one we are creating
+                    _roomTypeEditViewModel.PriceEditViewModel.Prices[i]._price.AssignedRoomType = newRoomType;
+                    prices.Add(_roomTypeEditViewModel.PriceEditViewModel.Prices[i]._price);
+                }
+
+                //we asign the prices to the new room type so they are also inserted into the database
+                newRoomType.Prices = prices;
+                
                 //add to the list and database
                 RoomTypeDAL.AddRoomType(newRoomType);
-                _roomTypeEditViewModel.AdminMainVM.RoomTypes.Add(new RoomTypeVM(newRoomType));
+                _roomTypeEditViewModel.AdminMainVM.RoomTypes.Add(new RoomTypeVM(newRoomType)
+                { Prices = null });
 
                 return true;
             }
@@ -58,6 +72,33 @@ namespace Hotel.Commands.Room_Type_Commands
                 _roomTypeEditViewModel.RoomTypeName;
             _roomTypeEditViewModel.AdminMainVM.SelectedRoomType.Capacity = capacity;
 
+            //first we create the list of prices that were added, we ignore the first one
+            //because it represents the "dummy" price, placeholder for the new price
+            ObservableCollection<Price> prices = new ObservableCollection<Price>();
+            for (int i = 1; i < _roomTypeEditViewModel.PriceEditViewModel.Prices.Count; i++)
+            {
+                //we set the current price's room type to the one we are creating
+                _roomTypeEditViewModel.PriceEditViewModel.Prices[i]._price.AssignedRoomType =
+                    _roomTypeEditViewModel.AdminMainVM.SelectedRoomType._roomType;
+
+                _roomTypeEditViewModel.PriceEditViewModel.Prices[i]._price.AssignedRoomTypeId =
+                    _roomTypeEditViewModel.AdminMainVM.SelectedRoomType.Id;
+
+                prices.Add(_roomTypeEditViewModel.PriceEditViewModel.Prices[i]._price);
+            }
+
+            //database updates, we update the room type and we insert, remove or update
+            //the prices list
+            foreach (var price in _roomTypeEditViewModel.PricesToBeDeleted)
+                PriceDAL.DeletePrice(price._price);
+
+            //we null the prices for the selected room type 
+            //so there are no conflicts in the database context
+            //for modified prices
+            _roomTypeEditViewModel.AdminMainVM.SelectedRoomType.Prices = null;
+
+            //perform updates
+            PriceDAL.AddOrUpdatePrices(prices);
             RoomTypeDAL.UpdateRoomType(
                    _roomTypeEditViewModel.AdminMainVM.SelectedRoomType._roomType);
         }

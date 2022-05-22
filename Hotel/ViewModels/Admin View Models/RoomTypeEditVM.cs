@@ -1,8 +1,10 @@
 ﻿
 using Hotel.Commands.Navigation_Commands;
 using Hotel.Commands.Room_Type_Commands;
+using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,8 @@ namespace Hotel.ViewModels
         public AdminMainVM AdminMainVM { get; private set; }
         public RoomTypeEditMode Mode { get; set; }
 
+        public PriceEditVM PriceEditViewModel { get; private set; }
+        
         //displays create if the window is opened in create mode, or edit if it is opened in edit mode
         public string SubmitButtonContent => Mode.ToString();
 
@@ -40,6 +44,14 @@ namespace Hotel.ViewModels
         }
         #endregion
 
+        #region Price Properties
+
+        //used by the price edit view model to store the prices that need
+        //to be deleted from the database when the user submits the room type changes
+        public ObservableCollection<PriceVM> PricesToBeDeleted { get; set; } = new ObservableCollection<PriceVM>();
+        
+        #endregion
+        
         #region Commands
         public ICommand SubmitRoomTypeCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
@@ -49,6 +61,9 @@ namespace Hotel.ViewModels
         {
             AdminMainVM = adminMainVM;
             Mode = mode;
+
+            PriceEditViewModel = new PriceEditVM(this);
+
             SubmitRoomTypeCommand = new SubmitRoomTypeCommand(this);
             CloseCommand = new CloseCommand(this);
 

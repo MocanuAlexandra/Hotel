@@ -9,19 +9,15 @@ using System.Threading.Tasks;
 
 namespace Hotel.DBContext
 {
+    //database context used by the entity framework to generate the database in a code-first manner
     public class HotelDBContext : DbContext
     {
-        public HotelDBContext() : base("HotelDBContext")
-        {        
-        }
-
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<HotelService> HotelServices { get; set; }
-       // public DbSet<Booking> Bookings { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Price> Prices { get; set; }

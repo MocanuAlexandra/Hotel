@@ -21,7 +21,8 @@ namespace Hotel.Models.DataAccessLayer
             {
                 var roomTypes = context.RoomTypes.
                     Include(rt => rt.RoomsOfType).
-                    Include(rt => rt.Facilities).ToList();
+                    Include(rt => rt.Facilities).
+                    Include(rt=> rt.Prices).ToList();
                 return new ObservableCollection<RoomType>(roomTypes);
             }
         }

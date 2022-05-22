@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Hotel.Views.Admin_Views
+namespace Hotel.Views
 {
     /// <summary>
     /// Interaction logic for PriceEditView.xaml

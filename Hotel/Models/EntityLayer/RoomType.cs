@@ -19,7 +19,8 @@ namespace Hotel.Models.EntityLayer
         public string Name { get; set; }
         public int Capacity { get; set; }
         public ObservableCollection<Room> RoomsOfType { get; set; }
-        public virtual ObservableCollection<Facility> Facilities { get; set; }
+        public ObservableCollection<Facility> Facilities { get; set; }
+        public ObservableCollection<Price> Prices { get; set; }
         public bool IsActive { get; set; }
     }
 }

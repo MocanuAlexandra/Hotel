@@ -39,6 +39,11 @@ namespace Hotel.ViewModels.Model_Wrappers
             get { return _roomType.Facilities; }
             set { _roomType.Facilities = value; OnPropertyChanged(); }
         }
+        public ObservableCollection<Price> Prices
+        {
+            get { return _roomType.Prices; }
+            set { _roomType.Prices = value; OnPropertyChanged(); }
+        }            
         public bool IsActive
         {
             get { return _roomType.IsActive; }

@@ -33,12 +33,12 @@ namespace Hotel.Models.DataAccessLayer
                 && (startDate <= p.ValabilityStartDate
                     && p.ValabilityStartDate <= endDate ||
                     p.ValabilityStartDate <= startDate
-                    && startDate <= p.ValabilityEndDate)).OrderBy(p => p.ValabilityStartDate));
+                    && startDate <= p.ValabilityEndDate)).
+                    OrderBy(p => p.ValabilityStartDate));
             }
         }
 
         //adds a price to the database
-
 
         //given a list of prices, it adds them to the database, or if they already exist, it updates them
         public static void AddOrUpdatePrices(ObservableCollection<Price> prices)

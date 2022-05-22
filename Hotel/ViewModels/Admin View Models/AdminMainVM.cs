@@ -21,41 +21,49 @@ namespace Hotel.ViewModels
 {
     public class AdminMainVM : BaseViewModel
     {
-        #region Properties
-        public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
+        #region Hotel Services Properties
         public ObservableCollection<HotelServicesVM> HotelServices { get; set; }
-        public ObservableCollection<FacilityVM> Facilities { get; set; }
-        public ObservableCollection<OfferVM> Offers { get; set; }
-        
 
-        private RoomTypeVM _selectedRoomType;
-        public RoomTypeVM SelectedRoomType
-        {
-            get { return _selectedRoomType; }
-            set { _selectedRoomType = value; OnPropertyChanged(); }
-        }
-  
         private HotelServicesVM _selectedHotelService;
         public HotelServicesVM SelectedHotelService
         {
             get { return _selectedHotelService; }
             set { _selectedHotelService = value; OnPropertyChanged(); }
         }
-  
+        #endregion
+
+        #region Room Facilities Properties
+        public ObservableCollection<FacilityVM> Facilities { get; set; }
+
         private FacilityVM _selectedFacility;
         public FacilityVM SelectedFacility
         {
             get { return _selectedFacility; }
             set { _selectedFacility = value; OnPropertyChanged(); }
         }
-       
+        #endregion
+
+        #region Offer Properties
+
+        public ObservableCollection<OfferVM> Offers { get; set; }
+
         private OfferVM _selectedOffer;
         public OfferVM SelectedOffer
         {
             get { return _selectedOffer; }
             set { _selectedOffer = value; OnPropertyChanged(); }
         }
-
+        #endregion
+        
+        #region RoomType Properties
+        public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }    
+         
+        private RoomTypeVM _selectedRoomType;
+        public RoomTypeVM SelectedRoomType
+        {
+            get { return _selectedRoomType; }
+            set { _selectedRoomType = value; OnPropertyChanged(); }
+        }
         #endregion
         
         #region Commands

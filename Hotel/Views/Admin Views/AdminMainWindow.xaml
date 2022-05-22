@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hotel.Views"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:viewModels="clr-namespace:Hotel.ViewModels" 
              d:DataContext="{d:DesignInstance Type=viewModels:AdminMainVM}"
              mc:Ignorable="d" 
-                d:DesignHeight="600" d:DesignWidth="1000">
+                d:DesignHeight="600" d:DesignWidth="1040">
 
     <!--We made a custom button style-->
     <UserControl.Resources>
@@ -179,21 +180,21 @@
 
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Room Type" Width="200">
+                            <GridViewColumn Header="Room Type" Width="150">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold"  />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Capacity" Width="200" >
+                            <GridViewColumn Header="Capacity" Width="140" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Capacity}"  FontSize="14" FontWeight="Bold"  />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Available" Width="200" >
+                            <GridViewColumn Header="Available" Width="140" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding RoomsOfType.Count}"  FontSize="14" FontWeight="Bold"  />
@@ -201,7 +202,32 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="Facilities" Width="180" >
+                            <GridViewColumn Header="Prices for interval" Width="350">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ListView ItemsSource="{Binding Prices}">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="12">
+                                                            <TextBlock.Text>
+                                                                <MultiBinding StringFormat="{}{0} - {1}{3}Value: {2}">
+                                                                    <Binding Path="ValabilityStartDate" />
+                                                                    <Binding Path="ValabilityEndDate" />
+                                                                    <Binding Path="Value" />
+                                                                    <Binding Source="{x:Static sys:Environment.NewLine}"/>
+                                                                </MultiBinding>
+                                                            </TextBlock.Text>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Facilities" Width="200" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <ComboBox ItemsSource="{Binding Facilities}"
@@ -327,14 +353,14 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Check in Date" Width="170" >
+                            <GridViewColumn Header="Check in Date" Width="180" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding CheckInDate}" FontSize="14" FontWeight="Bold"  Height="30"  />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="Check out Date" Width="170" >
+                            <GridViewColumn Header="Check out Date" Width="180" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding CheckOutDate}" FontSize="14" FontWeight="Bold"  Height="30"   />
