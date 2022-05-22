@@ -50,6 +50,14 @@ namespace Hotel.ViewModels.Model_Wrappers
             set { _roomType.IsActive = value; OnPropertyChanged(); }
         }
 
+        //not in the base model, used to display the total price when the user is searching a certain
+        //period
+        private float _totalPriceForPeriod;
+        public float TotalPriceForPeriod
+        {
+            get { return _totalPriceForPeriod; }
+            set { _totalPriceForPeriod = value; OnPropertyChanged(); }
+        }
         public RoomTypeVM(RoomType roomType)
         {
             _roomType = roomType;

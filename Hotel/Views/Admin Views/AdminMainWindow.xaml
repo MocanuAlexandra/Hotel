@@ -172,12 +172,6 @@
                   HorizontalContentAlignment="Center" 
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="553">
 
-                    <ListView.Resources>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                        </Style>
-                    </ListView.Resources>
-
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Room Type" Width="150">

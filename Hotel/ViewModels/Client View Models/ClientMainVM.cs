@@ -1,4 +1,5 @@
-﻿using Hotel.Models.DataAccessLayer;
+﻿using Hotel.Commands.Client_Commands;
+using Hotel.Models.DataAccessLayer;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Hotel.ViewModels
 {
@@ -22,20 +24,23 @@ namespace Hotel.ViewModels
             get { return _startDate; }
             set { _startDate = value; OnPropertyChanged(); }
         }
-
-        private DateTime _endDate;
-        public DateTime EndDate
+        
+        private double _noOfNights;
+        public double NoOfNights
         {
-            get { return _endDate; }
-            set { _endDate = value; OnPropertyChanged(); }
+            get { return _noOfNights; }
+            set { _noOfNights = value; OnPropertyChanged(); }
         }
 
         #endregion
+
+        public ICommand SearchCommand { get; private set; }
         
         public ClientMainVM()
         {
             StartDate = DateTime.Today;
-            EndDate = DateTime.Today.AddDays(1);
+
+            SearchCommand = new SearchCommand(this);
             
             // read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();

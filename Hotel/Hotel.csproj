@@ -135,6 +135,9 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\DeletePriceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\SubmitPriceCommand.cs" />
+    <Compile Include="Commands\Client Commands\SearchCommand.cs" />
+    <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
+    <Compile Include="Commands\GuestSearchCommand.cs" />
     <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
     <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />
@@ -270,7 +273,7 @@
     <Compile Include="Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
     <Compile Include="ViewModels\Admin View Models\HotelServiceEditVM.cs" />
-    <Compile Include="ViewModels\EmployeeMainVM.cs" />
+    <Compile Include="ViewModels\Employee View Models\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\Client View Models\ClientMainVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
@@ -318,7 +321,7 @@
     <Compile Include="Views\Client Views\ClientMainView.xaml.cs">
       <DependentUpon>ClientMainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EmployeeMainView.xaml.cs">
+    <Compile Include="Views\Employee Views\EmployeeMainView.xaml.cs">
       <DependentUpon>EmployeeMainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GuestWindow.xaml.cs">
@@ -381,7 +384,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EmployeeMainView.xaml">
+    <Page Include="Views\Employee Views\EmployeeMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

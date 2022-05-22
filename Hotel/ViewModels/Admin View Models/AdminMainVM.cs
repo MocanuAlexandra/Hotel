@@ -121,7 +121,7 @@ namespace Hotel.ViewModels
 
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
-            foreach (var roomType in RoomTypeDAL.GetRoomTypes())
+            foreach (var roomType in RoomTypeDAL.GetRoomTypesWithPrices())
                 RoomTypes.Add(new RoomTypeVM(roomType));
 
             // read the hotel services, create wrapers and populate the list

@@ -113,7 +113,6 @@ namespace Hotel.ViewModels
                     Prices.Add(new PriceVM(price));
                 }
             }
-
             SelectedPrice = Prices.FirstOrDefault();
         }
     }

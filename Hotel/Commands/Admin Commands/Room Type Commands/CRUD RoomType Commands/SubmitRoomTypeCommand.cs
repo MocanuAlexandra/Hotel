@@ -52,7 +52,7 @@ namespace Hotel.Commands.Room_Type_Commands
                 //add to the list and database
                 RoomTypeDAL.AddRoomType(newRoomType);
                 _roomTypeEditViewModel.AdminMainVM.RoomTypes.Add(new RoomTypeVM(newRoomType)
-                { Prices = null });
+                    { Prices = null });
 
                 return true;
             }
@@ -100,7 +100,7 @@ namespace Hotel.Commands.Room_Type_Commands
             //perform updates
             PriceDAL.AddOrUpdatePrices(prices);
             RoomTypeDAL.UpdateRoomType(
-                   _roomTypeEditViewModel.AdminMainVM.SelectedRoomType._roomType);
+                _roomTypeEditViewModel.AdminMainVM.SelectedRoomType._roomType);
         }
 
         public override void Execute(object parameter)

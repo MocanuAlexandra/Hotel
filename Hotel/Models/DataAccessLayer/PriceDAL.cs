@@ -23,6 +23,7 @@ namespace Hotel.Models.DataAccessLayer
 
         //given a start and end date, gets the price/prices that fit into
         //that time span for a certain roomType
+        
         public static ObservableCollection<Price> GetPricesInInterval(int roomTypeId,
             DateTime startDate, DateTime endDate)
         {

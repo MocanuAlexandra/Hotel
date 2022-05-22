@@ -26,6 +26,12 @@ namespace Hotel.Utils
             public const int windowWidth = 1000;
             public const int windowHeight = 600;
         }
+
+        public struct ClientWindowSize
+        {
+            public const int windowWidth = 1070;
+            public const int windowHeight = 600;
+        }
         #endregion
 
         #region Const strings

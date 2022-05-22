@@ -22,7 +22,22 @@ namespace Hotel.Models.DataAccessLayer
                 var roomTypes = context.RoomTypes.
                     Include(rt => rt.RoomsOfType).
                     Include(rt => rt.Facilities).
-                    Include(rt=> rt.Prices).ToList();
+                    ToList();
+                return new ObservableCollection<RoomType>(roomTypes);
+            }
+        }
+
+        // reads all room types from the database and also includes all rooms of the room type
+        // and all facilitie of the room type
+        // and also includes all prices of the room type
+        public static ObservableCollection<RoomType> GetRoomTypesWithPrices()
+        {
+            using (var context = new HotelDBContext())
+            {
+                var roomTypes = context.RoomTypes.
+                    Include(rt => rt.RoomsOfType).
+                    Include(rt => rt.Facilities).
+                    Include(rt => rt.Prices).ToList();
                 return new ObservableCollection<RoomType>(roomTypes);
             }
         }
@@ -42,8 +57,8 @@ namespace Hotel.Models.DataAccessLayer
         {
             using (var context = new HotelDBContext())
             {
-                var existingRoomType = context.RoomTypes.Find(roomType.Id);
-                context.Entry(existingRoomType).CurrentValues.SetValues(roomType);
+                context.RoomTypes.Attach(roomType);                
+                context.Entry(roomType).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

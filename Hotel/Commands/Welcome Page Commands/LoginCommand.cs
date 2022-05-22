@@ -52,8 +52,8 @@ namespace Hotel.Commands.Welcome_Page_Commands
                     if (LoginDAL.IsEmployeeInDB(signInVM.Email, signInVM.Password) != 0)
                     {
                         _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM();
-                        _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                        _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                        _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
                     }
                 }
 
@@ -64,8 +64,8 @@ namespace Hotel.Commands.Welcome_Page_Commands
                     if (LoginDAL.IsClientInDB(signInVM.Email, signInVM.Password) != 0)
                     {
                         _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
-                        _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                        _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                        _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
                     }
                 }             
 

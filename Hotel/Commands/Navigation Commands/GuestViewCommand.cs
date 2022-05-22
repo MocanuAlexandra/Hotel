@@ -22,8 +22,8 @@ namespace Hotel.Commands.Navigation_Commands
             if (parameter is StartVM)
             {
                 _mainWindowVM.CurrentViewModel = new GuestWindowVM();
-                _mainWindowVM.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                _mainWindowVM.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                _mainWindowVM.CurrentHeight = Constants.ClientWindowSize.windowHeight;
+                _mainWindowVM.CurrentWidth = Constants.ClientWindowSize.windowWidth;
             }
         }
     }
