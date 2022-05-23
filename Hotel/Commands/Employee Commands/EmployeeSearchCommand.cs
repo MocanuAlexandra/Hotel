@@ -1,4 +1,5 @@
-﻿using Hotel.Models.DataAccessLayer;
+﻿using Hotel.Models.Bussines_Data_Layer;
+using Hotel.Models.DataAccessLayer;
 using Hotel.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,31 +28,22 @@ namespace Hotel.Commands.Employee_Commands
                     checkOutDate);
 
 
-                //calculate the total price for the room type in the given time period            
-                roomType.TotalPriceForPeriod = 0;
-                DateTime checkInDate = _employeeViewModel.StartDate;
-                foreach (var price in roomType.Prices)
-                {
-                    //if the price valability extends past the remaining time period, consider the remaining
-                    //days included in this price and exit the loop
-                    if (price.ValabilityEndDate >= checkOutDate)
-                    {
-                        roomType.TotalPriceForPeriod +=
-                            price.Value * (checkOutDate.Subtract(checkInDate).Days + 1);
-                        break;
-                    }
+                //calculate the total price for the room type in the given time period
+                roomType.TotalPriceForPeriod = RoomTypeBLL.CalculatePriceForTimeInterval(roomType.Prices,
+                    _employeeViewModel.StartDate, checkOutDate);
 
-                    //if the price valability ends before the remaining time period, add the days that 
-                    //are covered by the price period and update the remaining time period
-                    else
-                    {
-                        roomType.TotalPriceForPeriod +=
-                            price.Value * (price.ValabilityEndDate.Subtract(checkInDate).Days + 1);
-                        checkInDate = price.ValabilityEndDate.AddDays(1);
-                    }
+                //search how many rooms are available for the given time period
+                roomType.RoomsOfType.Clear();
+                foreach (var room in RoomDAL.GetAvailableRooms(
+                    _employeeViewModel.StartDate,
+                    checkOutDate,
+                    roomType._roomType))
+                {
+                    roomType.RoomsOfType.Add(room);
                 }
             }
 
         }
     }
 }
+

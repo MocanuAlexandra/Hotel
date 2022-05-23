@@ -40,7 +40,7 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 // first we hash the password
                 // then we check if the email is already in the database
                 // if it is not, we add the user to the database and return true
-                string hashedPassword = Utils.Utility.HashPassword(signUpVM.Password);
+                string hashedPassword = Utility.HashPassword(signUpVM.Password);
                 if (RegisterDAL.CanRegisterClient(signUpVM.FirstName, signUpVM.LastName, signUpVM.Email,
                     hashedPassword, signUpVM.Phone))
                 {
@@ -53,8 +53,8 @@ namespace Hotel.Commands.Welcome_Page_Commands
                         // read the reservations, create wrapers and populate the list
                         ReservationOffers = ReservationOfferDAL.GetReservations(client)
                     };
-                    _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
-                    _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
+                    _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
+                    _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
                 }
                 else
                 {

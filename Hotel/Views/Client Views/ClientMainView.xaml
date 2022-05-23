@@ -290,7 +290,7 @@
                 </ListView>
             </TabItem>
 
-            <TabItem Header="Offer reservations" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
+            <TabItem Header="Bookings with offer" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding ReservationOffers}"
                           SelectedItem="{Binding SelectedReservationOffer}"
                   HorizontalContentAlignment="Center" 

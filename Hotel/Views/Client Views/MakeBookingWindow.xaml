@@ -37,7 +37,8 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <DockPanel Background="LightSkyBlue">
+        
         <!--Select interval-->
         <DockPanel DockPanel.Dock="Top" Height="62">
             <StackPanel DockPanel.Dock="Left" 
@@ -102,6 +103,7 @@
             </StackPanel>
         </DockPanel>
 
+        <!-- Display total price and submit booking-->
         <DockPanel DockPanel.Dock="Bottom">
             <StackPanel Orientation="Horizontal" Width="776" Height="40">
                 <TextBlock

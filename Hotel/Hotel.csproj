@@ -138,10 +138,10 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\DeletePriceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\SubmitPriceCommand.cs" />
-    <Compile Include="Commands\Client Commands\AddRoomTypeCommand.cs" />
-    <Compile Include="Commands\Client Commands\MakeBookingCommand.cs" />
-    <Compile Include="Commands\Client Commands\RemoveBookingItemCommand.cs" />
-    <Compile Include="Commands\Client Commands\ReserveOfferCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\AddRoomTypeCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\MakeBookingCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\RemoveBookingItemCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve with offer commands\ReserveOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\SearchCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
