@@ -1,4 +1,5 @@
 ﻿using Hotel.Commands.Client_Commands;
+using Hotel.Models.DataAccesLayer;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
@@ -14,8 +15,6 @@ namespace Hotel.ViewModels
 {
     public class ClientMainVM : BaseViewModel
     {
-        public ReservationOfferVM ReservationOfferVM { get; set; }
-
         #region Properties
 
         private ClientVM _client;
@@ -28,10 +27,9 @@ namespace Hotel.ViewModels
                 OnPropertyChanged("Client");
             }
         }
-        
+
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
-        public ObservableCollection<FacilityVM> Facilities { get; set; }
-        
+
         public ObservableCollection<OfferVM> Offers { get; set; }
         private OfferVM _selectedOffer;
         public OfferVM SelectedOffer
@@ -44,13 +42,35 @@ namespace Hotel.ViewModels
             }
         }
 
+        private ObservableCollection<ReservationOffer> _reservationOffers;
+        public ObservableCollection<ReservationOffer> ReservationOffers
+        {
+            get { return _reservationOffers; }
+            set
+            {
+                _reservationOffers = value;
+                OnPropertyChanged("ReservationOffers");
+            }
+        }
+
+        private ReservationOffer _selectedReservationOffer;
+        public ReservationOffer SelectedReservationOffer
+        {
+            get { return _selectedReservationOffer; }
+            set
+            {
+                _selectedReservationOffer = value;
+                OnPropertyChanged("SelectedReservationOffer");
+            }
+        }
+        
         private DateTime _startDate;
         public DateTime StartDate
         {
             get { return _startDate; }
             set { _startDate = value; OnPropertyChanged(); }
         }
-        
+
         private double _noOfNights;
         public double NoOfNights
         {
@@ -66,7 +86,7 @@ namespace Hotel.ViewModels
         public ICommand ReserveOfferCommand { get; private set; }
 
         public ClientMainVM()
-        {          
+        {
             StartDate = DateTime.Today;
 
             SearchCommand = new SearchCommand(this);
@@ -82,6 +102,8 @@ namespace Hotel.ViewModels
             Offers = new ObservableCollection<OfferVM>();
             foreach (var offer in OfferDAL.GetAllOffers())
                 Offers.Add(new OfferVM(offer));
+
+            ReservationOffers = new ObservableCollection<ReservationOffer>();           
         }
     }
 }

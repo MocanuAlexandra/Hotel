@@ -136,6 +136,35 @@ namespace Hotel.Models.DataAccesLayer
                     throw new Exception();
                 }
             }
-        }       
+        }
+
+        // get client id by instance client
+        public static int GetClientId(Client client)
+        {
+            using (var hotelDBContext = new HotelDBContext())
+            {
+                try
+                {
+                    var clientQuery = (from c in hotelDBContext.Clients
+                                       where c.ClientId == client.ClientId
+                                       select c).FirstOrDefault();
+
+                    // if a guest with these attributes exists
+                    // we check if the password is correct
+                    // if it is, we return ID of the guest
+                    if (clientQuery != null)
+                    {
+                        return clientQuery.ClientId;
+                    }
+                    return 0;
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+
     }
 }

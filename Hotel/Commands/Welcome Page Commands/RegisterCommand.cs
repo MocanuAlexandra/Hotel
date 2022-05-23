@@ -1,7 +1,10 @@
 ﻿
+using Hotel.Models.DataAccesLayer;
 using Hotel.Models.DataAccessLayer;
+using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using Hotel.ViewModels;
+using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +44,15 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 if (RegisterDAL.CanRegisterClient(signUpVM.FirstName, signUpVM.LastName, signUpVM.Email,
                     hashedPassword, signUpVM.Phone))
                 {
-                    _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
+                    Client client = LoginDAL.GetClient(signUpVM.Email, signUpVM.Password);
+                    
+                    _mainWindowViewModel.CurrentViewModel = new ClientMainVM()
+                    {
+                        Client = new ClientVM(client),
+
+                        // read the reservations, create wrapers and populate the list
+                        ReservationOffers = ReservationOfferDAL.GetReservations(client)
+                    };
                     _mainWindowViewModel.CurrentHeight = Constants.DefaultWindowSize.windowHeight;
                     _mainWindowViewModel.CurrentWidth = Constants.DefaultWindowSize.windowWidth;
                 }

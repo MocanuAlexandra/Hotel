@@ -1,10 +1,12 @@
 ﻿using Hotel.Models.DataAccesLayer;
+using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using Hotel.ViewModels;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +27,7 @@ namespace Hotel.Commands.Welcome_Page_Commands
             var signInVM = parameter as SignInVM;
             if (parameter is SignInVM)
             {
-              
+
                 // verify if Email and Password fileds are empty
                 if (string.IsNullOrEmpty(signInVM.Email) || string.IsNullOrEmpty(signInVM.Password))
                 {
@@ -63,18 +65,23 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 else if (Utility.IsClientEmail(signInVM.Email))
                 {
                     Client client = LoginDAL.GetClient(signInVM.Email, signInVM.Password);
+
                     // then we check if the guest exists in the database
                     if (LoginDAL.IsClientInDB(signInVM.Email, signInVM.Password) != 0)
                     {
                         _mainWindowViewModel.CurrentViewModel = new ClientMainVM()
                         {
-                            Client = new ClientVM(client)
+                            Client = new ClientVM(client),
+
+                            // read the reservations, create wrapers and populate the list
+                            ReservationOffers = ReservationOfferDAL.GetReservations(client)
                         };
+
                         _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
                         _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
                     }
-                }             
-
+                }
+                
                 // if user is not admin or employee or guest, we can't load the view
                 // so we show an error message
                 else
