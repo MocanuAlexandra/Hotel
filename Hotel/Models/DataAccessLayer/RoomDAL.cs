@@ -35,6 +35,28 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        
+        //read all rooms of a given type that are available in a given date range
+        //note: lastReservationDay is not the check out day, but the day before checkout
+        //(last reserved night)
+        public static IEnumerable<Room> GetAvailableRooms(DateTime fistReseservationDay,
+            DateTime lastReservationDay, RoomType roomType)
+        {
+            IEnumerable<Room> rooms;
+            using (var context = new HotelDBContext())
+            {
+                rooms = context.Rooms.
+                    Where(r => r.RoomType.Id == roomType.Id &&
+                    (r.ReservationsOffer.All(res => res.Offer.CheckInDate > lastReservationDay
+                    || res.Offer.CheckOutDate <= fistReseservationDay)) 
+                    
+                   // || (r.Bookings.All(res => res.CheckInDate > lastReservationDay
+                   //|| res.CheckInDate.AddDays(res.NoOfNights - 1) <= fistReseservationDay))
+                    
+                    ).ToList();
+            }
+                
+            return rooms;
+        }
+
     }
 }

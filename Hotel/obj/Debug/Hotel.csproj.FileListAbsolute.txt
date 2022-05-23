@@ -42,29 +42,6 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel\Hotel\obj\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel\Hotel\obj\Debug\Hotel.pdb
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel\Hotel\obj\Debug\Views\MainWindow.g.cs
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel\Hotel\obj\Debug\Views\MainWindow.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.AssemblyReference.cache
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.SuggestedBindingRedirects.cache
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Utils\Components\BindablePasswordBox.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignHotelServiceWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignRoomFacilityWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\OfferEditWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\PriceEditView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomFacilityEditWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddRoomWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\HotelServiceEditWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RemoveRoomWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomTypeEditWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminMainWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\ClientMainView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\GuestWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\MainWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignInView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignUpView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\StartView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\App.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupCompile.cache
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupCompile.lref
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.exe.config
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\Hotel.pdb
@@ -104,8 +81,35 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Text.Json
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Channels.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\bin\Debug\System.ValueTuple.xml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.AssemblyReference.cache
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.SuggestedBindingRedirects.cache
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Utils\Components\BindablePasswordBox.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddNewImageWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignHotelServiceWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignRoomFacilityWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\OfferEditWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\PriceEditView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomFacilityEditWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddRoomWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\HotelServiceEditWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RemoveRoomWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomTypeEditWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminMainWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\ClientMainView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\MakeBookingWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\EmployeeMainView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\GuestWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\MainWindow.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignInView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignUpView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\StartView.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\App.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupCompile.cache
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel_MarkupCompile.lref
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\App.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Utils\Components\BindablePasswordBox.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddNewImageWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignHotelServiceWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AssignRoomFacilityWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\OfferEditWindow.baml
@@ -117,6 +121,8 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin View
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\RoomTypeEditWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AdminMainWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\ClientMainView.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\MakeBookingWindow.baml
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\EmployeeMainView.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\GuestWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\MainWindow.baml
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Welcome Window Views\SignInView.baml
@@ -155,21 +161,16 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateHotelServiceTable.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddOfferTable1.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.Add1MRelationRoomTypeOffers.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddImageTable.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddImageTable1.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.RemoveBookingTable.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddBookingTable.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateBookingTable.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateBookingTable1.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Properties.Resources.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.GenerateResource.cache
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.csproj.CopyComplete
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.pdb
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\EmployeeMainView.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\EmployeeMainView.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddImageTable.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddImageTable1.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddNewImageWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Admin Views\AddNewImageWindow.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\MakeBookingWindow.g.cs
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Client Views\MakeBookingWindow.baml
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.RemoveBookingTable.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddBookingTable.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateBookingTable.resources
-D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateBookingTable1.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.AddReservationWithOfferTable.resources

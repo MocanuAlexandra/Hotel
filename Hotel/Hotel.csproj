@@ -141,6 +141,7 @@
     <Compile Include="Commands\Client Commands\AddRoomTypeCommand.cs" />
     <Compile Include="Commands\Client Commands\MakeBookingCommand.cs" />
     <Compile Include="Commands\Client Commands\RemoveBookingItemCommand.cs" />
+    <Compile Include="Commands\Client Commands\ReserveOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\SearchCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
@@ -266,7 +267,11 @@
     <Compile Include="Migrations\202205231557153_UpdateBookingTable1.designer.cs">
       <DependentUpon>202205231557153_UpdateBookingTable1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bussines Data Layer\RoomTypeDAL.cs" />
+    <Compile Include="Migrations\202205231713494_AddReservationWithOfferTable.cs" />
+    <Compile Include="Migrations\202205231713494_AddReservationWithOfferTable.designer.cs">
+      <DependentUpon>202205231713494_AddReservationWithOfferTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bussines Logic Layer\RoomTypeBLL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
     <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\ImageDAL.cs" />
@@ -274,10 +279,12 @@
     <Compile Include="Models\DataAccessLayer\OfferDAL.cs" />
     <Compile Include="Models\DataAccessLayer\PriceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RegisterDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\ReservationOfferDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomDAL.cs" />
     <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
     <Compile Include="Models\EntityLayer\Facility.cs" />
     <Compile Include="Models\EntityLayer\HotelService.cs" />
+    <Compile Include="Models\EntityLayer\ReservationOffer.cs" />
     <Compile Include="Models\EntityLayer\RoomImage.cs" />
     <Compile Include="Models\EntityLayer\Offer.cs" />
     <Compile Include="Models\EntityLayer\Price.cs" />
@@ -321,6 +328,7 @@
     <Compile Include="ViewModels\Model Wrappers\ImageVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\OfferVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\PriceVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\ReservationOfferVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RemoveRoomVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RoomTypeEditVM.cs" />
@@ -639,6 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205231557153_UpdateBookingTable1.resx">
       <DependentUpon>202205231557153_UpdateBookingTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231713494_AddReservationWithOfferTable.resx">
+      <DependentUpon>202205231713494_AddReservationWithOfferTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

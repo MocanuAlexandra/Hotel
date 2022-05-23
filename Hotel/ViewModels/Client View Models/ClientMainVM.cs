@@ -14,6 +14,8 @@ namespace Hotel.ViewModels
 {
     public class ClientMainVM : BaseViewModel
     {
+        public ReservationOfferVM ReservationOfferVM { get; set; }
+
         #region Properties
 
         private ClientVM _client;
@@ -29,7 +31,18 @@ namespace Hotel.ViewModels
         
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
         public ObservableCollection<FacilityVM> Facilities { get; set; }
+        
         public ObservableCollection<OfferVM> Offers { get; set; }
+        private OfferVM _selectedOffer;
+        public OfferVM SelectedOffer
+        {
+            get { return _selectedOffer; }
+            set
+            {
+                _selectedOffer = value;
+                OnPropertyChanged("SelectedOffer");
+            }
+        }
 
         private DateTime _startDate;
         public DateTime StartDate
@@ -50,6 +63,7 @@ namespace Hotel.ViewModels
         public ICommand SearchCommand { get; private set; }
 
         public ICommand MakeBookingCommand { get; private set; }
+        public ICommand ReserveOfferCommand { get; private set; }
 
         public ClientMainVM()
         {          
@@ -57,6 +71,7 @@ namespace Hotel.ViewModels
 
             SearchCommand = new SearchCommand(this);
             MakeBookingCommand = new MakeBookingCommand(this);
+            ReserveOfferCommand = new ReserveOfferCommand(this);
 
             // read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();

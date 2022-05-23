@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,12 @@ namespace Hotel.Models.EntityLayer
 
         public int RoomTypeId { get; set; }
         public RoomType RoomType { get; set; }
-        
-        // define collection for many to many relationship
-       // public virtual ICollection<Facility> Facilities { get; set; }
-       // public virtual ICollection<Booking> Bookings { get; set; }
+
+        public List<int> ReservationIds { get; set; }
+        public ObservableCollection<ReservationOffer> ReservationsOffer { get; set; }
+
+        public List<int>BookingsIds { get; set; }
+        public ObservableCollection<Booking> Bookings { get; set; }
 
         public bool IsActive { get; set; }
 
