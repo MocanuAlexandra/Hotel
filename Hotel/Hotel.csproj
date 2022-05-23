@@ -72,6 +72,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -122,6 +123,8 @@
     <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenAssignHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenEditServiceWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\SubmitHotelServiceCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Images Commands\OpenAddNewImageWindowCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Images Commands\PrevOrNextPictureCommand.cs" />
     <Compile Include="Commands\Admin Commands\Offers Commands\CRUD Offer Commands\DeleteOfferCommand.cs" />
     <Compile Include="Commands\Admin Commands\Offers Commands\CRUD Offer Commands\SubmitOfferCommand.cs" />
     <Compile Include="Commands\Admin Commands\Offers Commands\OpenAddOfferWindowCommand.cs" />
@@ -135,6 +138,9 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\DeletePriceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\SubmitPriceCommand.cs" />
+    <Compile Include="Commands\Client Commands\AddRoomTypeCommand.cs" />
+    <Compile Include="Commands\Client Commands\MakeBookingCommand.cs" />
+    <Compile Include="Commands\Client Commands\RemoveBookingItemCommand.cs" />
     <Compile Include="Commands\Client Commands\SearchCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
@@ -236,8 +242,34 @@
     <Compile Include="Migrations\202205210718134_Add1MRelationRoomTypeOffers.designer.cs">
       <DependentUpon>202205210718134_Add1MRelationRoomTypeOffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205231045324_AddImageTable.cs" />
+    <Compile Include="Migrations\202205231045324_AddImageTable.designer.cs">
+      <DependentUpon>202205231045324_AddImageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231047199_AddImageTable1.cs" />
+    <Compile Include="Migrations\202205231047199_AddImageTable1.designer.cs">
+      <DependentUpon>202205231047199_AddImageTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231402370_RemoveBookingTable.cs" />
+    <Compile Include="Migrations\202205231402370_RemoveBookingTable.designer.cs">
+      <DependentUpon>202205231402370_RemoveBookingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231405112_AddBookingTable.cs" />
+    <Compile Include="Migrations\202205231405112_AddBookingTable.designer.cs">
+      <DependentUpon>202205231405112_AddBookingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231509190_UpdateBookingTable.cs" />
+    <Compile Include="Migrations\202205231509190_UpdateBookingTable.designer.cs">
+      <DependentUpon>202205231509190_UpdateBookingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231557153_UpdateBookingTable1.cs" />
+    <Compile Include="Migrations\202205231557153_UpdateBookingTable1.designer.cs">
+      <DependentUpon>202205231557153_UpdateBookingTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bussines Data Layer\RoomTypeDAL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
     <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\ImageDAL.cs" />
     <Compile Include="Models\DataAccessLayer\LoginDAL.cs" />
     <Compile Include="Models\DataAccessLayer\OfferDAL.cs" />
     <Compile Include="Models\DataAccessLayer\PriceDAL.cs" />
@@ -246,12 +278,14 @@
     <Compile Include="Models\DataAccessLayer\RoomTypeDAL.cs" />
     <Compile Include="Models\EntityLayer\Facility.cs" />
     <Compile Include="Models\EntityLayer\HotelService.cs" />
+    <Compile Include="Models\EntityLayer\RoomImage.cs" />
     <Compile Include="Models\EntityLayer\Offer.cs" />
     <Compile Include="Models\EntityLayer\Price.cs" />
     <Compile Include="Models\EntityLayer\RoomType.cs" />
     <Compile Include="Utils\Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\IBookingItem.cs" />
     <Compile Include="ViewModels\Admin View Models\AssignRoomFacilityVM.cs" />
     <Compile Include="ViewModels\Admin View Models\AssignHotelServiceToOfferVM.cs" />
     <Compile Include="ViewModels\Admin View Models\OfferEditVM.cs" />
@@ -273,13 +307,18 @@
     <Compile Include="Commands\Welcome Page Commands\SignUpCommand.cs" />
     <Compile Include="Commands\Navigation Commands\LogoutCommand.cs" />
     <Compile Include="ViewModels\Admin View Models\HotelServiceEditVM.cs" />
+    <Compile Include="ViewModels\Admin View Models\RoomImageEditVM.cs" />
+    <Compile Include="ViewModels\Client View Models\MakeBookingVM.cs" />
     <Compile Include="ViewModels\Employee View Models\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\Client View Models\ClientMainVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
+    <Compile Include="Models\EntityLayer\Booking.cs" />
+    <Compile Include="ViewModels\Model Wrappers\BookingVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\FacilityVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\HotelServicesVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\ImageVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\OfferVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\PriceVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\RoomTypeVM.cs" />
@@ -288,6 +327,9 @@
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
+    <Compile Include="Views\Admin Views\AddNewImageWindow.xaml.cs">
+      <DependentUpon>AddNewImageWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin Views\AssignHotelServiceWindow.xaml.cs">
       <DependentUpon>AssignHotelServiceWindow.xaml</DependentUpon>
     </Compile>
@@ -321,6 +363,9 @@
     <Compile Include="Views\Client Views\ClientMainView.xaml.cs">
       <DependentUpon>ClientMainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Client Views\MakeBookingWindow.xaml.cs">
+      <DependentUpon>MakeBookingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Employee Views\EmployeeMainView.xaml.cs">
       <DependentUpon>EmployeeMainView.xaml</DependentUpon>
     </Compile>
@@ -337,6 +382,10 @@
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\AddNewImageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -381,6 +430,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Client Views\ClientMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Client Views\MakeBookingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -568,6 +621,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205210718134_Add1MRelationRoomTypeOffers.resx">
       <DependentUpon>202205210718134_Add1MRelationRoomTypeOffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231045324_AddImageTable.resx">
+      <DependentUpon>202205231045324_AddImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231047199_AddImageTable1.resx">
+      <DependentUpon>202205231047199_AddImageTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231402370_RemoveBookingTable.resx">
+      <DependentUpon>202205231402370_RemoveBookingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231405112_AddBookingTable.resx">
+      <DependentUpon>202205231405112_AddBookingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231509190_UpdateBookingTable.resx">
+      <DependentUpon>202205231509190_UpdateBookingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231557153_UpdateBookingTable1.resx">
+      <DependentUpon>202205231557153_UpdateBookingTable1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

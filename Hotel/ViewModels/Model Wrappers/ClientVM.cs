@@ -10,7 +10,7 @@ namespace Hotel.ViewModels.Model_Wrappers
     //wrapper class for Client model that will be used in the view model as a representative
     public class ClientVM : BaseViewModel
     {
-        private readonly Client _client;
+        public readonly Client _client;
         public int ClientId
         {
             get { return _client.ClientId; }

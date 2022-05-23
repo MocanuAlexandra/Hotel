@@ -1,5 +1,6 @@
 ﻿using Hotel.Commands.Client_Commands;
 using Hotel.Models.DataAccessLayer;
+using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,18 @@ namespace Hotel.ViewModels
     public class ClientMainVM : BaseViewModel
     {
         #region Properties
+
+        private ClientVM _client;
+        public ClientVM Client
+        {
+            get { return _client; }
+            set
+            {
+                _client = value;
+                OnPropertyChanged("Client");
+            }
+        }
+        
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
         public ObservableCollection<FacilityVM> Facilities { get; set; }
         public ObservableCollection<OfferVM> Offers { get; set; }
@@ -35,13 +48,16 @@ namespace Hotel.ViewModels
         #endregion
 
         public ICommand SearchCommand { get; private set; }
-        
+
+        public ICommand MakeBookingCommand { get; private set; }
+
         public ClientMainVM()
-        {
+        {          
             StartDate = DateTime.Today;
 
             SearchCommand = new SearchCommand(this);
-            
+            MakeBookingCommand = new MakeBookingCommand(this);
+
             // read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypes())

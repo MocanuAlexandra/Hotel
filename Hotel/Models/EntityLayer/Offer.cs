@@ -23,12 +23,8 @@ namespace Hotel.Models.EntityLayer
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
         public float Price { get; set; }
-
         public RoomType AssignedRoomType { get; set; }
-
+        public ObservableCollection<HotelService> HotelServices { get; set; }
         public bool IsActive { get; set; }
-
-        // define collection for many-to-namy relation with hotel services
-        public virtual ObservableCollection<HotelService> HotelServices { get; set; }
     }
 }

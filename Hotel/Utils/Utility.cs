@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,8 +10,22 @@ namespace Hotel.Utils
 {
     public class Utility
     {
-        #region String manipulation
+        #region Input/Output
+
+        //loads  picture paths
+        public static List<string> LoadPicturesPaths()
+        {
+            var pictures = new List<string>();
+
+            foreach (var picture in Directory.GetFiles(Constants.picturesStoragePath))
+                pictures.Add(Path.GetFileName(picture));
+
+            return pictures;
+        }
+        #endregion
         
+        #region String manipulation
+
         //check if email format is valid
         public static bool IsEmailFormatOK(string email)
         {
@@ -96,6 +111,36 @@ namespace Hotel.Utils
             if (string.IsNullOrEmpty(offerName) || offerName.Length < 1)
                 return false;
             return Regex.IsMatch(offerName, "^[- _]*[a-zA-Z0-9][- a-zA-Z0-9_]*$");
+        }
+        #endregion
+
+        #region Path manipulation
+         //gets a picture name and appends the full path to it
+        public static string PictureNameToPath(string pictureName)
+        {
+            try
+            {
+                return Path.Combine(Directory.GetCurrentDirectory(),
+                    Constants.picturesStoragePath,
+                    pictureName);
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+        }
+
+        //gets a picture path and returns the name of it
+        public static string PicureNameFromPath(string picturePath)
+        {
+            try
+            {
+                return Path.GetFileName(picturePath);
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
         }
         #endregion
 

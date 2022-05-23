@@ -40,7 +40,7 @@
 
     <DockPanel Background="LightSkyBlue">
         <Menu DockPanel.Dock="Top" Height="25" HorizontalAlignment="Center" Background="LightSkyBlue">
-            
+
             <!--Room type-->
             <MenuItem Header="Room Type" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
                       FontSize="12" Background="LightSkyBlue" Foreground="Black">
@@ -109,6 +109,24 @@
                 <MenuItem Header="Assign to room type" Command="{Binding OpenAssignRoomFacilityCommand}"/>
             </MenuItem>
 
+            <!--Room images-->
+            <MenuItem Header="Room images" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
+                      FontSize="12" Background="LightSkyBlue" Foreground="Black">
+
+                <!--Menu item style-->
+                <MenuItem.ItemContainerStyle>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Background" Value="LightSkyBlue"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+
+                <MenuItem Header="New" Command="{Binding OpenAddNewImageWindowCommand}" />
+                <MenuItem Header="Delete" />
+                <MenuItem Header="Assign to room type"/>
+            </MenuItem>
+
+            
             <!-- Offers-->
             <MenuItem Header="Offers" Height="25" FontFamily="Segoe UI Black" FontWeight="Bold" 
                       FontSize="12" Background="LightSkyBlue" Foreground="Black">
@@ -129,18 +147,16 @@
         </Menu>
 
 
-        <StackPanel DockPanel.Dock="Bottom" Height="33">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="38" Width="92">
             <Button         Content="Logout" Width="100" Height="33"
                             FontWeight="Bold" FontSize="14"
                             Style="{StaticResource RoundedButtonStyle}"
                             CommandParameter="{Binding}"
-                            Command="{Binding DataContext.LogoutCommand, 
-                            RelativeSource={RelativeSource Mode=FindAncestor, 
-                            AncestorType={x:Type local:MainWindow}}}"/>
+                            Command="{Binding DataContext.LogoutCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}, Mode=FindAncestor}}"/>
         </StackPanel>
 
         <TabControl DockPanel.Dock="Top">
-            
+
             <TabControl.Resources>
                 <Style TargetType="TabItem">
                     <Setter Property="Template">
@@ -166,7 +182,7 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-            
+
             <TabItem Header="Room types" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-1,0">
                 <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
                   HorizontalContentAlignment="Center" 
@@ -287,9 +303,9 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
-            
+
             <TabItem Header="Room facilities" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
-                
+
                 <ListView ItemsSource="{Binding Facilities}" SelectedItem="{Binding SelectedFacility}" 
                   HorizontalContentAlignment="Center" 
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="517">
@@ -320,6 +336,38 @@
                 </ListView>
             </TabItem>
 
+            <TabItem Header="Room images" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
+
+                <ListView ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}" 
+                  HorizontalContentAlignment="Center" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="517">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Image name" Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"  FontSize="14" FontWeight="Bold"  
+                                                   Height="30"  
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="GridViewColumnHeader">
+                                    <Setter Property="FontSize" Value="16"/>
+                                    <Setter Property="FontFamily" Value="Segoe UI Black"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="LightSkyBlue"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            
             <TabItem Header="Offers" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding Offers}" SelectedItem="{Binding SelectedOffer}" 
                   HorizontalContentAlignment="Center" 
@@ -371,10 +419,10 @@
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                       />
-                                      </DataTemplate>
+                                    </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            
+
                             <GridViewColumn Header="Price" Width="160" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>

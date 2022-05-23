@@ -1,5 +1,6 @@
 ﻿using Hotel.DBContext;
 using Hotel.Models.DataAccesLayer;
+using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using System;
 using System.Collections.Generic;
@@ -109,5 +110,32 @@ namespace Hotel.Models.DataAccesLayer
                 }
             }
         }
+
+        // get client by email and password
+        public static Client GetClient(string email, string password)
+        {
+            using (var hotelDBContext = new HotelDBContext())
+            {
+                try
+                {
+                    var clientQuery = (from client in hotelDBContext.Clients
+                                       where client.Email.Equals(email)
+                                       select client).FirstOrDefault();
+
+                    // if a guest with these attributes exists
+                    // we check if the password is correct
+                    // if it is, we return ID of the guest
+                    if (clientQuery != null && Utility.CheckPassword(password, clientQuery.Password))
+                    {
+                        return clientQuery;
+                    }
+                    return null;
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            }
+        }       
     }
 }

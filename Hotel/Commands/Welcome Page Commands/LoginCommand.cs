@@ -1,6 +1,8 @@
 ﻿using Hotel.Models.DataAccesLayer;
+using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using Hotel.ViewModels;
+using Hotel.ViewModels.Model_Wrappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,10 +62,14 @@ namespace Hotel.Commands.Welcome_Page_Commands
                 // verify if user is guest so we can load the guest view
                 else if (Utility.IsClientEmail(signInVM.Email))
                 {
+                    Client client = LoginDAL.GetClient(signInVM.Email, signInVM.Password);
                     // then we check if the guest exists in the database
                     if (LoginDAL.IsClientInDB(signInVM.Email, signInVM.Password) != 0)
                     {
-                        _mainWindowViewModel.CurrentViewModel = new ClientMainVM();
+                        _mainWindowViewModel.CurrentViewModel = new ClientMainVM()
+                        {
+                            Client = new ClientVM(client)
+                        };
                         _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
                         _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
                     }

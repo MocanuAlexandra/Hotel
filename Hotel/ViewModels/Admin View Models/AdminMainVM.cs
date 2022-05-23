@@ -1,5 +1,6 @@
 ﻿using Hotel.Commands.Admin_Commands;
 using Hotel.Commands.Admin_Commands.Hotel_services_Commands;
+using Hotel.Commands.Admin_Commands.Images_Commands;
 using Hotel.Commands.Admin_Commands.Offers_Commands;
 using Hotel.Commands.Admin_Commands.Offers_Commands.CRUD_Offer_Commands;
 using Hotel.Commands.Admin_Commands.Room_Commands;
@@ -65,6 +66,16 @@ namespace Hotel.ViewModels
             set { _selectedRoomType = value; OnPropertyChanged(); }
         }
         #endregion
+
+        #region Images Properties
+        public ObservableCollection<ImageVM> Images { get; set; }
+        private ImageVM _selectedImage;
+        public ImageVM SelectedImage
+        {
+            get { return _selectedImage; }
+            set { _selectedImage = value; OnPropertyChanged(); }
+        }
+        #endregion
         
         #region Commands
 
@@ -94,6 +105,8 @@ namespace Hotel.ViewModels
         public ICommand OpenEditOfferWindowCommand { get; set; }
         public ICommand DeleteOfferCommand { get; set; }
 
+        // image commands
+        public ICommand OpenAddNewImageWindowCommand { get; set; }
         #endregion
 
         public AdminMainVM()
@@ -118,6 +131,8 @@ namespace Hotel.ViewModels
             OpenAddOfferWindowCommand = new OpenAddOfferWindowCommand(this);
             OpenEditOfferWindowCommand = new OpenEditOfferWindowCommand(this);
             DeleteOfferCommand = new DeleteOfferCommand(this);
+
+            OpenAddNewImageWindowCommand = new OpenAddNewImageWindowCommand(this);
 
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();

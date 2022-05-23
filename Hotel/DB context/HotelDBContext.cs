@@ -21,5 +21,7 @@ namespace Hotel.DBContext
         public DbSet<Offer> Offers { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Price> Prices { get; set; }
+        public DbSet<RoomImage> Images { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
     }
 }

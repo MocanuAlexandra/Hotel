@@ -14,7 +14,7 @@ namespace Hotel.Models.DataAccessLayer
     public static class RoomTypeDAL
     {
         //reads all room types from the database and also includes all rooms of the room type
-        // and all facilitie of the room type
+        // and all facilities of the room type
         public static ObservableCollection<RoomType> GetRoomTypes()
         {
             using (var context = new HotelDBContext())

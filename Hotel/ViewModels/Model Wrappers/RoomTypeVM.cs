@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Hotel.ViewModels.Model_Wrappers
 {
     //wrapper class for RoomType model that will be used in the view model as a representative
-    public class RoomTypeVM : BaseViewModel
+    public class RoomTypeVM : BaseViewModel,IBookingItem
     {
         public readonly RoomType _roomType;
 
@@ -58,6 +58,18 @@ namespace Hotel.ViewModels.Model_Wrappers
             get { return _totalPriceForPeriod; }
             set { _totalPriceForPeriod = value; OnPropertyChanged(); }
         }
+
+        #region Booking item properties
+        public string ItemName { get => "Room Type"; }
+
+        private uint _itemQuantity;
+        public uint ItemQuantity
+        {
+            get { return _itemQuantity; }
+            set { _itemQuantity = value; OnPropertyChanged(); }
+        }
+        #endregion
+        
         public RoomTypeVM(RoomType roomType)
         {
             _roomType = roomType;

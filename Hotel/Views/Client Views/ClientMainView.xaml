@@ -51,7 +51,7 @@
         <DockPanel DockPanel.Dock="Top">
             <StackPanel Orientation="Horizontal" Width="571" DockPanel.Dock="Left">
                 <StackPanel>
-                    <TextBlock Text="Start date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
+                    <TextBlock Text="Check Out date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
                     <DatePicker
                         SelectedDate="{Binding StartDate}"
                         DisplayDateStart="{x:Static sys:DateTime.Today}"
@@ -73,11 +73,11 @@
                         Style="{StaticResource RoundedButtonStyle}"
                         Command="{Binding SearchCommand}"
                         Margin="20, 0" Height="30" FontSize="18" Width="73"/>
-                <!--<Button Content="Make Reservation" 
+                <Button Content="Make Booking" 
                         FontWeight="Bold"
-                        Background="AliceBlue"
+                        Command="{Binding MakeBookingCommand}"
                         Style="{StaticResource RoundedButtonStyle}"
-                        FontSize="18" Height="30"/>-->
+                        FontSize="18" Height="30"/>
             </StackPanel>
         </DockPanel>
 
