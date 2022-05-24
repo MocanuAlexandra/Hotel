@@ -1,4 +1,5 @@
-﻿using Hotel.Models.EntityLayer;
+﻿using Hotel.Commands.Client_Commands.Reserve_commands.Rooms;
+using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
     //wrapper class for RoomType model that will be used in the view model as a representative
-    public class RoomTypeVM : BaseViewModel,IBookingItem
+    public class RoomTypeVM : BaseViewModel, IBookingItem
     {
         public readonly RoomType _roomType;
 
@@ -43,7 +45,7 @@ namespace Hotel.ViewModels.Model_Wrappers
         {
             get { return _roomType.Prices; }
             set { _roomType.Prices = value; OnPropertyChanged(); }
-        }            
+        }
         public bool IsActive
         {
             get { return _roomType.IsActive; }
@@ -69,10 +71,17 @@ namespace Hotel.ViewModels.Model_Wrappers
             set { _itemQuantity = value; OnPropertyChanged(); }
         }
         #endregion
-        
+
+        #region Commands
+        public ICommand IncreaseNumberOfRoomsInReservation { get; private set; }
+        public ICommand DecreaseNumberOfRoomsInReservation { get; private set; }
+        #endregion
+
         public RoomTypeVM(RoomType roomType)
         {
             _roomType = roomType;
+            IncreaseNumberOfRoomsInReservation = new IncreaseNumberOfRooms(this);
+            DecreaseNumberOfRoomsInReservation = new DecreaseNumberOfRooms(this);
         }
     }
 }

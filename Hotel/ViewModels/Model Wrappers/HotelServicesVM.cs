@@ -2,6 +2,7 @@
 using Hotel.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,17 @@ namespace Hotel.ViewModels.Model_Wrappers
             set { _hotelService.IsActive = value; OnPropertyChanged(); }
         }
 
+        public List<int> AssignedReservationsIds
+        {
+            get { return _hotelService.AssignedReservationsIds; }
+            set { _hotelService.AssignedReservationsIds = value; OnPropertyChanged(); }
+        }
+        public ObservableCollection<Booking> AssignedReservations
+        {
+            get { return _hotelService.AssignedReservations; }
+            set { _hotelService.AssignedReservations = value; OnPropertyChanged(); }
+        }
+
         #region Booking item properties
         public string ItemName { get => "Hotel service"; }
 
@@ -45,15 +57,13 @@ namespace Hotel.ViewModels.Model_Wrappers
             set { _itemQuantity = value; OnPropertyChanged(); }
         }
 
-        //not in the base model, used to display the total price when the user is searching a certain
-        //period
-        private float _totalPriceForPeriod;
+        //services do not depend on the time period, they have a fixed price
         public float TotalPriceForPeriod
         {
-            get { return _totalPriceForPeriod; }
-            set { _totalPriceForPeriod = value; OnPropertyChanged(); }
+            get { return Price; }
+            set { /*empty*/ }
         }
-        
+
         #endregion
         public HotelServicesVM(HotelService hotelService)
         {

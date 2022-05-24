@@ -22,7 +22,7 @@ namespace Hotel.Models.EntityLayer
         public Client Client { get; set; }
 
         public DateTime CheckInDate { get; set; }
-        public int NoOfNights { get; set; }
+        public DateTime CheckOutDate { get; set; }
 
         public float TotalPrice { get; set; }
         public BookingStatus Status { get; set; }

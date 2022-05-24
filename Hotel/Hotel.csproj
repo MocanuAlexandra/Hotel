@@ -138,12 +138,16 @@
     <Compile Include="Commands\Admin Commands\Room Facilities Commands\OpenEditRoomFacilityWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\DeletePriceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Room Type Commands\Price Edit Commands\SubmitPriceCommand.cs" />
-    <Compile Include="Commands\Client Commands\Reserve commands\AddRoomTypeCommand.cs" />
-    <Compile Include="Commands\Client Commands\Reserve commands\MakeBookingCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\Hotel Services\AddServiceCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\Rooms\AddRoomTypeCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\OpenMakeBookingCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve commands\RemoveBookingItemCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\SumbitBookingCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve with offer commands\ReserveOfferCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\Rooms\DecreaseNumberOfRooms.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\Rooms\IncreaseNumberOfRooms.cs" />
     <Compile Include="Commands\Client Commands\SearchCommand.cs" />
-    <Compile Include="Commands\Client Commands\SetStatusResOfferCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve with offer commands\SetStatusResOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\ViewBookingsHistoryCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
@@ -274,7 +278,16 @@
     <Compile Include="Migrations\202205231713494_AddReservationWithOfferTable.designer.cs">
       <DependentUpon>202205231713494_AddReservationWithOfferTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205241100544_UpdateHotelServicesTable.cs" />
+    <Compile Include="Migrations\202205241100544_UpdateHotelServicesTable.designer.cs">
+      <DependentUpon>202205241100544_UpdateHotelServicesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241130540_UpdateBookingTable2.cs" />
+    <Compile Include="Migrations\202205241130540_UpdateBookingTable2.designer.cs">
+      <DependentUpon>202205241130540_UpdateBookingTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Bussines Logic Layer\RoomTypeBLL.cs" />
+    <Compile Include="Models\DataAccessLayer\BookingDAL.cs" />
     <Compile Include="Models\DataAccessLayer\FacilityDAL.cs" />
     <Compile Include="Models\DataAccessLayer\HotelServiceDAL.cs" />
     <Compile Include="Models\DataAccessLayer\ImageDAL.cs" />
@@ -661,6 +674,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205231713494_AddReservationWithOfferTable.resx">
       <DependentUpon>202205231713494_AddReservationWithOfferTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241100544_UpdateHotelServicesTable.resx">
+      <DependentUpon>202205241100544_UpdateHotelServicesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241130540_UpdateBookingTable2.resx">
+      <DependentUpon>202205241130540_UpdateBookingTable2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

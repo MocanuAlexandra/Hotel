@@ -57,9 +57,19 @@
                         </DatePicker.Resources>
                     </DatePicker>
                 </StackPanel>
-                <StackPanel Margin="20, 0, 0, 0">
-                    <TextBlock Text="Number of nights" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
-                    <TextBox Text="{Binding BookingVM.NoOfNights}" FontSize="18"/>
+                <StackPanel Margin="15,0,0,0">
+                    <TextBlock Text="Check Out date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
+                    <DatePicker 
+                        SelectedDate="{Binding BookingVM.CheckOutDate}" 
+                        DisplayDateStart="{x:Static sys:DateTime.Today}"
+                        FontSize="18">
+                        <DatePicker.Resources>
+                            <Style TargetType="DatePickerTextBox">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="SelectionOpacity" Value="0"/>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
                 </StackPanel>
             </StackPanel>
         </DockPanel>
@@ -105,11 +115,11 @@
 
         <!-- Display total price and submit booking-->
         <DockPanel DockPanel.Dock="Bottom">
-            <StackPanel Orientation="Horizontal" Width="776" Height="40">
+            <StackPanel Orientation="Horizontal" Width="776" Height="34">
                 <TextBlock
                            VerticalAlignment="Center"
                            DockPanel.Dock="Left"
-                           FontSize="20" Width="100"
+                           FontSize="20" Width="158"
                            FontWeight="Bold">
                     <TextBlock.Text>
                         <MultiBinding StringFormat="{}Total:  {0}">
@@ -118,7 +128,7 @@
                     </TextBlock.Text>
                 </TextBlock>
                 <Button Content="Submit"
-                        Margin="550,0,0,0"
+                        Margin="520,0,0,0"
                         Command="{Binding SubmitBookingCommand}"
                         Style="{StaticResource RoundedButtonStyle}"
                         Width="103" FontSize="18" Height="28" FontWeight="Bold"/>
@@ -126,7 +136,7 @@
         </DockPanel>
 
         <!--Vizualize the selected items-->
-        <ListView ItemsSource="{Binding BookingItems}" SelectedItem="{Binding SelectedBookingItem}" Height="471">
+        <ListView ItemsSource="{Binding BookingItems}" SelectedItem="{Binding SelectedBookingItem}" Height="507">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="BorderBrush" Value="LightGray"/>
@@ -185,12 +195,13 @@
                                 </MultiBinding>
                             </TextBlock.Text>
                         </TextBlock>
-                        <!--<Button Content="X" FontSize="20"
+                        <Button Content="X" FontSize="20"
                                 CommandParameter="{Binding}"
-                                Command="{Binding DataContext.RemoveReservationItemCommand,
+                                Style="{StaticResource RoundedButtonStyle}"
+                                Command="{Binding DataContext.RemoveBookingItemCommand,
                                 RelativeSource={RelativeSource Mode=FindAncestor, 
-                                AncestorType={x:Type local:MakeReservationWindowView}}}"
-                                Margin="50, 0, 0, 0" Width="50" Height="50"/>-->
+                                AncestorType={x:Type local:MakeBookingWindow}}}"
+                                Margin="50, 0, 0, 0" Width="50" Height="50"/>
                     </DockPanel>
                 </DataTemplate>
             </ListView.Resources>

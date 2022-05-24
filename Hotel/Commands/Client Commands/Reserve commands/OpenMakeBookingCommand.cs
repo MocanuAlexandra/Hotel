@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Hotel.Commands.Client_Commands
 {
-    public class MakeBookingCommand : BaseCommand
+    public class OpenMakeBookingCommand : BaseCommand
     {
         private readonly ClientMainVM _clientViewModel;
-        public MakeBookingCommand(ClientMainVM clientViewModel)
+        public OpenMakeBookingCommand(ClientMainVM clientViewModel)
         {
             _clientViewModel = clientViewModel;
         }

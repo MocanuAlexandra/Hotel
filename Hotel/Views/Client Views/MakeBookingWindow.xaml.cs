@@ -22,6 +22,13 @@ namespace Hotel.Views.Client_Views
         public MakeBookingWindow()
         {
             InitializeComponent();
+            Loaded += Window_Loaded;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Utils.Utility.ICloseWindows viewModel)
+                viewModel.Close += () => { this.Close(); };
         }
     }
 }

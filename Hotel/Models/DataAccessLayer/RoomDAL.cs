@@ -46,13 +46,13 @@ namespace Hotel.Models.DataAccessLayer
             {
                 rooms = context.Rooms.
                     Where(r => r.RoomType.Id == roomType.Id &&
-                    (r.ReservationsOffer.All(res => res.Offer.CheckInDate > lastReservationDay
-                    || res.Offer.CheckOutDate <= fistReseservationDay)) 
-                    
-                   // || (r.Bookings.All(res => res.CheckInDate > lastReservationDay
-                   //|| res.CheckInDate.AddDays(res.NoOfNights - 1) <= fistReseservationDay))
-                    
-                    ).ToList();
+                    r.ReservationsOffer.All(res => res.Offer.CheckInDate > lastReservationDay
+                    || res.Offer.CheckOutDate <= fistReseservationDay)
+                    ).
+
+                    Where(r => r.RoomType.Id == roomType.Id &&
+                    r.Bookings.All(res => res.CheckInDate > lastReservationDay
+                    || res.CheckOutDate <= fistReseservationDay)).ToList();
             }
                 
             return rooms;

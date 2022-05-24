@@ -22,9 +22,10 @@ namespace Hotel.Models.EntityLayer
         public string Name { get; set; }
         public float Price { get; set; }
 
-        // define collection for many to many relationship
         public virtual ObservableCollection<Offer> Offers { get; set; }
-
+        public List<int> AssignedReservationsIds { get; set; }
+        public ObservableCollection<Booking> AssignedReservations { get; set; }
+        
         public bool IsActive { get; set; }
     }
 }

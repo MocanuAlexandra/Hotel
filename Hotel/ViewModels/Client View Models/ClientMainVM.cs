@@ -72,7 +72,7 @@ namespace Hotel.ViewModels
 
             SearchCommand = new SearchCommand(this);
             ViewBookingsHistoryCommand = new ViewBookingsHistoryCommand(this);
-            MakeBookingCommand = new MakeBookingCommand(this);
+            MakeBookingCommand = new OpenMakeBookingCommand(this);
             ReserveOfferCommand = new ReserveOfferCommand(this);
 
             // read the room types, create wrapers and populate the list

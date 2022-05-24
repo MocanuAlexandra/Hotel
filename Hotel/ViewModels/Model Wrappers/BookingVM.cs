@@ -32,11 +32,13 @@ namespace Hotel.ViewModels.Model_Wrappers
             get { return _booking.CheckInDate; }
             set { _booking.CheckInDate = value; OnPropertyChanged(); }
         }
-        public int NoOfNights
+
+        public DateTime CheckOutDate
         {
-            get { return _booking.NoOfNights; }
-            set { _booking.NoOfNights = value; OnPropertyChanged(); }
+            get { return _booking.CheckOutDate; }
+            set { _booking.CheckOutDate = value; OnPropertyChanged(); }
         }
+
 
         public float TotalPrice
         {

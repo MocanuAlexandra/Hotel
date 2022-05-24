@@ -24,8 +24,7 @@ namespace Hotel.Commands.Client_Commands
         {
             RoomTypeVM addedRoomType = _makebookingViewModel.SelectedRoomType;
             DateTime startDate = _makebookingViewModel.BookingVM.CheckInDate,
-                endDate = _makebookingViewModel.BookingVM.CheckInDate.AddDays(
-                    _makebookingViewModel.BookingVM.NoOfNights - 1);
+                endDate = _makebookingViewModel.BookingVM.CheckOutDate.AddDays(-1);
 
             //read the prices from the database
             addedRoomType.Prices = PriceDAL.GetPricesInInterval(addedRoomType.Id, startDate, endDate);

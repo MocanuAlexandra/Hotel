@@ -1,4 +1,6 @@
 ﻿using Hotel.Commands.Client_Commands;
+using Hotel.Commands.Client_Commands.Reserve_commands;
+using Hotel.Commands.Client_Commands.Reserve_commands.Hotel_Services;
 using Hotel.Models.Bussines_Data_Layer;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
@@ -15,7 +17,7 @@ using System.Windows.Input;
 
 namespace Hotel.ViewModels
 {
-    public class MakeBookingVM : BaseViewModel
+    public class MakeBookingVM : BaseViewModel, Utility.ICloseWindows
     {
         public BookingVM BookingVM { get; set; }
         public ClientVM Client { get; set; }
@@ -56,14 +58,13 @@ namespace Hotel.ViewModels
 
         #region Commands
         public ICommand AddRoomTypeItemCommand { get; private set; }
-        //public ICommand AddServiceItemCommand { get; private set; }
+        public ICommand AddServiceItemCommand { get; private set; }
         public ICommand RemoveBookingItemCommand { get; private set; }
-       // public ICommand SubmitReservationCommand { get; private set; }
+        public ICommand SubmitBookingCommand { get; private set; }
         #endregion
 
         public MakeBookingVM(ClientVM client)
         {
-
             Client = client;
 
             //make a list of items that the client has added to the booking
@@ -79,7 +80,7 @@ namespace Hotel.ViewModels
                     ClientId = client.ClientId,
 
                     CheckInDate = DateTime.Today,
-                    NoOfNights =1,
+                    CheckOutDate = DateTime.Today.AddDays(1),
 
                     TotalPrice = 0,
                     Status = Booking.BookingStatus.Active,
@@ -98,6 +99,8 @@ namespace Hotel.ViewModels
             // commands
             AddRoomTypeItemCommand = new AddRoomTypeCommand(this);
             RemoveBookingItemCommand = new RemoveBookingItemCommand(this);
+            AddServiceItemCommand = new AddServiceCommand(this);
+            SubmitBookingCommand = new SubmitBookingCommand(this);
 
             //read all room types from the database            
             RoomTypes = new ObservableCollection<RoomTypeVM>();
@@ -113,12 +116,14 @@ namespace Hotel.ViewModels
             SelectedService = Services.FirstOrDefault();
         }
         
-        
-        //used to detect when the check in and check out have changed and recalculate the total price
+        #region Methods        
+
+        //used to detect when the check in and no of nights have changed
+        //and recalculate the total price
         private void BookingVM_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(BookingVM.CheckInDate) ||
-                e.PropertyName == nameof(BookingVM.NoOfNights))
+                e.PropertyName == nameof(BookingVM.CheckOutDate))
             {
 
                 foreach (var item in BookingItems)
@@ -127,12 +132,12 @@ namespace Hotel.ViewModels
                         //read the prices for the new time period
                         roomType.Prices = PriceDAL.GetPricesInInterval(roomType.Id,
                             BookingVM.CheckInDate,
-                            BookingVM.CheckInDate.AddDays(BookingVM.NoOfNights - 1));
+                            BookingVM.CheckOutDate.AddDays(- 1));
 
                         roomType.TotalPriceForPeriod =
                             RoomTypeBLL.CalculatePriceForTimeInterval(roomType.Prices,
-                            BookingVM.CheckInDate, 
-                            BookingVM.CheckInDate.AddDays(BookingVM.NoOfNights - 1))
+                            BookingVM.CheckInDate,
+                            BookingVM.CheckOutDate.AddDays(-1))
                             * roomType.ItemQuantity;
                     }
 
@@ -145,6 +150,14 @@ namespace Hotel.ViewModels
             if (e.PropertyName == nameof(RoomTypeVM.ItemQuantity))
                 BookingVM.TotalPrice = BookingItems.Sum(x => x.TotalPriceForPeriod);
         }
+        public Action Close { get; set; }
+        public void CloseWindow()
+        {
+            //if the close action has subscribers, it calls them, closing the 
+            //windows that use this viewModel (see MainWindow code-behind)
+            Close?.Invoke();
+        }
+        #endregion
     }
 }
 

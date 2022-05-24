@@ -59,9 +59,6 @@ namespace Hotel.Commands.Client_Commands
                 availableRooms.First(),
                 reservation);
 
-            // update the client's reservationsbookings history view
-            //_clientViewModel.ViewBookingsHistoryVM.ReservationOffers.Add(reservation);
-
             MessageBox.Show("Offer booked successfully!", "Success", MessageBoxButton.OK,
                    MessageBoxImage.Information);            
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hotel.Commands.Client_Commands
 {
-    public class RemoveBookingItemCommand:BaseCommand
+    public class RemoveBookingItemCommand : BaseCommand
     {
         private readonly MakeBookingVM _makeBookingViewModel;
         public RemoveBookingItemCommand(MakeBookingVM makeBookingViewModel)
@@ -35,17 +35,17 @@ namespace Hotel.Commands.Client_Commands
                             _makeBookingViewModel.RoomTypes[0];
                     }
                 }
-                
-                ////else, the parameter is a service, add it to the available services list
-                //else if (parameter is HotelServiceVM service)
-                //{
-                //    _makeReservationViewModel.Services.Add(service);
-                //    if (_makeReservationViewModel.SelectedService == null)
-                //    {
-                //        _makeReservationViewModel.SelectedService =
-                //            _makeReservationViewModel.Services[0];
-                //    }
-                //}
+
+                //else, the parameter is a service, add it to the available services list
+                else if (parameter is HotelServicesVM service)
+                {
+                    _makeBookingViewModel.Services.Add(service);
+                    if (_makeBookingViewModel.SelectedService == null)
+                    {
+                        _makeBookingViewModel.SelectedService =
+                            _makeBookingViewModel.Services[0];
+                    }
+                }
             }
         }
     }
