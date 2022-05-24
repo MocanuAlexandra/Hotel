@@ -147,6 +147,7 @@
     <Compile Include="Commands\Client Commands\ViewBookingsHistoryCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
+    <Compile Include="Commands\Navigation Commands\BackToMainVMCommand.cs" />
     <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
     <Compile Include="DB context\HotelDBContext.cs" />
     <Compile Include="Migrations\202205111647456_UpdateGuestTable.cs" />

@@ -40,14 +40,15 @@ namespace Hotel.ViewModels
             }
         }
         public ICommand SetStatusResOfferCommand { get; set; }
-        
+
         public ViewBookingsHistoryVM(MainWindowVM mainWindowVM)
         {
             MainWindowVM = mainWindowVM;            
             ReservationOffers = new ObservableCollection<ReservationOffer>();
 
             // commands
-            SetStatusResOfferCommand = new SetStatusResOfferCommand(this);
+            SetStatusResOfferCommand = new SetStatusResOfferCommand(this);          
+
         }
     }
 }

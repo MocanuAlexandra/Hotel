@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hotel.Views.Client_Views"
+             xmlns:localA="clr-namespace:Hotel.Views"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              xmlns:models="clr-namespace:Hotel.Models.EntityLayer"
@@ -50,7 +51,11 @@
         <StackPanel DockPanel.Dock="Bottom" Height="33">
             <Button         Content="Back" Width="100" Height="33"
                             FontWeight="Bold" FontSize="14"
-                            Style="{StaticResource RoundedButtonStyle}"/>
+                            Style="{StaticResource RoundedButtonStyle}"
+                            CommandParameter="{Binding}"
+                            Command="{Binding DataContext.BackToMainVMCommand, 
+                            RelativeSource={RelativeSource AncestorType={x:Type localA:MainWindow},
+                            Mode=FindAncestor}}"/>
         </StackPanel>
 
         <DockPanel DockPanel.Dock="Top">
