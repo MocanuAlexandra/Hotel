@@ -143,6 +143,8 @@
     <Compile Include="Commands\Client Commands\Reserve commands\RemoveBookingItemCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve with offer commands\ReserveOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\SearchCommand.cs" />
+    <Compile Include="Commands\Client Commands\SetStatusResOfferCommand.cs" />
+    <Compile Include="Commands\Client Commands\ViewBookingsHistoryCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
     <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
@@ -316,6 +318,7 @@
     <Compile Include="ViewModels\Admin View Models\HotelServiceEditVM.cs" />
     <Compile Include="ViewModels\Admin View Models\RoomImageEditVM.cs" />
     <Compile Include="ViewModels\Client View Models\MakeBookingVM.cs" />
+    <Compile Include="ViewModels\Client View Models\ViewBookingsHistoryVM.cs" />
     <Compile Include="ViewModels\Employee View Models\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\Client View Models\ClientMainVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
@@ -373,6 +376,9 @@
     </Compile>
     <Compile Include="Views\Client Views\MakeBookingWindow.xaml.cs">
       <DependentUpon>MakeBookingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Client Views\ViewBookingsHistory.xaml.cs">
+      <DependentUpon>ViewBookingsHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Employee Views\EmployeeMainView.xaml.cs">
       <DependentUpon>EmployeeMainView.xaml</DependentUpon>
@@ -442,6 +448,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Client Views\MakeBookingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Client Views\ViewBookingsHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

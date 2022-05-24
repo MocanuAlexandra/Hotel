@@ -40,10 +40,27 @@ namespace Hotel.Commands.Client_Commands
                 return;
             }
 
+            // create the new reservation
+            ReservationOffer reservation = new ReservationOffer
+            {
+                Client = _clientViewModel.Client._client,
+                ClientId = _clientViewModel.Client._client.ClientId,
+                Offer = _clientViewModel.SelectedOffer._offer,
+                OfferId = _clientViewModel.SelectedOffer._offer.Id,
+                Room = availableRooms.First(),
+                RoomId = availableRooms.First().Id,
+                Status = ReservationStatus.Active,
+                IsActive = true,
+            };
+            
             // add the room to the reservation and save it to database
             ReservationOfferDAL.CreateReservation(_clientViewModel.Client._client,
                 _clientViewModel.SelectedOffer._offer,
-                availableRooms.First());
+                availableRooms.First(),
+                reservation);
+
+            // update the client's reservationsbookings history view
+            //_clientViewModel.ViewBookingsHistoryVM.ReservationOffers.Add(reservation);
 
             MessageBox.Show("Offer booked successfully!", "Success", MessageBoxButton.OK,
                    MessageBoxImage.Information);            

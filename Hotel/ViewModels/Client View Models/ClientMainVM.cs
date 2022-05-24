@@ -40,29 +40,7 @@ namespace Hotel.ViewModels
                 _selectedOffer = value;
                 OnPropertyChanged("SelectedOffer");
             }
-        }
-
-        private ObservableCollection<ReservationOffer> _reservationOffers;
-        public ObservableCollection<ReservationOffer> ReservationOffers
-        {
-            get { return _reservationOffers; }
-            set
-            {
-                _reservationOffers = value;
-                OnPropertyChanged("ReservationOffers");
-            }
-        }
-
-        private ReservationOffer _selectedReservationOffer;
-        public ReservationOffer SelectedReservationOffer
-        {
-            get { return _selectedReservationOffer; }
-            set
-            {
-                _selectedReservationOffer = value;
-                OnPropertyChanged("SelectedReservationOffer");
-            }
-        }
+        }       
         
         private DateTime _startDate;
         public DateTime StartDate
@@ -78,18 +56,22 @@ namespace Hotel.ViewModels
             set { _noOfNights = value; OnPropertyChanged(); }
         }
 
+        //public ViewBookingsHistoryVM ViewBookingsHistoryVM { get; set; }
+        public MainWindowVM MainWindowVM { get; set; }
         #endregion
 
         public ICommand SearchCommand { get; private set; }
+        public ICommand ViewBookingsHistoryCommand { get; private set; }
 
         public ICommand MakeBookingCommand { get; private set; }
-        public ICommand ReserveOfferCommand { get; private set; }
+        public ICommand ReserveOfferCommand { get; private set; }        
 
         public ClientMainVM()
-        {
+        {         
             StartDate = DateTime.Today;
 
             SearchCommand = new SearchCommand(this);
+            ViewBookingsHistoryCommand = new ViewBookingsHistoryCommand(this);
             MakeBookingCommand = new MakeBookingCommand(this);
             ReserveOfferCommand = new ReserveOfferCommand(this);
 
@@ -102,8 +84,6 @@ namespace Hotel.ViewModels
             Offers = new ObservableCollection<OfferVM>();
             foreach (var offer in OfferDAL.GetAllOffers())
                 Offers.Add(new OfferVM(offer));
-
-            ReservationOffers = new ObservableCollection<ReservationOffer>();           
         }
     }
 }

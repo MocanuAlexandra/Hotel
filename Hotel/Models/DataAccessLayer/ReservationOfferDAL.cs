@@ -12,7 +12,7 @@ namespace Hotel.Models.DataAccessLayer
     public class ReservationOfferDAL
     {
         //given client, offer and room, create the reservation
-        public static void CreateReservation(Client client, Offer offer, Room room)
+        public static void CreateReservation(Client client, Offer offer, Room room, ReservationOffer reservation)
         {
             using (var context = new HotelDBContext())
             {
@@ -21,18 +21,7 @@ namespace Hotel.Models.DataAccessLayer
                 context.Entry(client).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(offer).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(room).State = System.Data.Entity.EntityState.Unchanged;
-                
-                ReservationOffer reservation = new ReservationOffer
-                {                    
-                    Client = client,
-                    ClientId = client.ClientId,
-                    Offer = offer,
-                    OfferId = offer.Id,
-                    Room = room,
-                    RoomId = room.Id,
-                    Status = ReservationOffer.ReservationStatus.Active,
-                    IsActive = true,
-                };
+                               
                 context.ReservationsOffer.Add(reservation);
                 context.SaveChanges();
             }
@@ -54,11 +43,20 @@ namespace Hotel.Models.DataAccessLayer
                     Include("Offer.AssignedRoomType").
                     Include("Offer.HotelServices").
                     Where(r => r.ClientId == client.ClientId &&
-                    r.IsActive == true && 
-                    r.Status != ReservationOffer.ReservationStatus.Canceled).
+                    r.IsActive == true).
                     ToList();
                 ObservableCollection<ReservationOffer> result = new ObservableCollection<ReservationOffer>(reservations);
                 return result;
+            }
+        }
+
+        // update status of a reservation
+        public static void UpdateReservation(ReservationOffer reservation)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.Entry(reservation).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
             }
         }
     }

@@ -39,18 +39,22 @@
 
     <DockPanel Background="LightSkyBlue">
         <StackPanel DockPanel.Dock="Bottom" Height="33">
-            <Button         Content="Logout" Width="100" Height="33"
+            <Button         Content="Back" Width="100" Height="33"
                             FontWeight="Bold" FontSize="14"
-                            Style="{StaticResource RoundedButtonStyle}"
-                            CommandParameter="{Binding}"
-                            Command="{Binding DataContext.LogoutCommand, 
-                            RelativeSource={RelativeSource Mode=FindAncestor, 
-                            AncestorType={x:Type local:MainWindow}}}"/>
+                            Style="{StaticResource RoundedButtonStyle}"/>
         </StackPanel>
 
         <DockPanel DockPanel.Dock="Top">
-            <StackPanel Orientation="Horizontal" Width="878" DockPanel.Dock="Left">
+            <StackPanel Orientation="Horizontal" Width="739" DockPanel.Dock="Left">
+               
+                <Button Content="View Bookings" 
+                        FontWeight="Bold"
+                        Command="{Binding ViewBookingsHistoryCommand}"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        FontSize="18" Height="30"
+                        Margin="20, 0"/>
                 <StackPanel>
+                    
                     <TextBlock Text="Check Out date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
                     <DatePicker
                         SelectedDate="{Binding StartDate}"
@@ -85,11 +89,6 @@
                         Style="{StaticResource RoundedButtonStyle}"
                         FontSize="18" Height="30"
                          Margin="20, 0"/>
-                <Button Content="Set Status" 
-                        FontWeight="Bold"
-                        Style="{StaticResource RoundedButtonStyle}"
-                        FontSize="18" Height="30"
-                        Margin="20, 0"/>
             </StackPanel>
         </DockPanel>
 
@@ -273,87 +272,6 @@
                                         <TextBlock Text="{Binding Price}" FontSize="14" FontWeight="Bold"  />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-
-                            <GridView.ColumnHeaderContainerStyle>
-                                <Style TargetType="GridViewColumnHeader">
-                                    <Setter Property="FontSize" Value="16"/>
-                                    <Setter Property="FontFamily" Value="Segoe UI Black"/>
-                                    <Setter Property="Foreground" Value="Black"/>
-                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                                    <Setter Property="Background" Value="LightSkyBlue"/>
-                                </Style>
-                            </GridView.ColumnHeaderContainerStyle>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </TabItem>
-
-            <TabItem Header="Bookings with offer" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
-                <ListView ItemsSource="{Binding ReservationOffers}"
-                          SelectedItem="{Binding SelectedReservationOffer}"
-                  HorizontalContentAlignment="Center" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="553">
-
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Description" Width="150">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Offer.Description}"  FontSize="14" FontWeight="Bold"   Height="30"   />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Room type" Width="150" >
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding  Offer.AssignedRoomType.Name}"  FontSize="14" FontWeight="Bold"  Height="30"  />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Check in Date" Width="170" >
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Offer.CheckInDate}" FontSize="14" FontWeight="Bold"  Height="30"  />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Check out Date" Width="170" >
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Offer.CheckOutDate}" FontSize="14" FontWeight="Bold"  Height="30"   />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-
-                            <GridViewColumn Header="Hotel services" Width="180" >
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <ComboBox ItemsSource="{Binding Offer.HotelServices}"
-                                        DisplayMemberPath="Name"
-                                        Width="160" Height="30" FontSize="18"
-                                        HorizontalContentAlignment="Center"
-                                        VerticalContentAlignment="Center"
-                                      />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-
-                            <GridViewColumn Header="Price" Width="100" >
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Offer.Price}" FontSize="14" FontWeight="Bold"  />
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-
-                            <GridViewColumn Header="Status" Width="160" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Status}" FontSize="14" FontWeight="Bold"  />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
                             <GridView.ColumnHeaderContainerStyle>

@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Hotel.Views"
              xmlns:viewModels="clr-namespace:Hotel.ViewModels"
              xmlns:views="clr-namespace:Hotel.Views"
+             xmlns:Clientviews="clr-namespace:Hotel.Views.Client_Views"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         
@@ -29,6 +30,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:GuestWindowVM}">
             <views:GuestWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ViewBookingsHistoryVM}">
+            <Clientviews:ViewBookingsHistory/>
         </DataTemplate>
     </Application.Resources>
 </Application>

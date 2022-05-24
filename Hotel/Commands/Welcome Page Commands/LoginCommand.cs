@@ -72,9 +72,7 @@ namespace Hotel.Commands.Welcome_Page_Commands
                         _mainWindowViewModel.CurrentViewModel = new ClientMainVM()
                         {
                             Client = new ClientVM(client),
-
-                            // read the reservations, create wrapers and populate the list
-                            ReservationOffers = ReservationOfferDAL.GetReservations(client)
+                            MainWindowVM = _mainWindowViewModel,                           
                         };
 
                         _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;

@@ -152,7 +152,9 @@
                             FontWeight="Bold" FontSize="14"
                             Style="{StaticResource RoundedButtonStyle}"
                             CommandParameter="{Binding}"
-                            Command="{Binding DataContext.LogoutCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}, Mode=FindAncestor}}"/>
+                            Command="{Binding DataContext.LogoutCommand, 
+                            RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow},
+                            Mode=FindAncestor}}"/>
         </StackPanel>
 
         <TabControl DockPanel.Dock="Top">

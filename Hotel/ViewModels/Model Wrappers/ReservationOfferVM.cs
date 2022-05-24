@@ -88,7 +88,7 @@ namespace Hotel.ViewModels.Model_Wrappers
                 OnPropertyChanged("IsActive");
             }
         }
-        public ReservationOffer.ReservationStatus Status
+        public ReservationStatus Status
         {
             get { return _reservationOffer.Status; }
             set { _reservationOffer.Status = value; OnPropertyChanged(); }

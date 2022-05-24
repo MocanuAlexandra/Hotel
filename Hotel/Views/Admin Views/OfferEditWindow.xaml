@@ -54,6 +54,7 @@
         </DockPanel>
 
         <DockPanel DockPanel.Dock="Top" Height="94" Width="300">
+            
             <!-- we are gonna have possibility so select room type only in add mode-->
             <DockPanel.Style>
                 <Style TargetType="DockPanel">
