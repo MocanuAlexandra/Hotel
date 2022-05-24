@@ -117,6 +117,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Admin Commands\Employee Commands\AddEmployeeCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Employee Commands\DeleteEmployeeCommand.cs" />
+    <Compile Include="Commands\Admin Commands\Employee Commands\OpenAddEmployeeWindowCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\AssignHotelServiceToOfferCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\CRUD Hotel services Commands\DeleteHotelServiceCommand.cs" />
     <Compile Include="Commands\Admin Commands\Hotel services Commands\OpenAddServiceWindowCommand.cs" />
@@ -313,6 +316,7 @@
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\IBookingItem.cs" />
+    <Compile Include="ViewModels\Admin View Models\AddEmployeeVM.cs" />
     <Compile Include="ViewModels\Admin View Models\AssignRoomFacilityVM.cs" />
     <Compile Include="ViewModels\Admin View Models\AssignHotelServiceToOfferVM.cs" />
     <Compile Include="ViewModels\Admin View Models\OfferEditVM.cs" />
@@ -345,6 +349,7 @@
     <Compile Include="Models\EntityLayer\Booking.cs" />
     <Compile Include="ViewModels\Model Wrappers\BookingVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ClientVM.cs" />
+    <Compile Include="ViewModels\Model Wrappers\EmployeeVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\FacilityVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\HotelServicesVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\ImageVM.cs" />
@@ -357,6 +362,9 @@
     <Compile Include="ViewModels\Welcome Page VM\SignInVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\SignUpVM.cs" />
     <Compile Include="ViewModels\Welcome Page VM\StartVM.cs" />
+    <Compile Include="Views\Admin Views\AddEmployeeWindow.xaml.cs">
+      <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin Views\AddNewImageWindow.xaml.cs">
       <DependentUpon>AddNewImageWindow.xaml</DependentUpon>
     </Compile>
@@ -418,6 +426,10 @@
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
     <Page Include="Utils\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin Views\AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

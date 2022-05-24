@@ -4,6 +4,7 @@ using Hotel.Models.EntityLayer;
 using Hotel.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -165,6 +166,35 @@ namespace Hotel.Models.DataAccesLayer
             }
         }
 
+        //gets all employees into observable colllection labmda expression
+        public static ObservableCollection<Employee> GetAllEmployees()
+        {
+            using (var hotelDBContext = new HotelDBContext())
+            {
+                try
+                {
+                    var employees = (from employee in hotelDBContext.Employees
+                                     where employee.IsActive == true
+                                     select employee).ToList();
 
+                    return new ObservableCollection<Employee>(employees);
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+        // deletes a employee
+        public static void DeleteEmployee(Employee employee)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.Employees.Attach(employee);
+                context.Employees.Remove(employee);
+                context.SaveChanges();
+            }
+        }
     }
 }

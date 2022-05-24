@@ -49,7 +49,7 @@
         </StackPanel>
 
         <DockPanel DockPanel.Dock="Top">
-            <StackPanel Orientation="Horizontal" Width="739" DockPanel.Dock="Left">
+            <StackPanel Orientation="Horizontal" Width="886" DockPanel.Dock="Left">
                
                 <Button Content="View Bookings" 
                         FontWeight="Bold"

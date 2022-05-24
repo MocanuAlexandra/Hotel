@@ -1,4 +1,5 @@
 ﻿using Hotel.Commands.Admin_Commands;
+using Hotel.Commands.Admin_Commands.Employee_Commands;
 using Hotel.Commands.Admin_Commands.Hotel_services_Commands;
 using Hotel.Commands.Admin_Commands.Images_Commands;
 using Hotel.Commands.Admin_Commands.Offers_Commands;
@@ -7,6 +8,7 @@ using Hotel.Commands.Admin_Commands.Room_Commands;
 using Hotel.Commands.Admin_Commands.Room_Facilities_Commands;
 using Hotel.Commands.Admin_Commands.Room_Facilities_Commands.CRUD_RoomFacilities_Commands;
 using Hotel.Commands.Admin_Commands.RoomFacilities_Commands;
+using Hotel.Models.DataAccesLayer;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
@@ -76,7 +78,17 @@ namespace Hotel.ViewModels
             set { _selectedImage = value; OnPropertyChanged(); }
         }
         #endregion
-        
+
+        #region Employee Properties
+        public ObservableCollection<EmployeeVM> Employees { get; set; }
+        private EmployeeVM _selectedEmployee;
+        public EmployeeVM SelectedEmployee
+        {
+            get { return _selectedEmployee; }
+            set { _selectedEmployee = value; OnPropertyChanged(); }
+        }
+        #endregion
+
         #region Commands
 
         // room type commands
@@ -107,6 +119,10 @@ namespace Hotel.ViewModels
 
         // image commands
         public ICommand OpenAddNewImageWindowCommand { get; set; }
+
+        //employee commands
+        public ICommand OpenAddEmployeeWindowCommand { get; set; }
+        public ICommand DeleteEmployeeCommand { get; set; }
         #endregion
 
         public AdminMainVM()
@@ -134,6 +150,9 @@ namespace Hotel.ViewModels
 
             OpenAddNewImageWindowCommand = new OpenAddNewImageWindowCommand(this);
 
+            OpenAddEmployeeWindowCommand = new OpenAddEmployeeWindowCommand(this);
+            DeleteEmployeeCommand = new DeleteEmployeeCommand(this);
+
             //read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypesWithPrices())
@@ -153,6 +172,11 @@ namespace Hotel.ViewModels
             Offers = new ObservableCollection<OfferVM>();
             foreach (var offer in OfferDAL.GetAllOffers())
                 Offers.Add(new OfferVM(offer));
+            
+            // reads the employees, create wrapers and populate the list
+            Employees = new ObservableCollection<EmployeeVM>();
+            foreach (var employee in LoginDAL.GetAllEmployees())
+                Employees.Add(new EmployeeVM(employee));
         }
     }
 }
