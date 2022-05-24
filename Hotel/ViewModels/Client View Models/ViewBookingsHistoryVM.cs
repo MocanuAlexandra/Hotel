@@ -1,4 +1,5 @@
 ﻿using Hotel.Commands.Client_Commands;
+using Hotel.Commands.Client_Commands.Reserve_commands;
 using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
@@ -53,6 +54,8 @@ namespace Hotel.ViewModels
 
         public ICommand SetStatusResOfferCommand { get; set; }
 
+        public ICommand SetStatusResCommand { get; set; }
+        
         public ViewBookingsHistoryVM(MainWindowVM mainWindowVM)
         {
             MainWindowVM = mainWindowVM;            
@@ -60,7 +63,8 @@ namespace Hotel.ViewModels
             Bookings = new ObservableCollection<Booking>();
 
             // commands
-            SetStatusResOfferCommand = new SetStatusResOfferCommand(this);          
+            SetStatusResOfferCommand = new SetStatusResOfferCommand(this);
+            SetStatusResCommand = new SetStatusResCommand(this);
 
         }
     }

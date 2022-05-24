@@ -50,15 +50,15 @@ namespace Hotel.Models.DataAccessLayer
                 return new ObservableCollection<Booking>(bookings);
             }
         }
-        
-        ////updates a reservation
-        //public static void UpdateReservation(Reservation reservation)
-        //{
-        //    using (var context = new HotelDbContext())
-        //    {
-        //        context.Entry(reservation).State = EntityState.Modified;
-        //        context.SaveChanges();
-        //    }
-        //}
+
+        //updates a booking
+        public static void UpdateBooking(Booking booking)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.Entry(booking).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
     }
 }

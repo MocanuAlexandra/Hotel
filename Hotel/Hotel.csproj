@@ -142,6 +142,7 @@
     <Compile Include="Commands\Client Commands\Reserve commands\Rooms\AddRoomTypeCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve commands\OpenMakeBookingCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve commands\RemoveBookingItemCommand.cs" />
+    <Compile Include="Commands\Client Commands\Reserve commands\SetStatusResCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve commands\SumbitBookingCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve with offer commands\ReserveOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\Reserve commands\Rooms\DecreaseNumberOfRooms.cs" />
