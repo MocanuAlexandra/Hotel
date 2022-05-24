@@ -83,7 +83,7 @@ namespace Hotel.ViewModels
                     CheckOutDate = DateTime.Today.AddDays(1),
 
                     TotalPrice = 0,
-                    Status = Booking.BookingStatus.Active,
+                    Status = BookingStatus.Active,
 
                     RoomsIds = new List<int>(),
                     Rooms = new ObservableCollection<Room>(),

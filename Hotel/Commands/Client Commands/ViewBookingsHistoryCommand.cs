@@ -23,7 +23,8 @@ namespace Hotel.Commands.Client_Commands
                 new ViewBookingsHistoryVM(_clientMainVM.MainWindowVM)
                 {
                     Client = _clientMainVM.Client,
-                    ReservationOffers = ReservationOfferDAL.GetReservations(_clientMainVM.Client._client)
+                    ReservationOffers = ReservationOfferDAL.GetReservations(_clientMainVM.Client._client),
+                    Bookings = BookingDAL.GetBookings(_clientMainVM.Client._client)
                 };           
         }
     }

@@ -27,9 +27,7 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        // given a client, return all the reservations,
-        // that are active and not cancelled
-        // includes offers
+        // given a client, return all the reservations
         public static ObservableCollection<ReservationOffer> GetReservations(Client client)
         {
             using (var context = new HotelDBContext())

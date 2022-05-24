@@ -39,12 +39,25 @@ namespace Hotel.ViewModels
                 OnPropertyChanged("SelectedReservationOffer");
             }
         }
+        public ObservableCollection<Booking> Bookings { get; set; }
+        private Booking _selectedBooking;
+        public Booking SelectedBooking
+        {
+            get { return _selectedBooking; }
+            set
+            {
+                _selectedBooking = value;
+                OnPropertyChanged("SelectedBooking");
+            }
+        }
+
         public ICommand SetStatusResOfferCommand { get; set; }
 
         public ViewBookingsHistoryVM(MainWindowVM mainWindowVM)
         {
             MainWindowVM = mainWindowVM;            
             ReservationOffers = new ObservableCollection<ReservationOffer>();
+            Bookings = new ObservableCollection<Booking>();
 
             // commands
             SetStatusResOfferCommand = new SetStatusResOfferCommand(this);          

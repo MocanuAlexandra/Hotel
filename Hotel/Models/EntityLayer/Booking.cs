@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Hotel.Models.EntityLayer
 {
+    public enum BookingStatus
+    {
+        Active,
+        Canceled,
+        Completed
+    }
     public class Booking
     {
-        public enum BookingStatus
-        {
-            Active, 
-            Canceled,
-            Completed
-        }
 
         public int Id { get; set; }
 

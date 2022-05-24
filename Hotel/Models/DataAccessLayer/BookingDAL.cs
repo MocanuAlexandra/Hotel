@@ -2,6 +2,7 @@
 using Hotel.Models.EntityLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -30,18 +31,26 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        ////reads all reservations from the database
-        //public static IEnumerable<Booking> GetAllReservations()
-        //{
-        //    using (var context = new HotelDBContext())
-        //    {
-        //        return context.Bookings.
-        //            Include(r => r.User).
-        //            Include(r => r.Rooms.Select(room => room.RoomType)).
-        //            Include(r => r.HotelServices).ToList();
-        //    }
-        //}
+        // given a client, return all the reservations into observable collection
+        // includes rooms and hotel services
+        public static ObservableCollection<Booking> GetBookings(Client client)
+        {
+            using (var context = new HotelDBContext())
+            {
+                //to avoid additional insertion into the database, we
+                //set the state of the entries to Unchanged
+                context.Entry(client).State = EntityState.Unchanged;
 
+                var bookings = context.Bookings.
+                    Include(b => b.Client).
+                    Include(b => b.Rooms).
+                    Include("Rooms.RoomType").
+                    Include(b => b.HotelServices).
+                    Where(b => b.Client.ClientId == client.ClientId).ToList();
+                return new ObservableCollection<Booking>(bookings);
+            }
+        }
+        
         ////updates a reservation
         //public static void UpdateReservation(Reservation reservation)
         //{

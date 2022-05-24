@@ -45,7 +45,7 @@ namespace Hotel.ViewModels.Model_Wrappers
             get { return _booking.TotalPrice; }
             set { _booking.TotalPrice = value; OnPropertyChanged(); }
         }
-        public Booking.BookingStatus Status
+        public BookingStatus Status
         {
             get { return _booking.Status; }
             set { _booking.Status = value; OnPropertyChanged(); }
@@ -82,7 +82,7 @@ namespace Hotel.ViewModels.Model_Wrappers
         public BookingVM(Booking booking)
         {
             _booking = booking;
-        }
+        }        
     }
 }
 
