@@ -51,6 +51,20 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
+        //gets all booking, including rooms and hotel services and clients
+        public static ObservableCollection<Booking> GetAllBookings()
+        {
+            using (var context = new HotelDBContext())
+            {
+                var bookings = context.Bookings.
+                    Include(b => b.Client).
+                    Include(b => b.Rooms).
+                    Include("Rooms.RoomType").
+                    Include(b => b.HotelServices).
+                    ToList();
+                return new ObservableCollection<Booking>(bookings);
+            }
+        }
         //updates a booking
         public static void UpdateBooking(Booking booking)
         {

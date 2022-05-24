@@ -50,7 +50,12 @@
         </StackPanel>
 
         <DockPanel DockPanel.Dock="Top">
-            <StackPanel Orientation="Horizontal" Width="397" DockPanel.Dock="Left">
+            <StackPanel Orientation="Horizontal" Width="576" DockPanel.Dock="Left">
+                <Button Content="View bookings" 
+                        FontWeight="Bold"
+                        Style="{StaticResource RoundedButtonStyle}"
+                        Command="{Binding ViewBookingsEmployeeCommand}"
+                        Margin="20, 0" Height="30" FontSize="18" Width="136"/>
                 <StackPanel>
                     <TextBlock Text="Start date" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold"/>
                     <DatePicker

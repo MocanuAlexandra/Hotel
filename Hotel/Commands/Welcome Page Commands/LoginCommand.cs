@@ -55,9 +55,12 @@ namespace Hotel.Commands.Welcome_Page_Commands
                     // then we check if the employee exists in the database
                     if (LoginDAL.IsEmployeeInDB(signInVM.Email, signInVM.Password) != 0)
                     {
-                        _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM();
-                        _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
-                        _mainWindowViewModel.CurrentWidth = Constants.ClientWindowSize.windowWidth;
+                        _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM()
+                        {
+                            MainWindowVM = _mainWindowViewModel,
+                        };
+                        _mainWindowViewModel.CurrentHeight = Constants.EmployeeWindowSize.windowHeight;
+                        _mainWindowViewModel.CurrentWidth = Constants.EmployeeWindowSize.windowWidth;
                     }
                 }
 

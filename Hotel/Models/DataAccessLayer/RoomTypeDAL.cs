@@ -41,7 +41,7 @@ namespace Hotel.Models.DataAccessLayer
                 return new ObservableCollection<RoomType>(roomTypes);
             }
         }
-
+        
         //adds a room type to the database
         public static void AddRoomType(RoomType roomType)
         {

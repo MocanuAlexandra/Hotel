@@ -14,6 +14,8 @@ namespace Hotel.ViewModels
     public class EmployeeMainVM : BaseViewModel
     {
         #region Properties
+        public MainWindowVM MainWindowVM { get; set; }
+        
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
 
         private DateTime _startDate;
@@ -32,12 +34,14 @@ namespace Hotel.ViewModels
 
         #endregion
         public ICommand SearchCommand { get; private set; }
-        
+        public ICommand ViewBookingsEmployeeCommand { get; private set; }
+
         public EmployeeMainVM()
         {
             StartDate = DateTime.Today;
 
             SearchCommand = new EmployeeSearchCommand(this);
+            ViewBookingsEmployeeCommand = new ViewBookingsEmployeeCommand(this);
 
             // read the room types, create wrapers and populate the list
             RoomTypes = new ObservableCollection<RoomTypeVM>();

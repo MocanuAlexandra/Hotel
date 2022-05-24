@@ -56,7 +56,6 @@ namespace Hotel.ViewModels
             set { _noOfNights = value; OnPropertyChanged(); }
         }
 
-        //public ViewBookingsHistoryVM ViewBookingsHistoryVM { get; set; }
         public MainWindowVM MainWindowVM { get; set; }
         #endregion
 

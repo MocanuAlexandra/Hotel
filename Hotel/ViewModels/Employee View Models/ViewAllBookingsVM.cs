@@ -1,6 +1,4 @@
-﻿using Hotel.Commands.Client_Commands;
-using Hotel.Commands.Client_Commands.Reserve_commands;
-using Hotel.Models.DataAccessLayer;
+﻿using Hotel.Models.DataAccessLayer;
 using Hotel.Models.EntityLayer;
 using Hotel.ViewModels.Model_Wrappers;
 using System;
@@ -10,29 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Hotel.Commands.Employee_Commands;
 
 namespace Hotel.ViewModels
 {
-    public class ViewBookingsHistoryVM : BaseViewModel
+    public class ViewAllBookingsVM:BaseViewModel
     {
         #region Properties
         public MainWindowVM MainWindowVM { get; set; }
-        
-        private ClientVM _client;
-        public ClientVM Client
-        {
-            get { return _client; }
-            set
-            {
-                _client = value;
-                OnPropertyChanged("Client");
-            }
-        }
+        public ObservableCollection<ReservationOfferVM> ReservationOffers { get; set; }
 
-        public ObservableCollection<ReservationOffer> ReservationOffers { get; set;  }
-   
-        private ReservationOffer _selectedReservationOffer;
-        public ReservationOffer SelectedReservationOffer
+        private ReservationOfferVM _selectedReservationOffer;
+        public ReservationOfferVM SelectedReservationOffer
         {
             get { return _selectedReservationOffer; }
             set
@@ -41,9 +28,9 @@ namespace Hotel.ViewModels
                 OnPropertyChanged("SelectedReservationOffer");
             }
         }
-        public ObservableCollection<Booking> Bookings { get; set; }
-        private Booking _selectedBooking;
-        public Booking SelectedBooking
+        public ObservableCollection<BookingVM> Bookings { get; set; }
+        private BookingVM _selectedBooking;
+        public BookingVM SelectedBooking
         {
             get { return _selectedBooking; }
             set
@@ -54,7 +41,7 @@ namespace Hotel.ViewModels
         }
 
         #endregion
-
+        
         #region Commands
         public ICommand SetStatusResOfferCommand { get; set; }
 
@@ -62,11 +49,19 @@ namespace Hotel.ViewModels
 
         #endregion
         
-        public ViewBookingsHistoryVM(MainWindowVM mainWindowVM)
+        public ViewAllBookingsVM(MainWindowVM mainWindowVM)
         {
-            MainWindowVM = mainWindowVM;            
-            ReservationOffers = new ObservableCollection<ReservationOffer>();
-            Bookings = new ObservableCollection<Booking>();
+            MainWindowVM = mainWindowVM;
+
+            // read the bookings with offer, create wrapers and populate the list
+            ReservationOffers = new ObservableCollection<ReservationOfferVM>();
+            foreach (var resOffer in ReservationOfferDAL.GetAllReservations())
+                ReservationOffers.Add(new ReservationOfferVM(resOffer));
+
+            // read the bookings without offer, create wrapers and populate the list
+            Bookings = new ObservableCollection<BookingVM>();
+            foreach (var booking in BookingDAL.GetAllBookings())
+                Bookings.Add(new BookingVM(booking));
 
             // commands
             SetStatusResOfferCommand = new SetStatusResOfferCommand(this);

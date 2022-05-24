@@ -151,6 +151,9 @@
     <Compile Include="Commands\Client Commands\Reserve with offer commands\SetStatusResOfferCommand.cs" />
     <Compile Include="Commands\Client Commands\ViewBookingsHistoryCommand.cs" />
     <Compile Include="Commands\Employee Commands\EmployeeSearchCommand.cs" />
+    <Compile Include="Commands\Employee Commands\SetStatusResCommand.cs" />
+    <Compile Include="Commands\Employee Commands\SetStatusResOfferCommand.cs" />
+    <Compile Include="Commands\Employee Commands\ViewBookingsEmployeeCommand.cs" />
     <Compile Include="Commands\GuestSearchCommand.cs" />
     <Compile Include="Commands\Navigation Commands\BackToMainVMCommand.cs" />
     <Compile Include="Commands\Navigation Commands\GuestViewCommand.cs" />
@@ -336,6 +339,7 @@
     <Compile Include="ViewModels\Client View Models\ViewBookingsHistoryVM.cs" />
     <Compile Include="ViewModels\Employee View Models\EmployeeMainVM.cs" />
     <Compile Include="ViewModels\Client View Models\ClientMainVM.cs" />
+    <Compile Include="ViewModels\Employee View Models\ViewAllBookingsVM.cs" />
     <Compile Include="ViewModels\GuestWindowVM.cs" />
     <Compile Include="ViewModels\Model Wrappers\AdminVM.cs" />
     <Compile Include="Models\EntityLayer\Booking.cs" />
@@ -397,6 +401,9 @@
     </Compile>
     <Compile Include="Views\Employee Views\EmployeeMainView.xaml.cs">
       <DependentUpon>EmployeeMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee Views\ViewAllBookings.xaml.cs">
+      <DependentUpon>ViewAllBookings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GuestWindow.xaml.cs">
       <DependentUpon>GuestWindow.xaml</DependentUpon>
@@ -471,6 +478,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Employee Views\EmployeeMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Employee Views\ViewAllBookings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

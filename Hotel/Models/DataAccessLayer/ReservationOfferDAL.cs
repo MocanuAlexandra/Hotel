@@ -48,6 +48,22 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
+        //get all reservations, inlcuding offers, offers asiigned room tyoe,
+        //hotel services adn clinets
+        public static ObservableCollection<ReservationOffer> GetAllReservations()
+        {
+            using (var context = new HotelDBContext())
+            {
+                var reservations = context.ReservationsOffer.
+                    Include("Offer").
+                    Include("Offer.AssignedRoomType").
+                    Include("Offer.HotelServices").
+                    Include("Client").
+                    ToList();
+                ObservableCollection<ReservationOffer> result = new ObservableCollection<ReservationOffer>(reservations);
+                return result;
+            }
+        }
         // update status of a reservation
         public static void UpdateReservation(ReservationOffer reservation)
         {

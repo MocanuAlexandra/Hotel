@@ -178,3 +178,5 @@ D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.exe
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.pdb
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateHotelServicesTable.resources
 D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Hotel.Migrations.UpdateBookingTable2.resources
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\ViewAllBookings.g.cs
+D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\obj\Debug\Views\Employee Views\ViewAllBookings.baml
