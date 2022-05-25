@@ -26,7 +26,8 @@ namespace Hotel.Utils.Components
             set { SetValue(PasswordProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Password.  This enables animation, styling, binding, etc...
+        // Using a DependencyProperty as the backing store for Password.
+        // This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox), 
                 new PropertyMetadata(string.Empty));

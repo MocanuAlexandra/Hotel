@@ -11,19 +11,6 @@ namespace Hotel.Utils
 {
     public class Utility
     {
-        #region Input/Output
-
-        //loads  picture paths
-        public static List<string> LoadPicturesPaths()
-        {
-            var pictures = new List<string>();
-
-            foreach (var picture in Directory.GetFiles(Constants.picturesStoragePath))
-                pictures.Add(Path.GetFileName(picture));
-
-            return pictures;
-        }
-        #endregion
         
         #region String manipulation
 

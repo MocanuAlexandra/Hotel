@@ -65,7 +65,7 @@ namespace Hotel.ViewModels
         {
             AdminMainVM = adminViewModel;
             RoomTypes = adminViewModel.RoomTypes;
-            
+
             CloseCommand = new CloseCommand(this);
             BrowsePictureCommand = new BrowsePictureCommand(this);
             AddImageCommand = new AddImageCommand(this);
