@@ -15,6 +15,7 @@ namespace Hotel.ViewModels
     {
         #region Properties
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
+        public ObservableCollection<RoomImageVM> Images { get; set; }
 
         private DateTime _startDate;
         public DateTime StartDate
@@ -45,6 +46,11 @@ namespace Hotel.ViewModels
             RoomTypes = new ObservableCollection<RoomTypeVM>();
             foreach (var roomType in RoomTypeDAL.GetRoomTypes())
                 RoomTypes.Add(new RoomTypeVM(roomType));
+
+            // read the images, create wrapers and populate the list
+            Images = new ObservableCollection<RoomImageVM>();
+            foreach (var image in ImageRoomDAL.GetAllImages())
+                Images.Add(new RoomImageVM(image));
         }
     }
 }

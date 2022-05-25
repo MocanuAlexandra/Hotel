@@ -13,7 +13,7 @@ namespace Hotel.Models.DataAccessLayer
 {
     public static class RoomTypeDAL
     {
-        //reads all room types from the database and also includes all rooms of the room type
+        //reads all active room types from the database and also includes all rooms of the room type
         // and all facilities of the room type
         public static ObservableCollection<RoomType> GetRoomTypes()
         {
@@ -22,6 +22,7 @@ namespace Hotel.Models.DataAccessLayer
                 var roomTypes = context.RoomTypes.
                     Include(rt => rt.RoomsOfType).
                     Include(rt => rt.Facilities).
+                    Where(rt => rt.IsActive).
                     ToList();
                 return new ObservableCollection<RoomType>(roomTypes);
             }
@@ -37,7 +38,9 @@ namespace Hotel.Models.DataAccessLayer
                 var roomTypes = context.RoomTypes.
                     Include(rt => rt.RoomsOfType).
                     Include(rt => rt.Facilities).
-                    Include(rt => rt.Prices).ToList();
+                    Include(rt => rt.Prices).
+                    Include(rt=> rt.Images).
+                    Where(rt => rt.IsActive).ToList();
                 return new ObservableCollection<RoomType>(roomTypes);
             }
         }

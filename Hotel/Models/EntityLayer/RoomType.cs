@@ -21,6 +21,7 @@ namespace Hotel.Models.EntityLayer
         public ObservableCollection<Room> RoomsOfType { get; set; }
         public ObservableCollection<Facility> Facilities { get; set; }
         public ObservableCollection<Price> Prices { get; set; }
+        public ObservableCollection< ImageRoom> Images { get; set; }
         public bool IsActive { get; set; }
     }
 }

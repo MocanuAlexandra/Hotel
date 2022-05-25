@@ -59,6 +59,7 @@ namespace Hotel.Models.DataAccessLayer
                     Include("Offer.AssignedRoomType").
                     Include("Offer.HotelServices").
                     Include("Client").
+                    Where(r=> r.IsActive == true).
                     ToList();
                 ObservableCollection<ReservationOffer> result = new ObservableCollection<ReservationOffer>(reservations);
                 return result;

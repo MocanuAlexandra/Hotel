@@ -16,24 +16,15 @@ namespace Hotel.Models.EntityLayer
         }
 
         //define primary key
-        [Key]
         public int ClientId { get; set; }
 
         //define other attributes
         //these fileds are required so can't be null
-        [Required]
+
         public string Email { get; set; }
-
-        [Required]
         public string Password { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
-
-        [Required]
         public string LastName { get; set; }
-
-        [Required]
         public string Phone { get; set; }
         
         public bool IsActive { get; set; }

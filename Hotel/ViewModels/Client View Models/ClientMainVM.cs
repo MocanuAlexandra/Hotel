@@ -29,6 +29,7 @@ namespace Hotel.ViewModels
         }
 
         public ObservableCollection<RoomTypeVM> RoomTypes { get; set; }
+        public ObservableCollection<RoomImageVM> Images { get; set; }        
 
         public ObservableCollection<OfferVM> Offers { get; set; }
         private OfferVM _selectedOffer;
@@ -59,12 +60,15 @@ namespace Hotel.ViewModels
         public MainWindowVM MainWindowVM { get; set; }
         #endregion
 
+        #region Commands
         public ICommand SearchCommand { get; private set; }
         public ICommand ViewBookingsHistoryCommand { get; private set; }
 
         public ICommand MakeBookingCommand { get; private set; }
-        public ICommand ReserveOfferCommand { get; private set; }        
+        public ICommand ReserveOfferCommand { get; private set; }
 
+        #endregion
+        
         public ClientMainVM()
         {         
             StartDate = DateTime.Today;
@@ -83,6 +87,11 @@ namespace Hotel.ViewModels
             Offers = new ObservableCollection<OfferVM>();
             foreach (var offer in OfferDAL.GetAllOffers())
                 Offers.Add(new OfferVM(offer));
+
+            // read the images, create wrapers and populate the list
+            Images = new ObservableCollection<RoomImageVM>();
+            foreach (var image in ImageRoomDAL.GetAllImages())
+                Images.Add(new RoomImageVM(image));
         }
     }
 }

@@ -69,16 +69,6 @@ namespace Hotel.ViewModels
         }
         #endregion
 
-        #region Images Properties
-        public ObservableCollection<ImageVM> Images { get; set; }
-        private ImageVM _selectedImage;
-        public ImageVM SelectedImage
-        {
-            get { return _selectedImage; }
-            set { _selectedImage = value; OnPropertyChanged(); }
-        }
-        #endregion
-
         #region Employee Properties
         public ObservableCollection<EmployeeVM> Employees { get; set; }
         private EmployeeVM _selectedEmployee;
@@ -89,6 +79,16 @@ namespace Hotel.ViewModels
         }
         #endregion
 
+        #region Image Properties
+        public ObservableCollection<RoomImageVM> Images { get; set; }
+        private RoomImageVM _selectedImage;
+        public RoomImageVM SelectedImage
+        {
+            get { return _selectedImage; }
+            set { _selectedImage = value; OnPropertyChanged(); }
+        }
+        #endregion
+        
         #region Commands
 
         // room type commands
@@ -119,6 +119,7 @@ namespace Hotel.ViewModels
 
         // image commands
         public ICommand OpenAddNewImageWindowCommand { get; set; }
+        public ICommand DeleteImageCommand { get; set; }
 
         //employee commands
         public ICommand OpenAddEmployeeWindowCommand { get; set; }
@@ -127,6 +128,7 @@ namespace Hotel.ViewModels
 
         public AdminMainVM()
         {
+            // init commands
             OpenAddRoomTypeWindowCommand = new OpenAddRoomTypeWindowCommand(this);
             OpenEditRoomTypeWindowCommand = new OpenEditRoomTypeWindowCommand(this);
             DeleteRoomTypeCommand = new DeleteRoomTypeCommand(this);
@@ -149,6 +151,7 @@ namespace Hotel.ViewModels
             DeleteOfferCommand = new DeleteOfferCommand(this);
 
             OpenAddNewImageWindowCommand = new OpenAddNewImageWindowCommand(this);
+            DeleteImageCommand = new DeleteImageCommand(this);
 
             OpenAddEmployeeWindowCommand = new OpenAddEmployeeWindowCommand(this);
             DeleteEmployeeCommand = new DeleteEmployeeCommand(this);
@@ -177,6 +180,11 @@ namespace Hotel.ViewModels
             Employees = new ObservableCollection<EmployeeVM>();
             foreach (var employee in LoginDAL.GetAllEmployees())
                 Employees.Add(new EmployeeVM(employee));
+
+            // read the images, create wrapers and populate the list
+            Images = new ObservableCollection<RoomImageVM>();
+            foreach (var image in ImageRoomDAL.GetAllImages())
+                Images.Add(new RoomImageVM(image));
         }
     }
 }

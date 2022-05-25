@@ -9,14 +9,11 @@ namespace Hotel.Models.EntityLayer
 {
     public class Admin
     {
-        [Key] //define primary key
         public int AdminId { get; set; }
 
         //define other attributes
-        [Required]
         public string Email { get; set; }
 
-        [Required]
         public string Password { get; set; }
 
         public bool IsActive { get; set; }

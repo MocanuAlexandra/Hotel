@@ -35,6 +35,7 @@ namespace Hotel.Commands.Room_Type_Commands
                 newRoomType.IsActive = true;
                 newRoomType.RoomsOfType = new ObservableCollection<Room>();
                 newRoomType.Facilities = new ObservableCollection<Facility>();
+                newRoomType.Images = new ObservableCollection<ImageRoom>();
 
                 //first we create the list of prices that were added, we ignore the first one
                 //because it represents the "dummy" price, placeholder for the new price

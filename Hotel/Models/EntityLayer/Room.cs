@@ -18,7 +18,6 @@ namespace Hotel.Models.EntityLayer
         //}
 
         //define primary key
-        [Key]
         public int Id { get; set; }
         public int Number { get; set; }
 

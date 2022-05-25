@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Hotel.Utils
 {
@@ -114,34 +115,22 @@ namespace Hotel.Utils
         }
         #endregion
 
-        #region Path manipulation
-         //gets a picture name and appends the full path to it
-        public static string PictureNameToPath(string pictureName)
-        {
-            try
-            {
-                return Path.Combine(Directory.GetCurrentDirectory(),
-                    Constants.picturesStoragePath,
-                    pictureName);
-            }
-            catch (Exception)
-            {
-                return string.Empty;
-            }
-        }
+        #region Image manipulation
 
-        //gets a picture path and returns the name of it
-        public static string PicureNameFromPath(string picturePath)
+        // convert from bitmapImage to byte array
+        public static byte[] ConvertBitmapImageToByteArray(BitmapImage bitmapImage)
         {
-            try
+            byte[] data;
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+            using (MemoryStream ms = new MemoryStream())
             {
-                return Path.GetFileName(picturePath);
+                encoder.Save(ms);
+                data = ms.ToArray();
             }
-            catch (Exception)
-            {
-                return string.Empty;
-            }
+            return data;
         }
+        
         #endregion
 
         #region Others

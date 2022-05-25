@@ -13,13 +13,13 @@ namespace Hotel.Models.DataAccessLayer
 {
     public static class FacilityDAL
     {
-        // reads all facilities from the database
+        // reads all active facilities from the database
         public static ObservableCollection<Facility> GetFacilities()
         {
             using (var context = new HotelDBContext())
             {
-                return new ObservableCollection<Facility>(
-                    context.Facilities);
+                var facilities = context.Facilities.Where(f => f.IsActive == true).ToList();
+                return new ObservableCollection<Facility>(facilities);
             }
         }
 

@@ -21,8 +21,17 @@ namespace Hotel.DBContext
         public DbSet<Offer> Offers { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Price> Prices { get; set; }
-        public DbSet<RoomImage> Images { get; set; }
+        public DbSet<ImageRoom> Images { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<ReservationOffer> ReservationsOffer { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Employee>()
+        //        .MapToStoredProcedures(s => s.Insert(u => u.HasName("InsertEmployee", "dbo"))
+        //                                        .Update(u => u.HasName("UpdateEmployee", "dbo"))
+        //                                        .Delete(u => u.HasName("DeleteEmployee", "dbo"))
+        //        );
+        //}
     }
 }

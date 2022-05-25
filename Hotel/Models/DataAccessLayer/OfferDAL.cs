@@ -24,14 +24,15 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-        // gets all offers from database includes assigned room type
+        // gets all active offers from database includes assigned room type
         public static ObservableCollection<Offer> GetAllOffers()
         {
             using (var context = new HotelDBContext())
             {
                 var offers = context.Offers.
                     Include(o => o.AssignedRoomType).
-                    Include(hs => hs.HotelServices).ToList();
+                    Include(hs => hs.HotelServices)
+                    .Where(o => o.IsActive == true).ToList();
                 return new ObservableCollection<Offer>(offers);
             }
         }

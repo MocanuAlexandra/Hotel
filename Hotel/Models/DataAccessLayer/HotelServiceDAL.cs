@@ -12,13 +12,13 @@ namespace Hotel.Models.DataAccessLayer
 {
     public static class HotelServiceDAL
     {
-        //reads all hotel services from the database
+        //reads all active hotel services from the database
         public static ObservableCollection<HotelService> GetHotelServices()
         {
             using (var context = new HotelDBContext())
             {
-                return new ObservableCollection<HotelService>(
-                    context.HotelServices);
+                var hotelServices = context.HotelServices.Where(hs => hs.IsActive == true).ToList();
+                return new ObservableCollection<HotelService>(hotelServices);
             }
         }
 

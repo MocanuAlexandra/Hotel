@@ -16,6 +16,7 @@ namespace Hotel.Models.DataAccesLayer
     {
         public LoginDAL() { }
 
+        #region Admin 
         // this method is used to check if admin is in databse or not
         public static int IsAdminInDB(string email, string password)
         {
@@ -32,9 +33,7 @@ namespace Hotel.Models.DataAccesLayer
                     // if it is, we return ID of the admin
                     if (adminQuery != null && Utility.CheckPassword(password, adminQuery.Password))
                     {
-                        adminQuery.IsActive = true;
-                        hotelDBContext.Admins.Attach(adminQuery);
-                        hotelDBContext.Entry(adminQuery).Property(x => x.IsActive).IsModified = true;
+                        hotelDBContext.Admins.Attach(adminQuery);            
                         hotelDBContext.SaveChanges();
 
                         return adminQuery.AdminId;
@@ -48,6 +47,9 @@ namespace Hotel.Models.DataAccesLayer
             }
         }
 
+        #endregion
+
+        #region Employee
         // this method is used to check if employee is in databse or not
         public static int IsEmployeeInDB(string email, string password)
         {
@@ -64,9 +66,7 @@ namespace Hotel.Models.DataAccesLayer
                     // if it is, we return ID of the employee
                     if (employeeQuery != null && Utility.CheckPassword(password, employeeQuery.Password))
                     {
-                        employeeQuery.IsActive = true;
                         hotelDBContext.Employees.Attach(employeeQuery);
-                        hotelDBContext.Entry(employeeQuery).Property(x => x.IsActive).IsModified = true;
                         hotelDBContext.SaveChanges();
 
                         return employeeQuery.EmployeeId;
@@ -80,6 +80,39 @@ namespace Hotel.Models.DataAccesLayer
             }
         }
 
+        //gets all employees into observable colllection labmda expression
+        public static ObservableCollection<Employee> GetAllEmployees()
+        {
+            using (var hotelDBContext = new HotelDBContext())
+            {
+                try
+                {
+                    var employees = (from employee in hotelDBContext.Employees
+                                     where employee.IsActive == true
+                                     select employee).ToList();
+
+                    return new ObservableCollection<Employee>(employees);
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+        // deletes a employee
+        public static void DeleteEmployee(Employee employee)
+        {
+            using (var context = new HotelDBContext())
+            {
+                context.Employees.Attach(employee);
+                context.Employees.Remove(employee);
+                context.SaveChanges();
+            }
+        }
+        #endregion
+
+        #region Client
         // this method is used to check if client is in databse or not
         public static int IsClientInDB(string email, string password)
         {
@@ -96,9 +129,7 @@ namespace Hotel.Models.DataAccesLayer
                     // if it is, we return ID of the guest
                     if (clientQuery != null && Utility.CheckPassword(password, clientQuery.Password))
                     {
-                        clientQuery.IsActive = true;
-                        hotelDBContext.Clients.Attach(clientQuery);
-                        hotelDBContext.Entry(clientQuery).Property(x => x.IsActive).IsModified = true;
+                        hotelDBContext.Clients.Attach(clientQuery);              
                         hotelDBContext.SaveChanges();
 
                         return clientQuery.ClientId;
@@ -166,35 +197,6 @@ namespace Hotel.Models.DataAccesLayer
             }
         }
 
-        //gets all employees into observable colllection labmda expression
-        public static ObservableCollection<Employee> GetAllEmployees()
-        {
-            using (var hotelDBContext = new HotelDBContext())
-            {
-                try
-                {
-                    var employees = (from employee in hotelDBContext.Employees
-                                     where employee.IsActive == true
-                                     select employee).ToList();
-
-                    return new ObservableCollection<Employee>(employees);
-                }
-                catch
-                {
-                    throw new Exception();
-                }
-            }
-        }
-
-        // deletes a employee
-        public static void DeleteEmployee(Employee employee)
-        {
-            using (var context = new HotelDBContext())
-            {
-                context.Employees.Attach(employee);
-                context.Employees.Remove(employee);
-                context.SaveChanges();
-            }
-        }
+        #endregion       
     }
 }
