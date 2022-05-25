@@ -13,25 +13,19 @@
     <!--We made a custom button style-->
     <Window.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightSkyBlue"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding  Content}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                                              Margin="{TemplateBinding Padding}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Background" Value="BurlyWood"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

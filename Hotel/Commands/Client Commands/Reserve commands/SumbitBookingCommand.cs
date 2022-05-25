@@ -77,7 +77,7 @@ namespace Hotel.Commands.Client_Commands.Reserve_commands
 
             MessageBox.Show("Booking made successfully!", "Success", MessageBoxButton.OK,
                  MessageBoxImage.Information);
-            
+
             //close the window after the reservation has been made
             _makeBookingViewModel.CloseWindow();
         }

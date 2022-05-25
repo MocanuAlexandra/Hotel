@@ -15,29 +15,23 @@
     <!--We made a custom button style-->
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightSkyBlue"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding  Content}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                                              Margin="{TemplateBinding Padding}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Background" Value="BurlyWood"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
+
         <ObjectDataProvider x:Key="enumValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type Type="{x:Type models:ReservationStatus}"/>
@@ -53,7 +47,7 @@
         <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
     </UserControl.Resources>
 
-    <DockPanel Background="LightSkyBlue">
+    <DockPanel Background="BurlyWood">
         <StackPanel DockPanel.Dock="Bottom" Height="33">
             <Button         Content="Back" Width="100" Height="33"
                             FontWeight="Bold" FontSize="14"
@@ -198,7 +192,7 @@
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                             <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="LightSkyBlue"/>
+                            <Setter Property="Background" Value="BurlyWood"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                 </GridView>

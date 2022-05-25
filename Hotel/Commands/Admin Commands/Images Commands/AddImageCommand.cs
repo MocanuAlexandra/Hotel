@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace Hotel.Commands.Admin_Commands.Images_Commands
 {
-    public class AddImageCommand:BaseCommand
+    public class AddImageCommand : BaseCommand
     {
         private readonly RoomImageEditVM _roomImageEditVM;
 
@@ -25,22 +25,32 @@ namespace Hotel.Commands.Admin_Commands.Images_Commands
 
         public override void Execute(object parameter)
         {
-            ImageRoom imageRoom = new ImageRoom()
+            // verify if the image already exists in the database            
+            byte[] imageInDatabase = Utility.ConvertBitmapImageToByteArray(_roomImageEditVM.ImageForRoomType);
+            if (ImageRoomDAL.ImageExists(imageInDatabase))
             {
-                ImageData = Utility.ConvertBitmapImageToByteArray(_roomImageEditVM.ImageForRoomType),
-                RoomType = _roomImageEditVM.SelectedRoomType._roomType,
-                IsActive = true,
-            };
+                MessageBox.Show("Image already exists!", "Error", MessageBoxButton.OK,
+                     MessageBoxImage.Error);
+            }
 
-            
-            // add image to database and to the list 
-            ImageRoomDAL.AddImage(imageRoom, _roomImageEditVM.SelectedRoomType._roomType);
-            _roomImageEditVM.AdminMainVM.Images.Add(new RoomImageVM(imageRoom));
+            else
+            {
+                ImageRoom imageRoom = new ImageRoom()
+                {
+                    ImageData = Utility.ConvertBitmapImageToByteArray(_roomImageEditVM.ImageForRoomType),
+                    RoomType = _roomImageEditVM.SelectedRoomType._roomType,
+                    IsActive = true,
+                };
 
-            MessageBox.Show("Image added successfully!", "Success", MessageBoxButton.OK,
-               MessageBoxImage.Information);
+                // add image to database and to the list 
+                ImageRoomDAL.AddImage(imageRoom, _roomImageEditVM.SelectedRoomType._roomType);
+                _roomImageEditVM.AdminMainVM.Images.Add(new RoomImageVM(imageRoom));
 
-            _roomImageEditVM.CloseWindow();
+                MessageBox.Show("Image added successfully!", "Success", MessageBoxButton.OK,
+                   MessageBoxImage.Information);
+
+                _roomImageEditVM.CloseWindow();
+            }
         }
 
         public override bool CanExecute(object parameter)

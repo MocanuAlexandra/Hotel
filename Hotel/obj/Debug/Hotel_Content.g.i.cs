@@ -8,8 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/double_1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/double_2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/noimage.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/background_2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/apartment.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/single.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/single_2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/triple_1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roomimages/triple_2.jpg")]
 
 

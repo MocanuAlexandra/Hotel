@@ -12,24 +12,19 @@
 
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding  Content}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                                              Margin="{TemplateBinding Padding}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Background" Value="BurlyWood"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -37,8 +32,9 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
+            <ImageBrush ImageSource="pack://application:,,,/Images/background_2.jpg"/>
         </Grid.Background>
+
 
         <Button Style="{StaticResource RoundedButtonStyle}"
                 HorizontalAlignment="Left"
@@ -83,7 +79,7 @@
                 RelativeSource={RelativeSource Mode=FindAncestor, 
                 AncestorType={x:Type local:MainWindow}}}"/>
 
-        <Label Content="{Binding ErrorMessage}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,348,0,0" Height="35" Width="390" FontSize="20" FontFamily="Segoe UI Black" Foreground="Red" HorizontalContentAlignment="Center"/>
+        <Label Content="{Binding ErrorMessage}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,348,0,0" Height="35" Width="390" FontSize="20" FontFamily="Segoe UI Black" Foreground="White" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </UserControl>

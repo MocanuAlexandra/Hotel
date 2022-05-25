@@ -13,31 +13,25 @@
 
     <Window.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightSkyBlue"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding  Content}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                                              Margin="{TemplateBinding Padding}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Background" Value="BurlyWood"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
 
-    <DockPanel Background="LightSkyBlue">
+    <DockPanel Background="BurlyWood">
         
         <!--Select interval-->
         <DockPanel DockPanel.Dock="Top" Height="62">
@@ -131,7 +125,7 @@
                         Margin="520,0,0,0"
                         Command="{Binding SubmitBookingCommand}"
                         Style="{StaticResource RoundedButtonStyle}"
-                        Width="103" FontSize="18" Height="28" FontWeight="Bold"/>
+                        Width="95" FontSize="18" Height="28" FontWeight="Bold"/>
             </StackPanel>
         </DockPanel>
 

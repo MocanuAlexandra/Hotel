@@ -22,6 +22,8 @@ namespace Hotel.ViewModels
         public BookingVM BookingVM { get; set; }
         public ClientVM Client { get; set; }
 
+        public ClientMainVM ClientMainVM { get; set; }
+
         //used to display the list of items that the user has added
         #region ItemList
 

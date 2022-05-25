@@ -21,6 +21,9 @@ namespace Hotel.Commands.Client_Commands
             new MakeBookingWindow()
             {
                 DataContext = new MakeBookingVM(_clientViewModel.Client)
+                {
+                    ClientMainVM = _clientViewModel
+                }
             }.Show();
         }
     }

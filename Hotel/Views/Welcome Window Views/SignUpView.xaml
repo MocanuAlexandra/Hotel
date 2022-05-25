@@ -12,33 +12,28 @@
 
     <UserControl.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10,10,10,10" Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding  Content}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                                              Margin="{TemplateBinding Padding}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Background" Value="BurlyWood"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg"/>
+            <ImageBrush ImageSource="pack://application:,,,/Images/background_2.jpg"/>
         </Grid.Background>
+
 
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="742" Margin="0,10,0,0">
 

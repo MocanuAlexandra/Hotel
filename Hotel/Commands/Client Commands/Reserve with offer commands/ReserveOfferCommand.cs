@@ -60,7 +60,10 @@ namespace Hotel.Commands.Client_Commands
                 reservation);
 
             MessageBox.Show("Offer booked successfully!", "Success", MessageBoxButton.OK,
-                   MessageBoxImage.Information);            
+                   MessageBoxImage.Information);
+
+            // update the client view model
+          
         }
 
         public override bool CanExecute(object parameter)

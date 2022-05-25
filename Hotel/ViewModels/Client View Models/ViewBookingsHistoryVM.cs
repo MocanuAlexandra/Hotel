@@ -17,7 +17,8 @@ namespace Hotel.ViewModels
     {
         #region Properties
         public MainWindowVM MainWindowVM { get; set; }
-        
+        public ClientMainVM ClientMainVM { get; set; }
+
         private ClientVM _client;
         public ClientVM Client
         {

@@ -50,6 +50,13 @@ namespace Hotel.Models.DataAccessLayer
             }
         }
 
-
+        // verify if image exists in database based on byte array
+        public static bool ImageExists(byte[] image)
+        {
+            using (var context = new HotelDBContext())
+            {
+                return context.Images.Any(i => i.ImageData == image);
+            }
+        }
     }
 }
