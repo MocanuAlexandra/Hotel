@@ -97,6 +97,7 @@
                 </Style>
             </TabControl.Resources>
 
+            <!--Room types tab item-->
             <TabItem Header="Room types" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-1,0">
                 <ListView ItemsSource="{Binding RoomTypes}" 
                   HorizontalContentAlignment="Center" 
@@ -187,8 +188,8 @@
                 </ListView>
             </TabItem>
 
+            <!--Rom images tab item-->
             <TabItem Header="Room images" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
-
                 <ListBox ItemsSource="{Binding Images}"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 Grid.Row="1" Margin="10">

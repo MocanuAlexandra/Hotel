@@ -154,7 +154,7 @@
             </MenuItem>
         </Menu>
 
-
+        <!--Logout button-->
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="38" Width="91">
             <Button         Content="Logout" Width="88" Height="34"
                             FontWeight="Bold" FontSize="14"
@@ -165,6 +165,7 @@
                             Mode=FindAncestor}}"/>
         </StackPanel>
 
+        <!--Define tab control-->
         <TabControl DockPanel.Dock="Top">
             <TabControl.Resources>
                 <Style TargetType="TabItem">
@@ -192,6 +193,7 @@
                 </Style>
             </TabControl.Resources>
 
+            <!--Room types tab item-->
             <TabItem Header="Room types" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-1,0">
                 <ListView ItemsSource="{Binding RoomTypes}" SelectedItem="{Binding SelectedRoomType}" 
                   HorizontalContentAlignment="Center" 
@@ -274,6 +276,37 @@
                 </ListView>
             </TabItem>
 
+            <!--room images tab item -->
+            <TabItem Header="Room images" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
+
+                <ListBox ItemsSource="{Binding Images}"
+                         SelectedItem="{Binding SelectedImage}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                Grid.Row="1" Margin="10">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid MaxWidth="200" Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding ImageData}" />
+                                <Label HorizontalAlignment="Center"
+                                       FontSize="14"
+                                       FontWeight="DemiBold"
+                                Content="{Binding RoomType.Name}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+            
+            <!--Hotel services tab item-->
             <TabItem Header="Hotel services" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding HotelServices}" SelectedItem="{Binding SelectedHotelService}" 
                   HorizontalContentAlignment="Center" 
@@ -313,6 +346,7 @@
                 </ListView>
             </TabItem>
 
+            <!--Room facilities tab item-->
             <TabItem Header="Room facilities" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
 
                 <ListView ItemsSource="{Binding Facilities}" SelectedItem="{Binding SelectedFacility}" 
@@ -345,35 +379,7 @@
                 </ListView>
             </TabItem>
 
-            <TabItem Header="Room images" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
-
-                <ListBox ItemsSource="{Binding Images}"
-                         SelectedItem="{Binding SelectedImage}"
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                Grid.Row="1" Margin="10">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid MaxWidth="200" Margin="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding ImageData}" />
-                                <Label HorizontalAlignment="Center"
-                                       FontSize="14"
-                                       FontWeight="DemiBold"
-                                Content="{Binding RoomType.Name}" />
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </TabItem>
-
+            <!-- Offer tab item -->
             <TabItem Header="Offers" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding Offers}" SelectedItem="{Binding SelectedOffer}" 
                   HorizontalContentAlignment="Center" 
@@ -452,6 +458,7 @@
                 </ListView>
             </TabItem>
 
+            <!--Employees tab item-->
             <TabItem Header="Employees" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" 
                   HorizontalContentAlignment="Center" 
@@ -481,7 +488,6 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
-
         </TabControl>
     </DockPanel>
 </UserControl>

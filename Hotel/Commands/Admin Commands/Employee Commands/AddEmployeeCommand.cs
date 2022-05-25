@@ -39,15 +39,15 @@ namespace Hotel.Commands.Admin_Commands.Employee_Commands
                 {
                     MessageBox.Show("Employee hired successfully!", "Success", MessageBoxButton.OK,
                         MessageBoxImage.Information);
+
+                    // after adding the employee, we close the window
+                    _addEmployeeVM.CloseWindow();
                 }
                 else
                 {
                     MessageBox.Show("Employee already exists!", "Error", MessageBoxButton.OK,
                         MessageBoxImage.Error);
-                }
-
-                // after adding the employee, we close the window
-                _addEmployeeVM.CloseWindow();
+                }               
             }                
         }
 

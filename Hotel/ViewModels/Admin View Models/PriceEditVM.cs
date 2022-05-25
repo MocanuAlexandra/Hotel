@@ -17,6 +17,8 @@ namespace Hotel.ViewModels
         //parent viewModel that contains the room type to which we add or edit the price
         public RoomTypeEditVM RoomTypeEditViewModel { get; private set; }
 
+        #region Properties
+        
         //prices associated to the room type
         public ObservableCollection<PriceVM> Prices { get; set; }
 
@@ -79,6 +81,7 @@ namespace Hotel.ViewModels
             }
         }
 
+        #endregion
 
         #region Commands
         public ICommand SubmitPriceCommand { get; private set; }

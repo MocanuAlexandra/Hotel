@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
+    //wrapper class for Employee model that will be used in the view model as a representative
+
     public class EmployeeVM:BaseViewModel
     {
         public Employee _employee;

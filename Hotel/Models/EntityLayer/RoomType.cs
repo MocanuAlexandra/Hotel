@@ -9,12 +9,7 @@ using System.Threading.Tasks;
 namespace Hotel.Models.EntityLayer
 {
     public class RoomType
-    {
-       public RoomType()
-        {
-            this.Facilities = new ObservableCollection<Facility>();
-        }
-        
+    {      
         public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }

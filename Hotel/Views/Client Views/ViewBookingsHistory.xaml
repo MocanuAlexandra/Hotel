@@ -280,7 +280,7 @@
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                             <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="LightSkyBlue"/>
+                            <Setter Property="Background" Value="BurlyWood"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                 </GridView>

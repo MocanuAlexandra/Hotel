@@ -32,7 +32,7 @@ namespace Hotel.Commands.Navigation_Commands
                 _mainWindowViewModel.CurrentHeight = Constants.ClientWindowSize.windowHeight;
             }
 
-            // if we execute BAck from ViewAllBookings
+            // if we execute Back from ViewAllBookings
             else if (parameter is ViewAllBookingsVM)
             {
                 _mainWindowViewModel.CurrentViewModel = new EmployeeMainVM()

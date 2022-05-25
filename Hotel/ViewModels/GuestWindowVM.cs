@@ -34,7 +34,10 @@ namespace Hotel.ViewModels
 
         #endregion
 
+        #region Commands
         public ICommand SearchCommand { get; private set; }
+
+        #endregion
         
         public GuestWindowVM()
         {

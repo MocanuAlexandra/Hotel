@@ -18,7 +18,6 @@ namespace Hotel.Commands.Navigation_Commands
 
         public override void Execute(object parameter)
         {
-            var signInVM = parameter as StartVM;
             if (parameter is StartVM)
             {
                 _mainWindowVM.CurrentViewModel = new GuestWindowVM();

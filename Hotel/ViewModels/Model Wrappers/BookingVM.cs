@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
+    //wrapper class for Booking model that will be used in the view model as a representative
+
     public class BookingVM:BaseViewModel
     {
         public readonly Booking _booking;

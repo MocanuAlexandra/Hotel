@@ -26,6 +26,8 @@ namespace Hotel.Commands.Admin_Commands.Images_Commands
                 Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | " +
                 "*.jpg; *.jpeg; *.jpe; *.jfif; *.png",
 
+                // set the initial directory to the image folder in the project
+                //InitialDirectory = @"..\..\..\..\..\Hotel\Images"
                 InitialDirectory = @"D:\Facultate\anul II\sem 2\MVP\tema 3\Hotel_git\Hotel\Images\RoomImages",
             };
 

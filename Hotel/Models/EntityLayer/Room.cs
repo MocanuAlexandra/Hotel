@@ -10,14 +10,6 @@ namespace Hotel.Models.EntityLayer
 {
     public class Room
     {
-        // constructor
-        //public Room()
-        //{
-        //    this.Facilities = new HashSet<Facility>();
-        //    this.Bookings = new HashSet<Booking>();
-        //}
-
-        //define primary key
         public int Id { get; set; }
         public int Number { get; set; }
 

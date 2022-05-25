@@ -62,7 +62,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <!--Set a radio button to know ifdisplay bookings with offer
+                <!--Set a radio button to know if display bookings with offer
                 or bookings-->
                 <StackPanel Orientation="Vertical" Width="149" Height="51">
                     <RadioButton Content="Booking with offer" Name="bookingWithOffer"
@@ -115,7 +115,7 @@
             </StackPanel>
         </DockPanel>
 
-        <!-- made visible this list item only if radio button is checked-->
+        <!-- made visible this list item only if 'bookings with offer' radio button is checked-->
         <ListView x:Name="ReservationOfferList"
                           ItemsSource="{Binding ReservationOffers}"
                           SelectedItem="{Binding SelectedReservationOffer}"
@@ -214,7 +214,7 @@
             </ListView.View>
         </ListView>
 
-        <!-- made visible this list item only if radio button is checked-->
+        <!-- made visible this list item only if 'bookings' radio button is checked-->
         <ListView x:Name="ReservationList"
                           ItemsSource="{Binding Bookings}"
                           SelectedItem="{Binding SelectedBooking}"
@@ -310,7 +310,7 @@
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                             <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="LightSkyBlue"/>
+                            <Setter Property="Background" Value="BurlyWood"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                 </GridView>

@@ -117,6 +117,7 @@
                 </Style>
             </TabControl.Resources>
 
+            <!--Room types tab item-->
             <TabItem Header="Room types" Background="BurlyWood" FontSize="14" Margin="0,-3,-1,0">
                 <ListView ItemsSource="{Binding RoomTypes}" 
                   HorizontalContentAlignment="Center" 
@@ -207,6 +208,7 @@
                 </ListView>
             </TabItem>
 
+            <!--Room images tab item-->
             <TabItem Header="Room images" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListBox ItemsSource="{Binding Images}"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
@@ -234,6 +236,7 @@
                 </ListBox>
             </TabItem>
             
+            <!--Offers tab item-->
             <TabItem Header="Offers" Background="LightSkyBlue" FontSize="14" Margin="0,-3,-3,0">
                 <ListView ItemsSource="{Binding Offers}"
                           SelectedItem="{Binding SelectedOffer}"
@@ -312,7 +315,6 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
-
         </TabControl>
     </DockPanel>
 </UserControl>

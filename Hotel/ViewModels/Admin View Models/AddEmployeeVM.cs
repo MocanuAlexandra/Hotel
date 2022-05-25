@@ -11,6 +11,7 @@ namespace Hotel.ViewModels.Admin_View_Models
 {
     public class AddEmployeeVM:BaseViewModel, Utils.Utility.ICloseWindows
     {
+        #region Properties
         private string _employeeEmail;
         private string _employeePassword;
 
@@ -34,9 +35,14 @@ namespace Hotel.ViewModels.Admin_View_Models
             }
         }
 
+        #endregion
+
+        #region Commands
         public ICommand CloseCommand { get; private set; }
         public ICommand AddEmployeeCommand { get; private set; }
 
+        #endregion
+        
         public AddEmployeeVM(AdminMainVM adminViewModel)
         {
             EmployeeEmail = "";

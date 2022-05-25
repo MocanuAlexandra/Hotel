@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hotel.ViewModels.Model_Wrappers
 {
+    //wrapper class for Room Image model that will be used in the view model as a representative
+    
     public class RoomImageVM:BaseViewModel
     {
         public readonly ImageRoom _roomImage;

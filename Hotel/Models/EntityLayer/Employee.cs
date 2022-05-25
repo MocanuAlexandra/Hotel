@@ -9,10 +9,8 @@ namespace Hotel.Models.EntityLayer
 {
     public class Employee
     {
-        // define primary key
         public int EmployeeId { get; set; }
 
-        //define other attributes
         public string Email { get; set; }
 
         public string Password { get; set; }

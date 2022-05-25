@@ -31,6 +31,8 @@ namespace Hotel.Commands.Admin_Commands.Images_Commands
             {
                 MessageBox.Show("Image already exists!", "Error", MessageBoxButton.OK,
                      MessageBoxImage.Error);
+
+                return;
             }
 
             else
